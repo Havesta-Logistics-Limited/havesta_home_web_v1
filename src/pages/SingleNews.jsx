@@ -1,67 +1,67 @@
-import { Box, Container, Typography, styled } from '@mui/material';
-import React from 'react';
-import FAQ from '../components/faq.';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css/effect-cards';
-import 'swiper/css';
-import PagesHero from '../components/News/pagesHero';
-import ReuseableHero from '../common/ReuseableHero';
+import { Box, Container, Typography, styled } from "@mui/material";
+import React from "react";
+import FAQ from "../templates/home-templates/chunks/faq/Faq";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css/effect-cards";
+import "swiper/css";
+import PagesHero from "../templates/news-template/pagesHero";
+import ReuseableHero from "../common/ReuseableHero";
 
 const StyledText = styled(Typography)({
-  fontSize: '1rem',
-  marginTop: '2rem',
-  marginBottom: '2rem',
+  fontSize: "1rem",
+  marginTop: "2rem",
+  marginBottom: "2rem",
 });
 const StyledTitle = styled(Typography)({
   fontWeight: 700,
-  fontSize: '1.2rem',
-  marginBottom: '1rem',
+  fontSize: "1.2rem",
+  marginBottom: "1rem",
 });
 const StyledBox = styled(Box)({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  borderRadius: '15px',
-  marginTop: '3rem',
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: "15px",
+  marginTop: "3rem",
 });
 const data = [
   {
-    img: 'https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526343/Rectangle_610_24_hcoxfn.png',
-    des: 'Poultry Market',
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526343/Rectangle_610_24_hcoxfn.png",
+    des: "Poultry Market",
     paragraph:
-      'At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ',
+      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
-    img: 'https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526338/Rectangle_610_25_p2mduc.png',
-    des: 'Freshness ',
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526338/Rectangle_610_25_p2mduc.png",
+    des: "Freshness ",
     paragraph:
-      'At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ',
+      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
 
   {
-    img: 'https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526343/Rectangle_610_27_i6pya0.png',
-    des: 'How I eat healthy meals ',
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526343/Rectangle_610_27_i6pya0.png",
+    des: "How I eat healthy meals ",
     paragraph:
-      'At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ',
+      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
-    img: 'https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526333/Rectangle_610_30_zk5jbh.png',
-    des: 'How To Grow Potatoes ',
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526333/Rectangle_610_30_zk5jbh.png",
+    des: "How To Grow Potatoes ",
     paragraph:
-      'At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ',
+      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
-    img: 'https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526332/Rectangle_610_28_byrgbn.png',
-    des: 'Harvesta: Expansion Plans',
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526332/Rectangle_610_28_byrgbn.png",
+    des: "Harvesta: Expansion Plans",
     paragraph:
-      'At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ',
+      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
-    img: 'https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526336/Rectangle_610_26_tulrf7.png',
-    des: 'How To Grow Potatoes ',
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526336/Rectangle_610_26_tulrf7.png",
+    des: "How To Grow Potatoes ",
     paragraph:
-      'At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ',
+      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
 ];
 
@@ -70,21 +70,21 @@ const SingleNews = () => {
     <>
       <ReuseableHero
         text={
-          'A Bumper Harvest: How Harvesta Empowered a Female Maize Farmer to Achieve Record Profits'
+          "A Bumper Harvest: How Harvesta Empowered a Female Maize Farmer to Achieve Record Profits"
         }
       />
 
       <Container>
         <StyledBox
-          height={['40vh', '50vh']}
+          height={["40vh", "50vh"]}
           sx={{
             background: `url( "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719331576/Rectangle_3854_qrepi6.png")`,
-            backgroundSize: ['cover', '100% 100%'],
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
+            backgroundSize: ["cover", "100% 100%"],
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
         />
-        <Box fontFamily={'Plus Jakarta Sans'} my={10}>
+        <Box fontFamily={"Plus Jakarta Sans"} my={10}>
           <StyledTitle>Introduction</StyledTitle>
           <StyledText>
             In the lush fields of the heartland, where the sun kisses the earth
@@ -227,14 +227,14 @@ const SingleNews = () => {
         </Box>
       </Container>
 
-      <Box marginTop={8} mb={'250px'}>
+      <Box marginTop={8} mb={"250px"}>
         <Container maxWidth="xl">
           <h3 className="flex justify-center font-bold text-4xl mb-5">
             More News
           </h3>
           <Swiper
             grabCursor={true}
-            effect={'slide'}
+            effect={"slide"}
             centeredSlides={true}
             autoplay={{
               disableOnInteraction: false,
@@ -249,12 +249,12 @@ const SingleNews = () => {
               // Large screens
               1024: {
                 slidesPerView: 3,
-                effect: 'slide',
+                effect: "slide",
               },
               // Smaller screens
               0: {
                 slidesPerView: 1,
-                effect: 'slide',
+                effect: "slide",
               },
             }}
           >

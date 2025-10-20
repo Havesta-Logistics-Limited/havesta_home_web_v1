@@ -1,14 +1,11 @@
+import useHomeHeroChunk from "./useHomeHeroChunk";
 
-const Hero = () => {
-    const heroImage =
-    "https://res.cloudinary.com/dtc89xi2r/image/upload/v1721821248/Hreo-img_a7ntfz.svg";
-  const heroImage2 =
-    "https://res.cloudinary.com/dtc89xi2r/image/upload/v1721833532/smiling-holding-bunch-fruits-against-white-copy-space-black-guy-is-yellow-background_1_kcarzh.svg";
-
+export default function HomeHeroChunk() {
+  const h = useHomeHeroChunk();
   return (
-   <>
-    <div
-        className={`relative w-full h-[593px] bg-cover p-4 bg-primary mb-20`}
+    <>
+      <div
+        className={`relative w-full h-[593px] bg-cover p-4 bg-primary mb-20 `}
       >
         <div className="">
           <div className=" text-white lg:ml-52 lg:mt-48 mt-32">
@@ -29,19 +26,17 @@ const Hero = () => {
             </div> */}
           </div>
           <div className="absolute -bottom-[90px]  lg:hidden w-full grid justify-items-center left-0">
-            <img src={heroImage2} alt="" className="w-64" />
+            <img src={h.heroImage2} alt="" className="w-64" />
           </div>
           <div className="absolute top-0 right-0">
             <img
-              src={heroImage}
+              src={h.heroImage}
               alt=""
               className="hidden lg:block lg:w-[550px] w-[200px]"
             />
           </div>
         </div>
       </div>
-   </>
-  )
+    </>
+  );
 }
-
-export default Hero

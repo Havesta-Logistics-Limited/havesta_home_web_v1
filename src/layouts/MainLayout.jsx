@@ -3,16 +3,16 @@ import { Box } from "@mui/material";
 import Navbar from "../common/Navbar";
 import Footer from "../common/Footer";
 import SideModal from "../common/SideModal";
-import {useSelector} from 'react-redux'
+import { useSelector } from "react-redux";
 
 const MainLayout = () => {
-  const {modalOpen} = useSelector((state)=> state.modalReducer)
+  const { modalOpen } = useSelector((state) => state.modalReducer);
   return (
     <>
       <Navbar />
-      <SideModal/> 
+      <SideModal />
       <Box overflow="hidden" flexGrow={1}>
-      <Outlet />
+        <Outlet />
       </Box>
 
       <Footer />

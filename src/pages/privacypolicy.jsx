@@ -1,28 +1,28 @@
-import { Box, Container, Typography, styled } from '@mui/material';
-import PagesHero from '../components/News/pagesHero';
-import FAQ from '../components/faq.';
-import { privacyPolicy } from '../config/privacyPolicy.config';
-import ReuseableHero from '../common/ReuseableHero';
+import { Box, Container, Typography, styled } from "@mui/material";
+import PagesHero from "../templates/news-template/pagesHero";
+import FAQ from "../templates/home-templates/chunks/faq/Faq";
+import { privacyPolicy } from "../config/privacyPolicy.config";
+import ReuseableHero from "../common/ReuseableHero";
 
 const StyledText = styled(Typography)({
-  fontSize: '1rem',
-  marginTop: '2rem',
-  marginBottom: '2rem',
+  fontSize: "1rem",
+  marginTop: "2rem",
+  marginBottom: "2rem",
 });
 const StyledTitle = styled(Typography)({
   fontWeight: 700,
-  fontSize: '1.2rem',
-  marginBottom: '1rem',
+  fontSize: "1.2rem",
+  marginBottom: "1rem",
 });
 
 const PrivacyPolicy = () => {
   return (
     <>
-      <ReuseableHero text={'PRIVACY POLICY'} />
+      <ReuseableHero text={"PRIVACY POLICY"} />
       <div className="full mb-[250px]">
         <Container>
           {privacyPolicy.map((policy, i) => (
-            <Box fontFamily={'Plus Jakarta Sans'} my={5} key={i}>
+            <Box fontFamily={"Plus Jakarta Sans"} my={5} key={i}>
               <StyledTitle>
                 {i + 1} {policy.title}
               </StyledTitle>

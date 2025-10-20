@@ -4,17 +4,20 @@ import Select from "@mui/joy/Select";
 import Option from "@mui/joy/Option";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
-import { vendorForm, vendorStats } from "../config/vendors.config";
+import { vendorStats } from "../../config/vendors.config";
 import Checkbox from "@mui/joy/Checkbox";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ReviewsRoutes from "../routes/reviews.routes";
-import FAQ from "../components/faq..jsx";
-import MobileReview from "../components/landing/Reviews-Fragment/MobileReview.jsx";
-import WebReview from "../components/landing/Reviews-Fragment/WebReview.jsx";
-import axiosInstance from "../config/axios.config.js";
+import ReviewsRoutes from "../../routes/reviews.routes";
+
+import MobileReview from "../../components/landing/Reviews-Fragment/MobileReview.jsx";
+import WebReview from "../../components/landing/Reviews-Fragment/WebReview.jsx";
+import axiosInstance from "../../config/axios.config.js";
 import { CircularProgress } from "@mui/material/";
-const Vendor = ({ hero }) => {
+import Faq from "../home-templates/chunks/faq/Faq.jsx";
+import VendorHeroChunk from "./chunks/vendor-hero-chunk/VendorHeroChunk.jsx";
+5;
+export default function VendorTemplate() {
   const formTitleStyle = {
     fontSize: "14px",
     fontWeight: "400",
@@ -135,7 +138,9 @@ const Vendor = ({ hero }) => {
       setLoading(true);
       if (error === "") {
         const { data } = await axiosInstance.post(
-          `${import.meta.env.VITE_AUTH_ENDPOINT}/auth_service/api/vendors/signup`,
+          `${
+            import.meta.env.VITE_AUTH_ENDPOINT
+          }/auth_service/api/vendors/signup`,
           formData
         );
         setLoading(false);
@@ -143,7 +148,7 @@ const Vendor = ({ hero }) => {
           navigate("/vendors/congratulations");
         }
       } else {
-        setLoading(false)
+        setLoading(false);
         toast.error("Invalid Email Format");
       }
     } catch (error) {
@@ -178,35 +183,8 @@ const Vendor = ({ hero }) => {
         transition={Bounce}
       />
       <section>
-        <div className="relative pb-5">
-          <div className="w-full bg-cover h-[30%] py-20 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1721823045/Group_1000002049_bjs7ez.png')]">
-            {/* HERO SECTION */}
-            <div className="mt-32 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative lg:ml-44">
-              <div className=" p-2">
-                <h2 className="p-3 text-[45px] font-primary font-bold lg:leading-tight lg:text-[55px] text-white text-6xl ">
-                  Make More Sales <br />
-                  <span className="text-primary font-[700]">Online </span>with
-                  Harvesta
-                </h2>
-                <p className=" p-3  text-md text-white">
-                  Let us help you take your business to the next level
-                </p>
-                {/*  <button className="mb-10 font-primary rounded-full bg-white p-3 text-black text-xs font-bold shadow-md w-[100px] ml-2 hover:bg-primary hover:text-white transition-all">
-                  Get Started
-                </button> */}
-              </div>
-              <div className="lg:absolute right-52">
-                <img
-                  src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719527040/Ellipse_69_2_n4dk4u.svg"
-                  alt=""
-                  className="w-[400px] "
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 justify-items-center mt-20 font-primary">
+        <VendorHeroChunk />
+        {/* <div className="grid grid-cols-1 justify-items-center mt-20 font-primary border-4">
           <h2 className=" text-3xl lg:text-4xl font-bold font-primary mt-10">
             Complete The Form
           </h2>
@@ -276,7 +254,9 @@ const Vendor = ({ hero }) => {
                         type={item.type}
                         placeholder={item.placeholder}
                         className={`border-[0.5px] w-full h-[56px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline focus:outline-1 focus:outline-harvestaLightGreen font-primary text-sm ${
-                          item.title == "Phone Number" ? "pl-12 phoneNum border-[1.2px]" : ""
+                          item.title == "Phone Number"
+                            ? "pl-12 phoneNum border-[1.2px]"
+                            : ""
                         }
                           ${
                             item.name === "email" &&
@@ -295,7 +275,9 @@ const Vendor = ({ hero }) => {
                       <img
                         src={item.img ? item.img : {}}
                         alt={item.img ? "naija-icon" : ""}
-                        className={ `absolute top-5 left-3 ${item.img ? "":"hidden"}` }
+                        className={`absolute top-5 left-3 ${
+                          item.img ? "" : "hidden"
+                        }`}
                       />
                     </div>
                   </FormControl>
@@ -366,7 +348,7 @@ const Vendor = ({ hero }) => {
               </Link>{" "}
             </p>
           </div>
-        </div>
+        </div> */}
 
         <div className="w-full h-auto bg-harvestaLightGreen px-3 flex justify-center mt-20">
           {" "}
@@ -423,10 +405,8 @@ const Vendor = ({ hero }) => {
           </div>
         </div>
 
-        <FAQ />
+        <Faq />
       </section>
     </>
   );
-};
-
-export default Vendor;
+}

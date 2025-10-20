@@ -1,27 +1,30 @@
-import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
-import Home from "../pages/Home";
+
+import HomeTemplate from "../templates/home-templates/HomeTemplate";
 import Rider from "../pages/Rider";
 import Marketplace from "../pages/Marketplace";
-import News from "../pages/News";
-import RouteWrapper from "../components/RouteWrapper";
-import Partner from "../pages/Vendor";
-import About from "../pages/About/About";
+
+import RouteWrapper from "../templates/news-template/RouteWrapper";
+
 import SingleNews from "../pages/SingleNews";
 import FinalMessageRider from "../pages/FinalMessage/FinalMessageRider";
 import PrivacyPolicy from "../pages/privacypolicy";
 import TermsOfUse from "../pages/termsOfUse";
+import AboutTemplate from "../templates/about-template/AboutTemplate";
+import NewsTemplate from "../templates/news-template/NewsTemplate";
+import ContactTemplate from "../templates/contact-template/ContactTemplate";
+import VendorTemplate from "../templates/vendor-template/VendorTemplate";
 const routes = [
   {
     path: "/home",
 
-    element: <RouteWrapper component={Home} hero="" />,
+    element: <RouteWrapper component={HomeTemplate} hero="" />,
   },
   {
     path: "/about",
     element: (
       <RouteWrapper
-        component={About}
+        component={AboutTemplate}
         hero={
           "https://res.cloudinary.com/dtc89xi2r/image/upload/v1718624097/EatFood.com_7_yexfzh.png"
         }
@@ -30,21 +33,25 @@ const routes = [
   },
   {
     path: "/contact",
-    element: <RouteWrapper component={Contact} hero="/icons/contact.png" />,
+    element: (
+      <RouteWrapper component={ContactTemplate} hero="/icons/contact.png" />
+    ),
   },
   {
     index: true,
 
     element: (
       <RouteWrapper
-        component={Home}
+        component={HomeTemplate}
         hero="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718725096/Group_3733_vyipoo.png"
       />
     ),
   },
   {
     path: "/vendors",
-    element: <RouteWrapper component={Partner} hero="/icons/vendorHero.png" />,
+    element: (
+      <RouteWrapper component={VendorTemplate} hero="/icons/vendorHero.png" />
+    ),
   },
   {
     path: "/riders",
@@ -57,7 +64,7 @@ const routes = [
   },
   {
     path: "/news",
-    element: <RouteWrapper component={News} hero="/icons/news.svg" />,
+    element: <RouteWrapper component={NewsTemplate} hero="/icons/news.svg" />,
   },
   {
     path: "/news/:id",

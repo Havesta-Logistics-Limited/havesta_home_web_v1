@@ -1,8 +1,8 @@
-import VideoPlayer from "./Video";
-import JoinUs from "./JoinUs";
-import Reviews from "./Reviews";
+import VideoPlayer from "../../../../components/landing/Video";
+import JoinUs from "../../../../components/landing/JoinUs";
+import Reviews from "../../../../components/landing/Reviews";
 
-const Explore = () => {
+export default function HomeExploreChunk() {
   return (
     <div className=" mt-20">
       <div className="flex justify-center items-center flex-col-reverse lg:flex-row font-primary gap-20">
@@ -40,6 +40,4 @@ const Explore = () => {
       <br />
     </div>
   );
-};
-
-export default Explore;
+}

@@ -8,7 +8,7 @@ import { Bounce, toast, ToastContainer } from "react-toastify";
 import Checkbox from "@mui/joy/Checkbox";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import FAQ from "../components/faq..jsx";
+import FAQ from "../templates/home-templates/chunks/faq/Faq.jsx";
 import { setIcon } from "../redux/features/iconSlice.js";
 import { useDispatch } from "react-redux";
 import WebReview from "../components/landing/Reviews-Fragment/WebReview.jsx";
@@ -120,14 +120,16 @@ const Rider = () => {
       if (error === "") {
         setLoading(true);
         const { data } = await axiosInstance.post(
-          `${import.meta.env.VITE_AUTH_ENDPOINT}/auth_service/api/riders/signup`,
+          `${
+            import.meta.env.VITE_AUTH_ENDPOINT
+          }/auth_service/api/riders/signup`,
           formData
         );
         if (data.status === "success") {
-        navigate(`/riders/congratulations`);
+          navigate(`/riders/congratulations`);
         }
       } else {
-        setLoading(false)
+        setLoading(false);
         toast.error("Invalid Email Format");
       }
     } catch (error) {
