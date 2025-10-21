@@ -1,7 +1,7 @@
 export default function useFaQ() {
   const Faqs = [
     {
-      title: "What does Harvesta do?",
+      title: "What does Havesta do?",
       text: `This is the paragraph with some ipsum text. Lorem ipsum
                     dolor sit amet, consectetur adipisicing elit. Officiis
                     distinctio quo.`,

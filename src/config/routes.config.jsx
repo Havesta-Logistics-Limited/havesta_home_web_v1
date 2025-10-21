@@ -1,7 +1,7 @@
 import NotFound from "../pages/NotFound";
 
 import HomeTemplate from "../templates/home-templates/HomeTemplate";
-import Rider from "../pages/Rider";
+
 import Marketplace from "../pages/Marketplace";
 
 import RouteWrapper from "../templates/news-template/RouteWrapper";
@@ -14,6 +14,7 @@ import AboutTemplate from "../templates/about-template/AboutTemplate";
 import NewsTemplate from "../templates/news-template/NewsTemplate";
 import ContactTemplate from "../templates/contact-template/ContactTemplate";
 import VendorTemplate from "../templates/vendor-template/VendorTemplate";
+import RiderTemplate from "../templates/rider-template/RiderTemplate";
 const routes = [
   {
     path: "/home",
@@ -57,7 +58,7 @@ const routes = [
     path: "/riders",
     element: (
       <RouteWrapper
-        component={Rider}
+        component={RiderTemplate}
         hero="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719527266/EatFood.com_8_exoobu.svg"
       />
     ),

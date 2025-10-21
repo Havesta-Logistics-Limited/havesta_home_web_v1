@@ -10,11 +10,11 @@ export default function AboutHavestaChunk() {
         <img src={image1} alt="ceo-image" className="w-full lg:w-2/3" />
         <p className="pt-2 font-bold font-primary">Noel Amobeda</p>
         <p className="text-xs text-primary font-bold tracking-wide">
-          CEO / Founder at Harvesta
+          Founder & CEO at Havesta
         </p>
         <div className="w-full mt-12 lg:w-2/3">
           <h5 className="p-4 font-bold text-lg uppercase border-l-4 border-harvestaLightGreen text-left">
-            Why choose Harvesta?
+            Why choose Havesta?
           </h5>
           <ul className="pl-8 text-left">
             {h.aboutListItems.map((item, index) => (
@@ -54,7 +54,7 @@ export default function AboutHavestaChunk() {
         ))}
         <div className="font-bold font-primary mt-4 px-4">
           <p className="ml-[-4px]">
-            Thank you for choosing Harvesta. Together, we can make fresh, local
+            Thank you for choosing Havesta. Together, we can make fresh, local
             produce a part of everyone’s daily life. Join us in our mission to
             create healthier, happier communities, one delivery at a time
           </p>

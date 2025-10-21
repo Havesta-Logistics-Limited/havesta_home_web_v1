@@ -30,38 +30,38 @@ const data = [
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526343/Rectangle_610_24_hcoxfn.png",
     des: "Poultry Market",
     paragraph:
-      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
+      "At Havesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526338/Rectangle_610_25_p2mduc.png",
     des: "Freshness ",
     paragraph:
-      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
+      "At Havesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
 
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526343/Rectangle_610_27_i6pya0.png",
     des: "How I eat healthy meals ",
     paragraph:
-      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
+      "At Havesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526333/Rectangle_610_30_zk5jbh.png",
     des: "How To Grow Potatoes ",
     paragraph:
-      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
+      "At Havesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526332/Rectangle_610_28_byrgbn.png",
-    des: "Harvesta: Expansion Plans",
+    des: "Havesta: Expansion Plans",
     paragraph:
-      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
+      "At Havesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526336/Rectangle_610_26_tulrf7.png",
     des: "How To Grow Potatoes ",
     paragraph:
-      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
+      "At Havesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
 ];
 
@@ -70,7 +70,7 @@ const SingleNews = () => {
     <>
       <ReuseableHero
         text={
-          "A Bumper Harvest: How Harvesta Empowered a Female Maize Farmer to Achieve Record Profits"
+          "A Bumper Harvest: How Havesta Empowered a Female Maize Farmer to Achieve Record Profits"
         }
       />
 
@@ -93,7 +93,7 @@ const SingleNews = () => {
             Meet Maria, a resilient and passionate maize farmer who has seen an
             unprecedented profitable harvest this farming season. Her journey,
             filled with challenges and triumphs, has been profoundly transformed
-            by Harvesta, our innovative logistics company. Through our online
+            by Havesta, our innovative logistics company. Through our online
             shopping platform, Maria has not only driven her sales to new
             heights but also inspired countless others in her community.
           </StyledText>
@@ -112,9 +112,9 @@ const SingleNews = () => {
           <StyledTitle>The Turning Point</StyledTitle>
           <StyledText>
             The turning point in Maria’s farming career came when she discovered
-            Harvesta. Our logistics company, focused on making freshly farm
+            Havesta. Our logistics company, focused on making freshly farm
             produce available to all customers within their localities, provided
-            her with a lifeline. With Harvesta’s user-friendly online shopping
+            her with a lifeline. With Havesta’s user-friendly online shopping
             platform, Maria could now reach a broader audience and sell her
             maize directly to consumers. This innovation not only cut out the
             middlemen, who often took a significant portion of her profits, but
@@ -122,10 +122,10 @@ const SingleNews = () => {
             produce.
           </StyledText>
           <StyledTitle>
-            Harvesta’s Impact: Driving Sales and Empowering Farmers
+            Havesta’s Impact: Driving Sales and Empowering Farmers
           </StyledTitle>
           <StyledText>
-            Harvesta’s platform revolutionized the way Maria conducted her
+            Havesta’s platform revolutionized the way Maria conducted her
             business. Here’s how we made a difference:
           </StyledText>
           <StyledTitle>Increased Market Reach:</StyledTitle>
@@ -149,13 +149,13 @@ const SingleNews = () => {
             orders, Maria’s business flourished.
           </StyledText>
           <StyledText>
-            Better Pricing: Harvesta’s transparent pricing model ensured that
+            Better Pricing: Havesta’s transparent pricing model ensured that
             Maria received fair compensation for her produce, significantly
             improving her profit margins.
           </StyledText>
           <StyledTitle>Efficient Logistics:</StyledTitle>
           <StyledText>
-            Reliable Delivery: Harvesta’s efficient logistics network ensured
+            Reliable Delivery: Havesta’s efficient logistics network ensured
             that Maria’s maize reached customers promptly and in excellent
             condition. This reliability built trust with consumers and
             encouraged repeat business.
@@ -167,7 +167,7 @@ const SingleNews = () => {
           </StyledText>
           <StyledTitle>Support and Training:</StyledTitle>
           <StyledText>
-            Agricultural Training: Harvesta provided Maria with access to
+            Agricultural Training: Havesta provided Maria with access to
             agricultural experts who offered valuable advice on best farming
             practices, pest control, and crop management. This support helped
             Maria improve her yields and overall farm productivity.
@@ -180,7 +180,7 @@ const SingleNews = () => {
           <StyledTitle> A Season of Prosperity</StyledTitle>
           <StyledText>
             This farming season has been nothing short of spectacular for Maria.
-            With Harvesta’s support, she achieved a record-breaking harvest. Her
+            With Havesta’s support, she achieved a record-breaking harvest. Her
             fields, once modest, now flourished with an abundance of maize. The
             increase in production was matched by a surge in sales, as more and
             more customers discovered the convenience of purchasing fresh
@@ -188,7 +188,7 @@ const SingleNews = () => {
           </StyledText>
           <StyledText>
             Maria’s story is a testament to the power of innovation and the
-            importance of supporting local farmers. By leveraging Harvesta’s
+            importance of supporting local farmers. By leveraging Havesta’s
             platform, she transformed her small farm into a profitable venture.
             Her success not only improved her family’s living standards but also
             inspired other women in her community to pursue their agricultural
@@ -196,8 +196,8 @@ const SingleNews = () => {
           </StyledText>
           <StyledTitle>Building a Community of Empowered Farmers</StyledTitle>
           <StyledText>
-            At Harvesta, we believe in the power of community. Maria’s success
-            is just one example of how our platform is making a difference. By
+            At Havesta, we believe in the power of community. Maria’s success is
+            just one example of how our platform is making a difference. By
             empowering local farmers, we are fostering a network of sustainable
             agricultural businesses. Our commitment to freshness, convenience,
             community support, sustainability, and customer satisfaction drives
@@ -208,7 +208,7 @@ const SingleNews = () => {
           <StyledText>
             Maria’s journey from a struggling maize farmer to a prosperous
             businesswoman is an inspiring story of resilience, hard work, and
-            the transformative power of technology. With Harvesta’s online
+            the transformative power of technology. With Havesta’s online
             shopping platform, Maria found a way to overcome the challenges that
             once hindered her progress. Her profitable harvest this season is a
             beacon of hope and a testament to what can be achieved when farmers
@@ -216,12 +216,12 @@ const SingleNews = () => {
           </StyledText>
 
           <StyledText>
-            As we continue to expand our reach and enhance our services,
-            Harvesta remains dedicated to empowering farmers, driving sales, and
-            making fresh, local produce accessible to all. Together, we can
-            build a future where every farmer thrives, and every customer enjoys
-            the best that our fields have to offer. Join us in celebrating
-            Maria’s success and be part of a community that values quality,
+            As we continue to expand our reach and enhance our services, Havesta
+            remains dedicated to empowering farmers, driving sales, and making
+            fresh, local produce accessible to all. Together, we can build a
+            future where every farmer thrives, and every customer enjoys the
+            best that our fields have to offer. Join us in celebrating Maria’s
+            success and be part of a community that values quality,
             sustainability, and growth.
           </StyledText>
         </Box>

@@ -10,7 +10,7 @@ export default function VendorHeroChunk() {
             <h2 className="p-3 text-[45px] font-primary font-bold lg:leading-tight lg:text-[55px] text-white text-6xl ">
               Make More Sales <br />
               <span className="text-primary font-[700]">Online </span>with
-              Harvesta
+              Havesta
             </h2>
             <p className=" p-3  text-md text-white">
               Let us help you take your business to the next level

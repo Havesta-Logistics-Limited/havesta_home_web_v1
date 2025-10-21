@@ -1,4 +1,5 @@
-import useVendorFormChunk from "./useVendorFormChunk";
+import React from "react";
+import useRiderFormChunk from "./useRiderFormChunk";
 import FormControl from "@mui/joy/FormControl";
 import FormLabel from "@mui/joy/FormLabel";
 import Select from "@mui/joy/Select";
@@ -8,29 +9,26 @@ import Checkbox from "@mui/joy/Checkbox";
 import { Link } from "react-router-dom";
 import { CircularProgress } from "@mui/material/";
 
-export default function VendorFormChunk() {
-  const h = useVendorFormChunk();
+export default function RiderFormChunk() {
+  const h = useRiderFormChunk();
   return (
-    <div className="grid grid-cols-1 justify-items-center mt-20 font-primary">
-      <h2 className=" text-3xl lg:text-4xl font-bold font-primary mt-10">
-        Complete The Form
-      </h2>
+    <div className="grid grid-cols-1 justify-items-center mt-10 font-primary">
+      <h2 className="text-[54px] font-bold font-primary">Complete The Form</h2>
 
-      <form className="my-12 lg:max-w-[1154px] md  w-full p-8">
+      <form className="my-4 lg:w-[70%] w-full p-8">
         <p className="text-xs pb-4">
           Fields marked with<span className="text-red-400"> * </span> are
           required
         </p>
-        <div className="lg:grid md:grid md:grid-cols-2 grid-cols-2 gap-9 font-normal">
-          {h.vendorForm.map((item, index) =>
-            item.option ? (
-              <FormControl key={index} className="w-full">
+        <div className="lg:grid grid-cols-2 gap-6 lg:mt-6">
+          {h.riderForm.map((item, index) =>
+            item.options ? (
+              <FormControl key={index} className="max-w-[542px] ">
                 <FormLabel style={h.formTitleStyle} className="font-primary">
                   {item.title}
                 </FormLabel>
 
                 <Select
-                  className="h-[56px]"
                   placeholder={item.placeholder}
                   startDecorator={
                     item.phoneNumber ? <KeyboardArrowDown /> : false
@@ -42,26 +40,13 @@ export default function VendorFormChunk() {
                     backgroundColor: "#f3f4f6",
                     fontFamily: "Helvetica",
                     fontSize: "12px",
+                    height: "56px",
                   }}
                 >
                   {item.subItems &&
                     item.subItems.map((subItem, subIndex) => (
                       <>
-                        <Option
-                          key={subIndex}
-                          value={subItem}
-                          sx={{
-                            "&:hover": {
-                              backgroundColor: "#80EEC6", // Customize the hover color
-                            },
-                            "&.Mui-selected": {
-                              backgroundColor: "#01BE72", // Keeps the selected item's background unchanged
-                              "&:hover": {
-                                backgroundColor: "", // Keeps the hover effect for the selected item
-                              },
-                            },
-                          }}
-                        >
+                        <Option key={subIndex} value={subItem}>
                           {subItem}
                         </Option>
                       </>
@@ -69,47 +54,54 @@ export default function VendorFormChunk() {
                 </Select>
               </FormControl>
             ) : (
-              <FormControl key={index} className=" w-full mt-4">
+              <FormControl key={index} className="relative max-w-[542px]">
                 <FormLabel style={h.formTitleStyle}>
                   {item.title} &nbsp;{" "}
                   <span className="text-[12px] text-red-400"> * </span>
                 </FormLabel>
-                <div className="w-full relative">
-                  <input
-                    type={item.type}
-                    placeholder={item.placeholder}
-                    className={`border-[0.5px] w-full h-[56px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline focus:outline-1 focus:outline-harvestaLightGreen font-primary text-sm ${
-                      item.title == "Phone Number"
-                        ? "pl-12 phoneNum border-[1.2px]"
-                        : ""
-                    }
-                          ${
-                            item.name === "email" &&
-                            h.error === "Invalid email address"
-                              ? "border-[1.2px] border-red-300 focus:outline-transparent focus:outline-none"
-                              : ""
-                          }`}
-                    onChange={h.handleInputChange}
-                    name={item.name}
-                    onBlur={
-                      item.name === "email"
-                        ? () => h.handleBlur(h.formData.email)
-                        : () => {}
-                    }
-                  />
-                  <img
-                    src={item.img ? item.img : {}}
-                    alt={item.img ? "naija-icon" : ""}
-                    className={`absolute top-5 left-3 ${
-                      item.img ? "" : "hidden"
-                    }`}
-                  />
-                </div>
+                {/* <div className="w-full bg-red-500 absolute"> */}
+                {item.name == "phone_number" ? (
+                  <div className="absolute bottom-[18px] left-2.5">
+                    <img src="/icons/naija-flag.svg" alt="flag" />
+                  </div>
+                ) : (
+                  <div></div>
+                )}
+                <input
+                  type={item.type}
+                  placeholder={item.placeholder}
+                  className={`border-[0.5px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline focus:outline-harvestaLightGreen  focus:outline-1 font-primary h-[56px] text-sm w-full ${
+                    item.name == "phone_number"
+                      ? "pl-10 phoneNum border-[1.2px]"
+                      : item.name === "phone_number" &&
+                        phoneNumberError === "error"
+                      ? "border-[1.2px] border-red-300 focus:border-transparent"
+                      : ""
+                  } ${
+                    item.name === "email" && h.error === "Invalid email address"
+                      ? "border-[1.2px] border-red-300 focus:outline-transparent focus:outline-none"
+                      : ""
+                  }`}
+                  value={h.formData[item.name]}
+                  name={item.name}
+                  onChange={h.handleChange}
+                  readOnly={item.constant}
+                  max={item.max}
+                  onInput={item.oninput}
+                  id={item.id}
+                  required={item.required}
+                  onBlur={
+                    item.name === "email"
+                      ? () => h.handleBlur(h.formData.email)
+                      : () => {}
+                  }
+                />
               </FormControl>
             )
           )}
         </div>
       </form>
+
       <div className="grid grid-col-1 gap-5 p-3 justify-items-center">
         <Checkbox
           sx={{
@@ -131,7 +123,7 @@ export default function VendorFormChunk() {
           }}
           color="success"
           size="sm"
-          label="By clicking this, you accept the  privacy policy"
+          label="By clicking this, you accept the  privacy policy "
           name="accepted_privacy_policy"
           onChange={h.handleCheckboxChange}
           checked={h.formData.accepted_privacy_policy}
@@ -164,9 +156,9 @@ export default function VendorFormChunk() {
           </p>
         </button>
         <p className="text-xs">
-          Want to become a Rider?{" "}
+          Want to become a Vendor?{" "}
           <Link
-            to="/rider"
+            to="/vendor"
             className="text-harvestaLightGreen font-bold hover:text-primaryHover"
           >
             Register Here

@@ -10,7 +10,7 @@ export default function useAboutCoreValuesChunk() {
       img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1718303121/Rectangle_610_20_ocsbq4.png",
       title: "Freshness",
       paragraph:
-        "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards of quality and freshness, so you can enjoy nutritious and delicious food every day.",
+        "At Havesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards of quality and freshness, so you can enjoy nutritious and delicious food every day.",
     },
     {
       img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1718303222/Rectangle_610_21_ldeajv.png",
@@ -22,13 +22,13 @@ export default function useAboutCoreValuesChunk() {
       img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1718303255/Rectangle_610_23_o945uk.png",
       title: "Sustainability",
       paragraph:
-        "We are committed to promoting sustainable practices in our operations. From sourcing local produce to minimizing waste and reducing our carbon footprint, Harvesta strives to protect the environment and foster a healthier planet for future generations.",
+        "We are committed to promoting sustainable practices in our operations. From sourcing local produce to minimizing waste and reducing our carbon footprint, Havesta strives to protect the environment and foster a healthier planet for future generations.",
     },
     {
       img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1718303221/Rectangle_610_22_ezulvg.png",
       title: "Community Support",
       paragraph:
-        "Harvesta is dedicated to supporting local farmers by providing them with a reliable platform to sell their produce. By connecting farmers directly with consumers, we contribute to the growth and sustainability of our local agricultural community.",
+        "Havesta is dedicated to supporting local farmers by providing them with a reliable platform to sell their produce. By connecting farmers directly with consumers, we contribute to the growth and sustainability of our local agricultural community.",
     },
   ];
 

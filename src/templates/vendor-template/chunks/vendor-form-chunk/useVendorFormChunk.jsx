@@ -1,79 +1,9 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 export default function useVendorFormChunk() {
-  const formTitleStyle = {
-    fontSize: "14px",
-    fontWeight: "400",
-    color: "#242424",
-    lineHeight: "1.5",
-    fontFamily: "Plus Jakarta Sans",
-  };
-  const handleInputChange = (event) => {
-    setFormData((prev) => ({
-      ...prev,
-      [event.target.name]: event.target.value,
-    }));
-
-    checkIfEmpty();
-
-    if (event.target.name === "email") {
-      handleBlur(event.target.value);
-    }
-  };
-  const handleCheckboxChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.checked,
-    }));
-
-    console.log(
-      e.target.name,
-      e.target.checked,
-      formData.accepted_privacy_policy,
-      "ertghgdh"
-    );
-    // console.log(event.target.checked)
-  };
-  const handlePrevClick = () => {
-    const prevSlide =
-      currentSlide === 0 ? ReviewsRoutes.length - 1 : currentSlide - 1;
-    setCurrentSlide(prevSlide);
-  };
-
-  const handleNextClick = () => {
-    const nextSlide =
-      currentSlide === ReviewsRoutes.length - 1 ? 0 : currentSlide + 1;
-    setCurrentSlide(nextSlide);
-  };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(formData);
-    try {
-      setLoading(true);
-      if (error === "") {
-        const { data } = await axiosInstance.post(
-          `${
-            import.meta.env.VITE_AUTH_ENDPOINT
-          }/auth_service/api/vendors/signup`,
-          formData
-        );
-        setLoading(false);
-        if (data) {
-          navigate("/vendors/congratulations");
-        }
-      } else {
-        setLoading(false);
-        toast.error("Invalid Email Format");
-      }
-    } catch (error) {
-      setLoading(false);
-      const message = error.response.data.MESSAGE
-        ? error.response.data.MESSAGE
-        : "Something went wrong";
-      console.log(error.response.data);
-      toast.error(message);
-    }
-  };
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const vendorForm = [
     {
       title: "First Name",
@@ -118,14 +48,113 @@ export default function useVendorFormChunk() {
       name: "legal_business_address",
     },
   ];
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    phone_number: "",
+    email: "",
+    name_of_business: "",
+    legal_business_address: "",
+    agreed_to_regular_updates: false,
+    accepted_privacy_policy: false,
+    // password: null,
+    // date_of_birth:null,
+    // gender:null,
+    // category_of_business:null
+  });
+  const formTitleStyle = {
+    fontSize: "14px",
+    fontWeight: "400",
+    color: "#242424",
+    lineHeight: "1.5",
+    fontFamily: "Plus Jakarta Sans",
+  };
+  const checkIfEmpty = () => {
+    const arr = Object.values(formData);
+    const subArr = arr.filter((val) => typeof val == "string");
+    return subArr.every((value) => value.trim() !== "");
+  };
+  const handleInputChange = (event) => {
+    setFormData((prev) => ({
+      ...prev,
+      [event.target.name]: event.target.value,
+    }));
+    // console.log(
+    //   e.target.value,
+    //   formData[event.target.name],
+    //   formData.firstname
+    // );
+    checkIfEmpty();
 
+    if (event.target.name === "email") {
+      handleBlur(event.target.value);
+    }
+  };
+
+  const handleCheckboxChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.checked,
+    }));
+
+    console.log(
+      e.target.name,
+      e.target.checked,
+      formData.accepted_privacy_policy,
+      "ertghgdh"
+    );
+    // console.log(event.target.checked)
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(formData);
+    try {
+      setLoading(true);
+      if (error === "") {
+        const { data } = await axiosInstance.post(
+          `${
+            import.meta.env.VITE_AUTH_ENDPOINT
+          }/auth_service/api/vendors/signup`,
+          formData
+        );
+        setLoading(false);
+        if (data) {
+          navigate("/vendors/congratulations");
+        }
+      } else {
+        setLoading(false);
+        toast.error("Invalid Email Format");
+      }
+    } catch (error) {
+      setLoading(false);
+      const message = error.response.data.MESSAGE
+        ? error.response.data.MESSAGE
+        : "Something went wrong";
+      console.log(error.response.data);
+      toast.error(message);
+    }
+  };
+  const handleBlur = (email) => {
+    console.log("fregbfgerberwrfeb");
+    if (!validateEmailFormat(email)) {
+      setError("Invalid email address");
+    } else {
+      setError(""); // Clear error if valid
+    }
+  };
   return {
+    loading,
+    setLoading,
+    vendorForm,
+    formData,
+    setFormData,
+    formTitleStyle,
+    checkIfEmpty,
+    handleBlur,
+    handleInputChange,
     handleCheckboxChange,
     handleSubmit,
-    handleNextClick,
-    handlePrevClick,
-    handleInputChange,
-    vendorForm,
-    formTitleStyle,
+    error,
+    setError,
   };
 }

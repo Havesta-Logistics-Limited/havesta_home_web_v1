@@ -84,16 +84,6 @@ const Rider = () => {
     });
   }, []);
 
-  // const inputChange = (e) => {
-  //   const input = e.target;
-  //   if (input.length > 11) {
-  //     input.value = input.value.slice(0, 11);
-  //   }
-
-  //   setFormData((prev) => ({ ...prev, phone_number: input.value }));
-  //   input.value = input.value.replace(/[^0-9]/g, "");
-  // };
-
   const checkIfEmpty = () => {
     const arr = Object.values(formData);
     const subArr = arr.filter((val) => typeof val == "string");
@@ -232,7 +222,7 @@ const Rider = () => {
                 <h2 className="p-3 text-[50px] font-primary font-bold lg:leading-tight lg:text-[55px] text-[#242424] text-6xl">
                   Become a Delivery <br />
                   <span className="text-white font-[700]">AGENT </span>with
-                  Harvesta
+                  Havesta
                 </h2>
                 <p className=" p-3  text-[#242424] font-primary">
                   Be your Boss. Build your income daily, weekly, or monthly.

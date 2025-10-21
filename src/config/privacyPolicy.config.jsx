@@ -3,7 +3,7 @@ export const privacyPolicy = [
     title: "Introduction",
     paragraphs: [
       {
-        text: "Welcome to Harvesta. We prioritize convenience and transparency, offering real-time order tracking, secure payment options, and eco-friendly delivery choices. This Privacy Policy outlines how we collect, use, and protect your personal information when you visit our website or use our services.",
+        text: "Welcome to Havesta. We prioritize convenience and transparency, offering real-time order tracking, secure payment options, and eco-friendly delivery choices. This Privacy Policy outlines how we collect, use, and protect your personal information when you visit our website or use our services.",
       },
     ],
   },

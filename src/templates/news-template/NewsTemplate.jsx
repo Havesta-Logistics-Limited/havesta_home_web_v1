@@ -9,7 +9,7 @@ export default function NewsTemplate() {
     <>
       <ReuseableHero
         text={
-          "get the latest updates and deeper shopping experience from harvesta "
+          "get the latest updates and deeper shopping experience from havesta "
         }
       />
 

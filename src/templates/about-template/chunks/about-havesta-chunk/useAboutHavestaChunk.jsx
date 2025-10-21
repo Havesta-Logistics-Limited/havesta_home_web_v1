@@ -1,16 +1,16 @@
 export default function useAboutHavestaChunk() {
   const aboutItems = [
     {
-      title: "Welcome to Harvesta!",
+      title: "Welcome to Havesta!",
       content:
-        "At Harvesta, we believe that everyone deserves access to the freshest farm produce, right at their doorstep. Our mission is to bridge the gap between local farmers and busy customers, ensuring that the highest quality fruits, vegetables, and other farm-fresh products are just a click away.",
+        "At Havesta, we believe that everyone deserves access to the freshest farm produce, right at their doorstep. Our mission is to bridge the gap between local farmers and busy customers, ensuring that the highest quality fruits, vegetables, and other farm-fresh products are just a click away.",
       position: "right",
     },
 
     {
       title: "Who We Are",
       content:
-        "Harvesta is a dedicated logistics company with a passion for supporting local agriculture and enhancing the well-being of our communities. We understand that in today’s fast-paced world, finding the time to visit the market can be challenging. That's why we’ve created a seamless solution to bring the farm to your table, saving you time and effort while promoting healthy living.",
+        "Havesta is a dedicated logistics company with a passion for supporting local agriculture and enhancing the well-being of our communities. We understand that in today’s fast-paced world, finding the time to visit the market can be challenging. That's why we’ve created a seamless solution to bring the farm to your table, saving you time and effort while promoting healthy living.",
       position: "left",
     },
 
@@ -24,7 +24,7 @@ export default function useAboutHavestaChunk() {
     {
       title: "Our Vision",
       content:
-        "At Harvesta, our vision is to make freshly harvested produce easily accessible to everyone in their locality. We strive to support local farmers by providing a reliable platform for their products, while also making it simple for our customers to enjoy healthy, delicious food every day.",
+        "At Havesta, our vision is to make freshly harvested produce easily accessible to everyone in their locality. We strive to support local farmers by providing a reliable platform for their products, while also making it simple for our customers to enjoy healthy, delicious food every day.",
       position: "left",
     },
   ];
@@ -45,7 +45,7 @@ export default function useAboutHavestaChunk() {
     {
       title: "Community Support",
       content:
-        "By choosing Harvesta, you are supporting local farmers and contributing to the sustainability of your community.",
+        "By choosing Havesta, you are supporting local farmers and contributing to the sustainability of your community.",
     },
 
     {

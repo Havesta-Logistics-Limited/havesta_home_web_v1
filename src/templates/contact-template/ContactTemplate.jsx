@@ -115,7 +115,7 @@ export default function ContactTemplate() {
                 </Box>
                 <Box ml={3}>
                   <Typography variant="h6" color="white" fontSize={"1.2rem"}>
-                    080HARVESTA
+                    080HAVESTA
                   </Typography>
                 </Box>
               </Stack>
@@ -130,7 +130,7 @@ export default function ContactTemplate() {
                 </Box>
                 <Box ml={3}>
                   <Typography variant="h6" color="white" fontSize={"1.2rem"}>
-                    hello@harvesta.com
+                    hello@havesta.com
                   </Typography>
                 </Box>
               </Stack>
