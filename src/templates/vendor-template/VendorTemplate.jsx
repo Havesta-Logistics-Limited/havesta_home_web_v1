@@ -1,10 +1,9 @@
 import { Bounce, toast, ToastContainer } from "react-toastify";
-
-import Faq from "../home-templates/chunks/faq/Faq.jsx";
 import VendorHeroChunk from "./chunks/vendor-hero-chunk/VendorHeroChunk.jsx";
 import VendorFormChunk from "./chunks/vendor-form-chunk/VendorFormChunk.jsx";
 import VendorOverflowChunk from "./chunks/vendor-overflow-chunk/VendorOverflowChunk.jsx";
 import VendorReviewsChunk from "./chunks/vendor-reviews-chunk/VendorReviewsChunk.jsx";
+import Faq from "../../common/faq/Faq.jsx";
 
 export default function VendorTemplate({ hero }) {
   return (

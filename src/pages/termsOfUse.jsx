@@ -1,8 +1,8 @@
 import { Box, Container, Typography, styled } from "@mui/material";
 import PagesHero from "../templates/news-template/pagesHero";
-import FAQ from "../templates/home-templates/chunks/faq/Faq";
 import { TermsOfuse } from "../config/termsOfUse.config";
 import ReuseableHero from "../common/ReuseableHero";
+import Faq from "../common/faq/Faq";
 
 const StyledText = styled(Typography)({
   fontSize: "1rem",
@@ -33,7 +33,7 @@ const TermsOfUse = () => {
           ))}
         </Container>
       </div>
-      <FAQ />
+      <Faq />
     </>
   );
 };

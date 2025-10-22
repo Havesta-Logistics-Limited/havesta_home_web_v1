@@ -1,5 +1,6 @@
 import useAboutHavestaChunk from "./useAboutHavestaChunk";
-import image1 from "../../../../assets/images/CEO-pic.png";
+
+import Noel from "../../../../assets/images/Noel.svg";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 export default function AboutHavestaChunk() {
@@ -7,7 +8,7 @@ export default function AboutHavestaChunk() {
   return (
     <div className="grid gap-8 md:grid-cols-2 ">
       <div className="p-4 flex flex-col items-center text-center">
-        <img src={image1} alt="ceo-image" className="w-full lg:w-2/3" />
+        <img src={Noel} alt="ceo-image" className="w-full lg:w-2/3" />
         <p className="pt-2 font-bold font-primary">Noel Amobeda</p>
         <p className="text-xs text-primary font-bold tracking-wide">
           Founder & CEO at Havesta

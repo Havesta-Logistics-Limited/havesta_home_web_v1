@@ -1,12 +1,11 @@
 import { Box, Container, Typography, styled } from "@mui/material";
-import React from "react";
-import FAQ from "../templates/home-templates/chunks/faq/Faq";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css/effect-cards";
 import "swiper/css";
 import PagesHero from "../templates/news-template/pagesHero";
 import ReuseableHero from "../common/ReuseableHero";
+import Faq from "../common/faq/Faq";
 
 const StyledText = styled(Typography)({
   fontSize: "1rem",
@@ -284,7 +283,7 @@ const SingleNews = () => {
           </Swiper>
         </Container>
       </Box>
-      <FAQ />
+      <Faq />
     </>
   );
 };

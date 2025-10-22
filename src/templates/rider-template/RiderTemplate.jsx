@@ -1,15 +1,13 @@
 import { Bounce, toast, ToastContainer } from "react-toastify";
 
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { setIcon } from "../../redux/features/iconSlice.js";
 import { useDispatch } from "react-redux";
-
-import axiosInstance from "../../config/axios.config.js";
 import RiderHeroChunk from "./chunks/rider-hero-chunk/RiderHeroChunk.jsx";
 import RiderFormChunk from "./chunks/rider-form-chunk/RiderFormChunk.jsx";
 import RiderOverflowChunk from "./chunks/rider-overflow-chunk/RiderOverflowChunk.jsx";
 import RiderReviewsChunk from "./chunks/rider-reviews-chunk/RiderReviewsChunk.jsx";
+import Faq from "../../common/faq/Faq.jsx";
 
 export default function RiderTemplate() {
   const dispatch = useDispatch();

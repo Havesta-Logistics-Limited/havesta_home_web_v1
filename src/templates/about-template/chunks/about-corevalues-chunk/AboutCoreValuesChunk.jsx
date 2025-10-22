@@ -38,8 +38,8 @@ export default function AboutCoreValuesChunk() {
         {h.coreValues.map((item, index) => (
           <SwiperSlide key={index}>
             <div
-              className="bg-harvestaLightGreen rounded-xl
-              border-primary overflow-hidden hover:bg-primary hover:border-primary text-white my-10 h-[480px]
+              className="bg-primary rounded-xl
+              border-primary overflow-hidden hover:bg-harvestaLightGreen hover:border-primary text-white my-10 h-[480px]
               transition-all hover:shadow-lg"
             >
               <img

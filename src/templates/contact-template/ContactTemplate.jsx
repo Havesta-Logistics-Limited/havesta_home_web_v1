@@ -10,7 +10,7 @@ import { IoMail } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import ReuseableHero from "../../common/ReuseableHero";
-import Faq from "../home-templates/chunks/faq/Faq";
+import Faq from "../../common/faq/Faq";
 import ContactFormChunk from "./chunks/contact-form-chunk/ContactFormChunk";
 
 const StyledAboutBox = styled(Box)({

@@ -1,5 +1,5 @@
 import ReuseableHero from "../../common/ReuseableHero";
-import Faq from "../home-templates/chunks/faq/Faq";
+import Faq from "../../common/faq/Faq";
 import Latest from "./latest";
 import useNewsTemplate from "./useNewsTemplate";
 

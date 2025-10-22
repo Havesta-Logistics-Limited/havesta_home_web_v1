@@ -16,7 +16,8 @@ export default {
         harvestaBlack: "#242424",
         harvestaSecondBlack: "#3F3D4D",
         tertiaryGreen: "rgba(1, 190, 114, 0.3)",
-        tertiaryGreenHover: "rgba(1, 152, 91, 0.3)"
+        tertiaryGreenHover: "rgba(1, 152, 91, 0.3)",
+        purpleblack:"#1F2937"
       },
       boxShadow: {
         "3xl": " 0 -10px 25px -10px rgba(0, 0, 0, 0.75)",
