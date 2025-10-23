@@ -8,12 +8,22 @@ import facebookPng from "../assets/icons/facebook.png";
 import instagramPng from "../assets/icons/instagram.png";
 import Logo from "./Logo";
 import { NavLink } from "react-router-dom";
+import { IMG_HAVESTALOGO } from "../assets/images";
 const Footer = () => {
   return (
     <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-10 bg-black p-16  md:p-16 lg:p-24 text-gray-400 font-body relative">
       <div className=" p-4">
-        <div className="flex items-center gap-2 mb-4">
-          <Logo />
+        <div className=" mb-4">
+          <div className=" relative  font-bold  text-xl py-2 text-white  w-fit">
+            <div className=" relative flex ">
+              <p className="inter">Havesta</p>
+              <img
+                src={IMG_HAVESTALOGO}
+                alt="havesta"
+                className="w-6 -mt-2  "
+              />
+            </div>
+          </div>
         </div>
         <p className="text-sm leading-6">
           HAVESTA prioritizes convenience and transparency, enhancing the
@@ -48,13 +58,14 @@ const Footer = () => {
               <span className="ml-2">Contact</span>
             </NavLink>
           </li>
-          <li className="flex items-center">
-            <ChevronRightIcon color="success" />
-            <span className="ml-2">Riders</span>
-          </li>
+
           <li className="flex items-center">
             <ChevronRightIcon color="success" />
             <span className="ml-2">Vendors</span>
+          </li>
+          <li className="flex items-center">
+            <ChevronRightIcon color="success" />
+            <span className="ml-2">Riders</span>
           </li>
           <li className="flex items-center">
             <NavLink to={"/careers"}>

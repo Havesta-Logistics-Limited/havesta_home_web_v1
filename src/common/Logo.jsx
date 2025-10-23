@@ -1,14 +1,12 @@
+import { IMG_HAVESTALOGO } from "../assets/images";
 const Logo = () => {
   return (
-    <>
-      <img
-        src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1721813637/New_Logo_jnpwju.svg"
-        alt="havesta"
-        width={"120px"}
-        height={"11.13px"}
-        className=""
-      />
-    </>
+    <div className="flex items-center relative  font-bold text-lg border-2 px-3 py-2 border-harvestaLightGreen bg-white text-harvestaBlack rounded-3xl w-fit">
+      <div className=" relative flex items-center ml-2">
+        <p className="inter">Havesta</p>
+        <img src={IMG_HAVESTALOGO} alt="havesta" className="w-6 -mt-2  " />
+      </div>
+    </div>
   );
 };
 

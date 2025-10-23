@@ -5,7 +5,7 @@ import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 export default function AboutCoreValuesChunk() {
   const h = useAboutCoreValuesChunk();
   return (
-    <div className="my-14 ">
+    <div className="my-14  mb-0 lg:p-24 ">
       <h3 className="flex justify-center font-bold text-4xl mb-14">
         Our Core Values
       </h3>

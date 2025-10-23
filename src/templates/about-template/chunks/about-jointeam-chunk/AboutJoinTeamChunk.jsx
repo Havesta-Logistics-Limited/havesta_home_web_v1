@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 export default function AboutJoinTeamChunk() {
   const h = useAboutJoinTeamChunk();
   return (
-    <div className="grid grid-col-1 justify-items-center p-20 lg:mt-40 font-primary relative my-20 ">
+    <div className="grid grid-col-1 justify-items-center px-20 lg:mt-10 font-primary relative my-20 mt-0 lg:px-24 ">
       <img
         src={h.aboutMainImage}
         alt="image"

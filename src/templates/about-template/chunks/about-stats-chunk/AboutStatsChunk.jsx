@@ -4,29 +4,20 @@ import useAboutStatsChunk from "./useAboutStatsChunk";
 export default function AboutStatsChunk() {
   const h = useAboutStatsChunk();
   return (
-    <div
-      className="mt-16 grid grid-cols-1 justify-items-center md:grid-cols-4 border-t-2 "
-      ref={h.ref}
-    >
-      {h.aboutStats.map((item, index) => {
-        return (
-          <div
-            className="grid justify-items-center p-8  m-8  border-harvestaLightGreen"
-            key={index}
-          >
-            <span className="grid justify-items-center">{item.icon}</span>{" "}
-            {/* REFACTOR THIS SECTION */}
-            <p className="text-lg font-bold  text-harvestaLightGreen font-primary lg:text-4xl my-2 ">
-              {h.inView && (
-                <CountUp end={item.amount} duration={item.duration} />
-              )}
-            </p>
-            <p className="font-primary text-lg font-lighter mt-[-8px]">
-              {item.content}
-            </p>
-          </div>
-        );
-      })}
+    <div className=" bg-harvestaDarkGreen flex justify-center items-center font-primary ">
+      <div className=" grid grid-cols-1 justify-items-center md:grid-cols-4 gap-4 text-white ">
+        {h.aboutStats.map((item, index) => {
+          return (
+            <div
+              className="flex flex-col gap-2 p-3  m-8  border-l-2 border-l-harvestaLightGreen"
+              key={index}
+            >
+              <h1 className="  text-3xl">{item.amount}</h1>
+              <p className="text-sm">{item.content}</p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

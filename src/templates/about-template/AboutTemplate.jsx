@@ -20,7 +20,7 @@ export default function AboutTemplate() {
   return (
     <>
       <ReuseableHero text={h.headerText} image={h.imageUrl} />
-      <div className="p lg:p-24 ">
+      <div className="  ">
         <AboutHavestaChunk />
 
         <AboutStatsChunk />

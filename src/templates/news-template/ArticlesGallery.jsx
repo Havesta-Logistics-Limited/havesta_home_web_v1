@@ -36,7 +36,7 @@ const ArticlesGallery = ({ data, gridWidth = "300px" }) => {
           <StyledGridElements key={index}>
             <Card
               sx={{
-                backgroundColor: `${colors.harvestaLightGreen}`,
+                backgroundColor: `${colors.primary}`,
                 borderRadius: "25px",
                 // border: "1px solid rgba(0, 0, 0, 0.1)",
                 boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.05)",
@@ -92,7 +92,7 @@ const ArticlesGallery = ({ data, gridWidth = "300px" }) => {
                             boxShadow: "none",
                             marginTop: 3,
                             fontFamily: "Plus Jakarta Sans",
-                            backgroundColor: colors.primary,
+                            backgroundColor: colors.harvestaLightGreen,
                             "&:hover": {
                               backgroundColor: colors.WHITE,
                               // border: 1,
