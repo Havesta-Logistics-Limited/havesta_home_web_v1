@@ -6,7 +6,8 @@ import twitterPng from "../assets/icons/twitter (2).png";
 import linkedinPng from "../assets/icons/linkedin (1).png";
 import facebookPng from "../assets/icons/facebook.png";
 import instagramPng from "../assets/icons/instagram.png";
-import Logo from "./Logo";
+import { FiFacebook, FiLinkedin } from "react-icons/fi";
+import { FaXTwitter, FaInstagram } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import { IMG_HAVESTALOGO } from "../assets/images";
 const Footer = () => {
@@ -34,7 +35,7 @@ const Footer = () => {
         </p>
       </div>
 
-      <div className=" p-6">
+      <div className=" p-6  px-4">
         <h3 className="text-xl font-semibold text-white mb-4">
           Featured Links
         </h3>
@@ -127,19 +128,11 @@ const Footer = () => {
             fontSize="large"
           />
         </span>
-        <div className="flex space-x-4 my-10  h-7">
-          <span className="w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-1 transition-all">
-            <img src={facebookPng} alt="facebook-icon" className="text-white" />
-          </span>
-          <span className=" w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-1 transition-all">
-            <img src={instagramPng} alt="gmail-icon" />
-          </span>
-          <span className=" w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-1 transition-all">
-            <img src={linkedinPng} alt="linkedin-icon" />
-          </span>
-          <span className=" w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-1 transition-all bg-white">
-            <img src={twitterPng} alt="twitter-icon" />
-          </span>
+        <div className="flex space-x-4 my-10 text-white text-xl cursor-pointer">
+          <FiFacebook />
+          <FaXTwitter />
+          <FiLinkedin />
+          <FaInstagram />
         </div>
       </div>
       <div className="w-full h-auto bg-dim absolute bottom-0 left-0 text-xs text-center align-middle p-2  border-t-[0.5px] border-gray-600">

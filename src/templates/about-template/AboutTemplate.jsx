@@ -10,6 +10,7 @@ import AboutStatsChunk from "./chunks/about-stats-chunk/AboutStatsChunk";
 import AboutCoreValuesChunk from "./chunks/about-corevalues-chunk/AboutCoreValuesChunk";
 import AboutMeetTeamChunk from "./chunks/about-meetteam-chunk/AboutMeetTeamChunk";
 import AboutJoinTeamChunk from "./chunks/about-jointeam-chunk/AboutJoinTeamChunk";
+import Faq from "../../common/faq/Faq";
 
 export default function AboutTemplate() {
   const h = useAboutTemplate();
@@ -27,6 +28,7 @@ export default function AboutTemplate() {
         <AboutCoreValuesChunk />
         <AboutMeetTeamChunk />
         <AboutJoinTeamChunk />
+        <Faq />
       </div>
     </>
   );

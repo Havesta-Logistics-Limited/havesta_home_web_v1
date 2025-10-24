@@ -1,5 +1,4 @@
 import Category from "../../templates/home-templates/chunks/home-hero-chunk/HomeDownloadChunk";
-import Explore from "../../templates/home-templates/chunks/home-explore-chunk/HomeExploreChunk";
 import Hero from "../../templates/home-templates/chunks/home-hero-chunk/HomeHeroChunk";
 import JoinUs from "../../components/landing/JoinUs";
 import SectionL1 from "../../components/landing/new/SectionL1";

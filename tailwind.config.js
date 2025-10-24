@@ -44,6 +44,7 @@ export default {
         careerGradient: "url('/images/Vector.png')",
         careerGradient2: "url('/images/Vector (1).png')",
         marketSec1: "url('/images/Rectangle 1.png')",
+        'green-radial': 'radial-gradient(circle, #005231, #273F2B)'
       },
       height: {
         "max": "max-content",
