@@ -1,6 +1,6 @@
 import Category from "../../templates/home-templates/chunks/home-hero-chunk/HomeDownloadChunk";
 import Hero from "../../templates/home-templates/chunks/home-hero-chunk/HomeHeroChunk";
-import JoinUs from "../../components/landing/JoinUs";
+
 import SectionL1 from "../../components/landing/new/SectionL1";
 import SectionL2 from "../../components/landing/new/SectionL2";
 import VideoPlayer from "../../components/landing/Video";
