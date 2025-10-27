@@ -8,7 +8,7 @@ export default function HomeChooseUsChunk() {
   return (
     <div className="border-2 m-auto pt-24 max-w-5xl ">
       {/* UPPER PART */}
-      <div className="text-white inter px-8  md:px-12 relative">
+      <div className="text-white inter px-8  md:px-12 relative ">
         <h1 className="font-bold text-2xl mb-4">Why Choose Havesta?</h1>
         <p className="max-w-lg font-light mb-5">
           At Havesta, we believe that everyone deserves access to the freshest

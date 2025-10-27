@@ -3,6 +3,7 @@ import HomeDownloadChunk from "./chunks/home-hero-chunk/HomeDownloadChunk";
 import HomeChooseUsChunk from "./chunks/home-chooseus-chunk/HomeChooseUsChunk";
 import Faq from "../../common/faq/Faq";
 import HomeJoinChunk from "./chunks/home-join-chunk/HomeJoinChunk";
+import HomeSeeTheWorldChunk from "./chunks/home-seeworld-chunk/HomeSeeTheWorldChunk";
 
 export default function HomeTemplate() {
   return (
@@ -16,6 +17,7 @@ export default function HomeTemplate() {
       </div>
 
       <HomeJoinChunk />
+      <HomeSeeTheWorldChunk />
       <Faq />
     </div>
   );

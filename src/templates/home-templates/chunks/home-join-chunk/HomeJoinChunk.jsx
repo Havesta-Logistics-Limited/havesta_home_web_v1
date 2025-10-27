@@ -1,13 +1,11 @@
 import VideoPlayer from "../../../../components/landing/Video";
-import JoinUs from "../../../../components/landing/JoinUs";
-import Reviews from "../../../../components/landing/Reviews";
 import useHomeJoinChunk from "./useHomeJoinChunk";
 
 export default function HomeJoinChunk() {
   const h = useHomeJoinChunk();
   return (
     <div className=" mt-12">
-      <h1 className="font-primary text-center font-bold text-white text-4xl mb-12">
+      <h1 className="font-primary text-center font-bold text-white text-2xl sm:text-3xl md:text-4xl mb-12">
         Join our growing community!
       </h1>
       <div className="p-10 border-2 m-auto max-w-6xl py-24 ">
@@ -50,10 +48,6 @@ export default function HomeJoinChunk() {
       <div className="flex justify-center mt-8 p-6">
         <VideoPlayer />
       </div>
-
-      <JoinUs />
-
-      <Reviews />
 
       <br />
     </div>

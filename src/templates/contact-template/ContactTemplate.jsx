@@ -12,6 +12,7 @@ import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import ReuseableHero from "../../common/ReuseableHero";
 import Faq from "../../common/faq/Faq";
 import ContactFormChunk from "./chunks/contact-form-chunk/ContactFormChunk";
+import SocialIcons from "../../common/social-icons/SocialIcons";
 
 const StyledAboutBox = styled(Box)({
   borderRadius: "10px",
@@ -150,18 +151,7 @@ export default function ContactTemplate() {
               </Stack>
             </Box>
             <Stack direction="row" spacing={2}>
-              <Avatar sx={{ bgcolor: "orange" }}>
-                <FaFacebook />
-              </Avatar>
-              <Avatar sx={{ bgcolor: "orange" }}>
-                <FaTwitter />
-              </Avatar>
-              <Avatar sx={{ bgcolor: "orange" }}>
-                <FaInstagram />
-              </Avatar>
-              <Avatar sx={{ bgcolor: "orange" }}>
-                <FaLinkedin />
-              </Avatar>
+              <SocialIcons />
             </Stack>
           </StyledAboutBox>
         </Stack>

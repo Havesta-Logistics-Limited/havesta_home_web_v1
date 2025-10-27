@@ -2,14 +2,10 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import twitterPng from "../assets/icons/twitter (2).png";
-import linkedinPng from "../assets/icons/linkedin (1).png";
-import facebookPng from "../assets/icons/facebook.png";
-import instagramPng from "../assets/icons/instagram.png";
-import { FiFacebook, FiLinkedin } from "react-icons/fi";
-import { FaXTwitter, FaInstagram } from "react-icons/fa6";
+
 import { NavLink } from "react-router-dom";
 import { IMG_HAVESTALOGO } from "../assets/images";
+import SocialIcons from "./social-icons/SocialIcons";
 const Footer = () => {
   return (
     <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-10 bg-black p-16  md:p-16 lg:p-24 text-gray-400 font-body relative">
@@ -128,12 +124,7 @@ const Footer = () => {
             fontSize="large"
           />
         </span>
-        <div className="flex space-x-4 my-10 text-white text-xl cursor-pointer">
-          <FiFacebook />
-          <FaXTwitter />
-          <FiLinkedin />
-          <FaInstagram />
-        </div>
+        <SocialIcons color="white" />
       </div>
       <div className="w-full h-auto bg-dim absolute bottom-0 left-0 text-xs text-center align-middle p-2  border-t-[0.5px] border-gray-600">
         <span>
