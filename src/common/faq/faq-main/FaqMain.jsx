@@ -12,21 +12,19 @@ export default function FaqMain() {
         <h1 className=" text-center text-xl font-bold mt-4 text-purpleblack">
           Frequently Asked Questions
         </h1>
-        <div className="flex-col w-full  my-4 ">
+        <div className="flex-col  m-auto  my-4  w-[80%] ">
           {h.Faqs.map((faq, index) => (
             <div key={index} className="flex flex-row w-[100%]  p-4 ">
               <div className="flex justify-between items-center w-full gap-3">
                 <div>
-                  <h3 className="text-md font-medium ">{faq.title}</h3>
+                  <h3 className="text-md font-medium  w-full">{faq.title}</h3>
                   {h.activefaq === index && (
                     <p className="text-sm mt-2 font-extrabold">{faq.answer}</p>
                   )}
                 </div>
                 <p
                   className={`text-2xl ${
-                    h.activefaq === index
-                      ? "text-harvestaBlack"
-                      : "text-[#D9D9D9]"
+                    h.activefaq === index ? "text-primary" : "text-[#D9D9D9]"
                   } cursor-pointer`}
                   onClick={() => h.handleFaqClick(index)}
                 >

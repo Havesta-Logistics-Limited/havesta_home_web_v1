@@ -1,22 +1,18 @@
-import VideoPlayer from "../../../../components/landing/Video";
 import useHomeJoinChunk from "./useHomeJoinChunk";
 
 export default function HomeJoinChunk() {
   const h = useHomeJoinChunk();
   return (
-    <div className=" mt-12">
+    <div className=" pt-12  bg-green-radial">
       <h1 className="font-primary text-center font-bold text-white text-2xl sm:text-3xl md:text-4xl mb-12">
         Join our growing community!
       </h1>
-      <div className="p-10 border-2 m-auto max-w-6xl py-24 ">
+      <div className="p-10 border m-auto max-w-6xl py-24 bg-white/10 backdrop-blur-md  border-white/20 rounded-md shadow-lg  ">
         <div className="lg:grid  grid-flow-col justify-items-center items-center space-y-4 lg:p-1 lg:gap-7 bordr ">
           {h.joinUs.map((item, index) => (
-            <div className="flex flex-col items-center">
-              <div className=" relative z-20 ">
-                <div
-                  className="bg-white border-primary border-4 relative grid grid-flow-col lg:grid-flow-row justify-items-center items-center rounded-xl  mx-auto"
-                  key={index}
-                >
+            <div className="flex flex-col items-center  " key={index}>
+              <div className=" relative z-20  ">
+                <div className="bg-white border-primary border-4 relative grid grid-flow-col lg:grid-flow-row justify-items-center items-center rounded-xl  mx-auto">
                   <div className="z-10 w-full">
                     <img
                       src={item.image}
@@ -44,12 +40,6 @@ export default function HomeJoinChunk() {
           ))}
         </div>
       </div>
-
-      <div className="flex justify-center mt-8 p-6">
-        <VideoPlayer />
-      </div>
-
-      <br />
     </div>
   );
 }
