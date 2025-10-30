@@ -126,13 +126,10 @@ const Footer = () => {
         </span>
         <SocialIcons color="white" />
       </div>
-      <div className="w-full h-auto bg-dim absolute bottom-0 left-0 text-xs text-center align-middle p-2  border-t-[0.5px] border-gray-600">
+      <div className="w-full h-auto bg-dim absolute bottom-0 left-0 text-xs text-center align-middle p-2 text-white  border-t-[0.5px] border-gray-900">
         <span>
-          © Copyright 2024{" "}
-          <span className="text-white cursor-pointer hover:text-gray-700">
-            {" "}
-            Designed By Dregon J&Z Techbase Limited
-          </span>
+          © 2025 Havesta{". "}
+          <span className=""> All Rights Reserved</span>
         </span>
       </div>
     </footer>

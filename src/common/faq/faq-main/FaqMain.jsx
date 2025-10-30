@@ -12,15 +12,12 @@ export default function FaqMain() {
         <h1 className=" text-center text-xl font-bold mt-4 text-purpleblack">
           Frequently Asked Questions
         </h1>
-        <div className="flex-col  m-auto  my-4  w-[80%] ">
+        <div className="flex-col  m-auto  my-4 w-[450px] lg:w-[500px]  ">
           {h.Faqs.map((faq, index) => (
-            <div key={index} className="flex flex-row w-[100%]  p-4 ">
+            <div key={index} className="flex flex-col    p-4 ">
               <div className="flex justify-between items-center w-full gap-3">
                 <div>
                   <h3 className="text-md font-medium  w-full">{faq.title}</h3>
-                  {h.activefaq === index && (
-                    <p className="text-sm mt-2 font-extrabold">{faq.answer}</p>
-                  )}
                 </div>
                 <p
                   className={`text-2xl ${
@@ -31,6 +28,11 @@ export default function FaqMain() {
                   <IoMdAddCircleOutline />
                 </p>
               </div>
+              {h.activefaq === index && (
+                <p className="text-sm mt-2 text-primary font-extrabold border-t p-1">
+                  {faq.answer}
+                </p>
+              )}
             </div>
           ))}
         </div>

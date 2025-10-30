@@ -11,7 +11,7 @@ export default function HomeVideoChunk() {
   const h = useHomeVideoChunk();
 
   return (
-    <div className=" bg-green-radial pb-8">
+    <div className=" bg-green-radial pb-8 px-6">
       <div className="border border-harvestaYellow w-fit m-auto rounded-md">
         <div
           style={{
