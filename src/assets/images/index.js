@@ -4,3 +4,7 @@ export {default  as IMG_PEOPLE} from './people.svg'
 export {default  as IMG_UNSPLASH} from './unsplash.svg'
 export {default  as IMG_SEEWORLD} from './seeworld.svg'
 export {default  as IMG_CUSTOMER} from './customer.svg'
+export {default  as IMG_LEAFTOP} from './leaf-top.svg'
+export {default  as IMG_LEAFRIGHT} from './leaf-right.svg'
+export {default  as IMG_LEAFLEFT} from './leaf-left.svg'
+

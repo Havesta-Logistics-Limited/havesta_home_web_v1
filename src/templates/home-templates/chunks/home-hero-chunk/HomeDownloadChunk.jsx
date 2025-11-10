@@ -1,6 +1,6 @@
 export default function HomeDownloadChunk() {
   return (
-    <div className=" bg-green-radial px-4 py-5">
+    <div className=" bg-green-radial px-4 py-12 pl-16">
       <section className="  grid grid-flow-col justify-center items-center box-border  py-4  ">
         <div className="grid grid-flow-row">
           <div className="grid grid-flow-row justify-items-center">
@@ -16,12 +16,12 @@ export default function HomeDownloadChunk() {
               <img
                 src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718623942/App_Store_brjnhq.svg"
                 alt="first_img"
-                width={140}
+                width={160}
               />
               <img
                 src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718623942/Play_Store_wq2cvo.svg"
                 alt="second_img"
-                width={140}
+                width={160}
               />
             </div>
           </div>
@@ -31,7 +31,7 @@ export default function HomeDownloadChunk() {
           <img
             src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1721823608/Group_1000001793_qvhqd7.png"
             alt=""
-            className="w-[600px]"
+            className="w-[750px]"
           />
         </div>
       </section>

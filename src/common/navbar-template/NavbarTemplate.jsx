@@ -18,7 +18,7 @@ export default function NavbarTemplate() {
   }
 
   return (
-    <div className=" p-6 mt-5  absolute text-harvestaBlack z-10 w-full font-primary lg:px">
+    <div className=" p-6 px-10 mt-5  absolute text-harvestaBlack z-10 w-full font-primary lg:px">
       <div className="grid grid-flow-col  items-center  lg:mx-52 relative ">
         <Link to={"/"} className="">
           {" "}
@@ -26,7 +26,7 @@ export default function NavbarTemplate() {
           <Logo />
         </Link>
 
-        <div className="hidden lg:flex flex-row gap-5 relative border-harvestaLightGreen  bg-white px-2 border-2 rounded-3xl w-fit ml">
+        <div className="hidden lg:flex flex-row gap-5 relative border-harvestaLightGreen  bg-white px-4  border-2 rounded-3xl w-fit ml">
           {" "}
           {/* Routes */}
           {navRoutes.map((item, index) => (

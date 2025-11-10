@@ -4,7 +4,7 @@ import { IoMdAddCircleOutline } from "react-icons/io";
 export default function FaqMain() {
   const h = useFaQmain();
   return (
-    <div className="bg-white md:w-1/2 w-[98%] mt-[-150px] shadow-3xl flex flex-col items-center justify-center py-6 text-purpleblack">
+    <div className="bg-white md:w-1/2 w-[98%] mt-[-150px] shadow-3xl flex flex-col items-center justify-center py-6 text-purpleblack absolute -top-11">
       <div className=" w-[85% ]">
         <p className=" text-purplebl text-xs text-center ">
           LET’S ANSWER YOUR QUESTIONS

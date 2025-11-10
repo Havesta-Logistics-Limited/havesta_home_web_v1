@@ -1,3 +1,4 @@
+import Section5 from "../../../../components/Career/Section5";
 import useAboutMeetTeamChunk from "./useAboutMeetTeamChunk";
 import { FaLinkedin } from "react-icons/fa6";
 
@@ -15,28 +16,7 @@ export default function AboutMeetTeamChunk() {
         </p>
       </div>
 
-      <div className="mt-20 w-full relative  flex flex-col items-center">
-        {h.aboutTeam.map((team) => (
-          <div className="flex text-harvestaBlack " key={team.name}>
-            <img src={team.img} alt="" className="w-64" />
-            <div className="flex flex-col justify-between">
-              <div>
-                <p className="text-lg mb-10">{team.testimony} </p>
-              </div>
-              <div>
-                <h1 className="font-bold">{team.name}</h1>
-                <p className="text-sm"> {team.role}</p>
-              </div>
-              <div className="flex items-center gap-1">
-                <p className="text-2xl text-harvestaDarkGreen">
-                  <FaLinkedin />
-                </p>
-                <p className="text-lg">{team.profile}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <Section5 />
     </div>
   );
 }

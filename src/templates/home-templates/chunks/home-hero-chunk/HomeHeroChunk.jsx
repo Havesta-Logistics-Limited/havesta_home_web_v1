@@ -1,15 +1,25 @@
-import { IMG_PEOPLE } from "../../../../assets/images";
+import {
+  IMG_LEAFLEFT,
+  IMG_LEAFRIGHT,
+  IMG_LEAFTOP,
+  IMG_PEOPLE,
+} from "../../../../assets/images";
 import useHomeHeroChunk from "./useHomeHeroChunk";
 
 export default function HomeHeroChunk() {
   const h = useHomeHeroChunk();
   return (
     <>
-      <div className={`relative w-full h-[593px] bg-cover p-4  mb-20 `}>
+      <div className={`relative w-full h-[593px] bg-cover p-4  mb-20  `}>
         <div className="">
-          <div className=" text-white lg:ml-52 lg:mt-48 mt-32">
-            <h2 className=" text-6xl lg:text-[70px] font-bold inter">
+          <div className=" text-white lg:ml-52 lg:mt-48 mt-32 pl-8 ">
+            <h2 className=" text-7xl lg:text-[70px] font-bold inter  w-fit relative">
               Find Your Healthy
+              <img
+                src={IMG_LEAFTOP}
+                alt=""
+                className="hidden lg:flex absolute -top-12 -right-12"
+              />
             </h2>
             <h2 className="text-6xl lg:text-[70px] text-harvestaYellow font-bold">
               Groceries
@@ -18,6 +28,7 @@ export default function HomeHeroChunk() {
             <p className="text-lg">
               Fresh fruits & veggies, grains, Tubers and More!
             </p>
+
             <div className="mt-9 flex  gap-6 items-center">
               <img src={IMG_PEOPLE} alt="" className="w-36" />
               <div className="urbanist flex flex-col">
@@ -34,15 +45,24 @@ export default function HomeHeroChunk() {
               </div>
             </div>
           </div>
-
-          <div className="absolute top-0 right-0">
-            <img
-              src={h.heroImage}
-              alt=""
-              className="hidden lg:block lg:w-[550px] w-[200px]"
-            />
-          </div>
         </div>
+        <div className="absolute top-0 right-0 ">
+          <img
+            src={h.heroImage}
+            alt=""
+            className="hidden lg:block lg:w-[480px] w-[200px]"
+          />
+        </div>
+        <img
+          src={IMG_LEAFRIGHT}
+          alt=""
+          className="absolute hidden lg:block  right-48 w-56 top-96"
+        />
+        <img
+          src={IMG_LEAFLEFT}
+          alt=""
+          className=" hidden lg:flex absolute top-64 left-0"
+        />
       </div>
     </>
   );
