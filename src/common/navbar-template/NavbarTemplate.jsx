@@ -18,15 +18,15 @@ export default function NavbarTemplate() {
   }
 
   return (
-    <div className=" p-6 px-10 mt-5  absolute text-harvestaBlack z-10 w-full font-primary lg:px">
-      <div className="grid grid-flow-col  items-center  lg:mx-52 relative ">
+    <div className=" py-3  mt-5 px-12 md:px-3  absolute text-harvestaBlack z-10 w-full font-primary ">
+      <div className="grid grid-flow-col  items-center max-w-4xl m-auto  relative ">
         <Link to={"/"} className="">
           {" "}
           {/* Logo */}
           <Logo />
         </Link>
 
-        <div className="hidden lg:flex flex-row gap-5 relative border-harvestaLightGreen  bg-white px-4  border-2 rounded-3xl w-fit ml">
+        <div className="hidden md:flex flex-row gap-5 relative border-harvestaLightGreen  bg-white px-4  border-2 rounded-3xl w-fit ml">
           {" "}
           {/* Routes */}
           {navRoutes.map((item, index) => (
@@ -68,11 +68,11 @@ export default function NavbarTemplate() {
           ))}
         </div>
 
-        <div className="border-2 px-4 py-2 border-harvestaLightGreen bg-white rounded-3xl cursor-pointer w-fit ml-4 text-sm">
+        <div className="border-2 hidden md:block px-4 py-2 border-harvestaLightGreen bg-white rounded-3xl cursor-pointer w-fit ml-4 text-sm">
           <Link>Marketplace</Link>
         </div>
 
-        <div className="absolute right-0 text-xl lg:hidden">
+        <div className="absolute right-0 text-xl md:hidden">
           <MenuIcon
             onClick={() => dispatch(openModal())}
             className={

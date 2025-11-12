@@ -8,7 +8,7 @@ import { IMG_HAVESTALOGO } from "../assets/images";
 import SocialIcons from "./social-icons/SocialIcons";
 const Footer = () => {
   return (
-    <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-10 bg-black p-16  md:p-16 lg:p-24 text-gray-400 font-body relative">
+    <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-10 bg-black p-16  md:p-16 lg:p-24 lg:px-16 text-gray-400 font-body relative">
       <div className=" p-4">
         <div className=" mb-4">
           <div className=" relative  font-bold  text-xl py-2 text-white  w-fit">
@@ -31,8 +31,8 @@ const Footer = () => {
         </p>
       </div>
 
-      <div className=" p-6  px-4">
-        <h3 className="text-xl font-semibold text-white mb-4">
+      <div className=" p-6  px-4 lg:px-1">
+        <h3 className="text-xl font-semibold text-white mb-4 ">
           Featured Links
         </h3>
         <ul className="text-sm leading-6 space-y-2 lg:grid grid-cols-2">
@@ -82,10 +82,10 @@ const Footer = () => {
               <span className="ml-2">Terms of use</span>
             </NavLink>
           </li>
-          <li className="flex items-center">
-            <NavLink to={"/privacy-policy"}>
+          <li className="flex items-center ">
+            <NavLink to={"/privacy-policy"} className={`flex items-center`}>
               <ChevronRightIcon color="success" />
-              <span className="ml-2">Privacy Policy</span>
+              <span className="ml-1 ">Privacy Policy</span>
             </NavLink>
           </li>
         </ul>

@@ -15,7 +15,7 @@ export default function HomeStandardsChunk() {
             what both cats and dogs are from an early age.
           </p>
 
-          <div className=" mt-6 gap-1 lg:absolute lg:left-1/2 lg:-translate-x-1/2 top-36 grid md:grid-cols-2 w-full lg:grid-cols-4 lg:gap-3 lg:px-2 text-left">
+          <div className=" mt-6 gap-1 lg:absolute lg:left-1/2 lg:-translate-x-1/2 top-36 grid md:grid-cols-2 w-full lg:grid-cols-4 lg:gap-3 lg:px-4 text-left">
             {h.standards.map((standard) => (
               <div
                 key={standard.title}

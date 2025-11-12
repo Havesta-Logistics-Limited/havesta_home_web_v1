@@ -8,19 +8,19 @@ export default function SocialIcons({ color }) {
     <div
       className={`flex space-x-4 my-10 text-${color} text-xl cursor-pointer`}
     >
-      <Link to={Environment.FACEBOOK_LINK}>
+      <Link to={'https://www.facebook.com/share/1BKct6DEEh/'}>
         <FiFacebook />
       </Link>
-      <Link to={Environment.X_LINK}>
+      <Link to={'https://x.com/havestahq?t=8MyC1z0ALuVRowpor-naMg&s=09'}>
         <FaXTwitter />
       </Link>
-      <Link to={Environment.LINKEDIN_LINK}>
+      <Link to={'https://www.linkedin.com/company/havesta/'}>
         <FiLinkedin />
       </Link>
-      <Link to={Environment.TIKTOK_LINK}>
+      <Link to={'https://www.tiktok.com/@havestahq?is_from_webapp=1&sender_device=pc'}>
         <FaTiktok />
       </Link>
-      <Link to={Environment.INSTAGRAM_LINK}>
+      <Link to={'https://www.instagram.com/havestahq?igsh=cTN0bHVyNjUxeDh1'}>
         <FaInstagram />
       </Link>
     </div>

@@ -77,10 +77,10 @@ const SideModal = () => {
               ))}
             </div>
 
-           <div className="absolute bottom-0  w-full text-center">
+           {/* <div className="absolute bottom-0  w-full text-center">
               <p className="text-[10px] text-gray-400">@Copyright 2024</p>
               <p className="text-[11px] text-white my-2">Designed By Dregon J&Z Techbase Limited</p>
-           </div>
+           </div> */}
           </div>
         )}
       </div>

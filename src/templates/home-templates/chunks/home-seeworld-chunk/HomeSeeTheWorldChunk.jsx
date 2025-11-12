@@ -3,7 +3,7 @@ import { IMG_SEEWORLD } from "../../../../assets/images";
 
 export default function HomeSeeTheWorldChunk() {
   return (
-    <div className=" bg-green-radial py-20">
+    <div className=" bg-green-radial pt-20 pb-14 md:pb-20">
       <div className="pt-12  flex flex-col justify-center gap-4 pb-24 sm:flex-row sm:items-center  m-auto max-w-4xl px-4  md:gap-6 ">
         <div className="m-auto   max-w-sm    md:w-[40rem] lg:w-[45rem]">
           <img src={IMG_SEEWORLD} alt="" />
