@@ -1,3 +1,4 @@
+import logo from "../../assets/santaPngHavesta.png";
 export const Logo = () => {
   return (
     // <svg
@@ -51,7 +52,7 @@ export const Logo = () => {
     //     </clipPath>
     //   </defs>
     // </svg>
-    <img src="/public/santaPngHavesta.png" alt="Logo" width="130" />
+    <img src={logo} alt="Logo" width="130" />
   );
 };
 
