@@ -51,7 +51,7 @@ export const Logo = () => {
     //     </clipPath>
     //   </defs>
     // </svg>
-    <img src="/public/santaPngHavesta.png" alt="Logo" width="130" />
+    <img src="/santaPngHavesta.png" alt="Logo" width="130" />
   );
 };
 
