@@ -52,7 +52,7 @@ export const Logo = () => {
     //     </clipPath>
     //   </defs>
     // </svg>
-    <img src={logo} alt="Logo" width="130" />
+    <img src={logo} alt="Logo" width="135" />
   );
 };
 
