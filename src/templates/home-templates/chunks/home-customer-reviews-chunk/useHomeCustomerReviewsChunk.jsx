@@ -1,5 +1,3 @@
-import { color } from "framer-motion";
-import React from "react";
 import { IMG_CUSTOMER } from "../../../../assets/images";
 
 export default function useHomeCustomerReviewsChunk() {

@@ -1,9 +1,8 @@
 import Section5 from "../../../../components/Career/Section5";
 import useAboutMeetTeamChunk from "./useAboutMeetTeamChunk";
-import { FaLinkedin } from "react-icons/fa6";
 
 export default function AboutMeetTeamChunk() {
-  const h = useAboutMeetTeamChunk();
+  useAboutMeetTeamChunk();
   return (
     <div className="p-8 font-primary lg:p-24">
       <div className="  w-[70%] m-auto p-2 mb-10 bg-harvestaDarkGreen"></div>

@@ -1,5 +1,4 @@
 import { Box, Container, Typography, styled } from "@mui/material";
-import PagesHero from "../templates/news-template/pagesHero";
 import { TermsOfuse } from "../config/termsOfUse.config";
 import ReuseableHero from "../common/ReuseableHero";
 import Faq from "../common/faq/Faq";

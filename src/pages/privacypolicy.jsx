@@ -1,5 +1,4 @@
 import { Box, Container, Typography, styled } from "@mui/material";
-import PagesHero from "../templates/news-template/pagesHero";
 // import FAQ from "../templates/home-templates/chunks/faq/Faq";
 import { privacyPolicy } from "../config/privacyPolicy.config";
 import ReuseableHero from "../common/ReuseableHero";

@@ -1,9 +1,9 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export default function useHomeVideoChunk() {
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
-  const [hovered, setHovered] = useState(false);
+  const [, setHovered] = useState(false);
 
   const togglePlay = () => {
     if (videoRef.current.paused) {

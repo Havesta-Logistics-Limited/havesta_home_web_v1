@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function VendorHeroChunk() {
   return (
     <div className="relative pb-5 ">

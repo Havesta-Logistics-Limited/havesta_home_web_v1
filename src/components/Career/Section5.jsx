@@ -50,7 +50,7 @@ const Section5 = () => {
       <div className="w-[327px] flex justify-center flex-col items-center gap-16 lg:w-5/6">
         <div>
           <p className="text-[28px] text-center font-career md:text-[50px] md:w-[753px]">
-            Don't just take our word for it!
+            Don&apos;t just take our word for it!
           </p>
           <p className="text-16px text-[#646363] lg:font-career text-center lg:text-[24px] lg:w-[753px]">
             See the feedback from your teammates.

@@ -13,11 +13,9 @@ import imageCompression from "browser-image-compression";
 
 const UploadRider = () => {
   const [progress, setProgress] = useState({});
-  const [files, setFiles] = useState([]);
   const [vehicleImgFile, setVehicleImgFile] = useState([]);
   const [idImgFile, setIdImgFile] = useState([]);
   const navigate = useNavigate();
-  const [buttonAvailable, setButtonAvailable] = useState(false);
   const dispatch = useDispatch();
   const fileVehicleInputRef = useRef();
   const fileIdInputRef = useRef();
@@ -48,7 +46,7 @@ const UploadRider = () => {
       });
     }
 
-    console.log(idImgFile);
+    // console.log(idImgFile);
   };
 
   const simulateUploadProgress = (file) => {
@@ -68,7 +66,7 @@ const UploadRider = () => {
   };
 
   const cancelUpload = (fileName) => {
-    console.log(`Cancelling upload of ${fileName}`);
+    // console.log(`Cancelling upload of ${fileName}`);
     if (vehicleImgFile[0] && fileName === vehicleImgFile[0].name) {
       setVehicleImgFile([]);
       setProgress((prevProgress) => {
@@ -87,40 +85,47 @@ const UploadRider = () => {
   };
 
   const handleSubmit = async (e) => {
-    const allowedFormats = ["image/jpeg", "image/png", "image/pdf", "image/jpg"];
+    const allowedFormats = [
+      "image/jpeg",
+      "image/png",
+      "image/pdf",
+      "image/jpg",
+    ];
     // console.log(allowedFormats.includes(vehicleImgFile[0].type), allowedFormats.includes(idImgFile[0].type))
     // console.log(vehicleImgFile.length > 0)
-
-    
 
     // console.log(vehicleImgFile[0].type, idImgFile, "these are the files in submit");
     // console.log(vehicleImgFile.length > 0 &&
     //   idImgFile.length > 0 &&
     //   allowedFormats.includes(
     //     vehicleImgFile[0].type && allowedFormats.includes(idImgFile[0].type)))
-        e.preventDefault();
-        const options = {
-          maxSizeMB: 1.5,
-          maxWidthOrHeight: 1200,
-          useWebWorker: true,
-        };
+    e.preventDefault();
+    const options = {
+      maxSizeMB: 1.5,
+      maxWidthOrHeight: 1200,
+      useWebWorker: true,
+    };
     try {
       if (
         vehicleImgFile.length > 0 &&
         idImgFile.length > 0 &&
-        allowedFormats.includes(
-          vehicleImgFile[0].type) && allowedFormats.includes(idImgFile[0].type)
-        
+        allowedFormats.includes(vehicleImgFile[0].type) &&
+        allowedFormats.includes(idImgFile[0].type)
       ) {
-        const compressedVehicleImg = await imageCompression(vehicleImgFile[0], options);
+        const compressedVehicleImg = await imageCompression(
+          vehicleImgFile[0],
+          options
+        );
         const compressedIdImg = await imageCompression(idImgFile[0], options);
 
         const formData = new FormData();
-        formData.append("vehicle_image",compressedVehicleImg  );
+        formData.append("vehicle_image", compressedVehicleImg);
         formData.append("ID_image", compressedIdImg);
 
         const data = await axiosInstance.post(
-          `${import.meta.env.VITE_AUTH_ENDPOINT}/auth_service/api/riders/upload`,
+          `${
+            import.meta.env.VITE_AUTH_ENDPOINT
+          }/auth_service/api/riders/upload`,
           formData,
           {
             headers: {
@@ -129,13 +134,12 @@ const UploadRider = () => {
           }
         );
 
-        console.log(data)
+        console.log(data);
 
         if (data.data.success) {
           navigate("/finalmessage");
         }
       } else throw new Error("Format must be in png,jpeg or pdf");
-
     } catch (err) {
       console.error(err);
     }
@@ -147,17 +151,10 @@ const UploadRider = () => {
     return () => {
       dispatch(setIcon("home"));
     };
-  }, []);
+  }, [dispatch]);
 
-  useEffect(() => {
-    if (files.length == 2 && files.length != 0 && files.length != 1) {
-      console.log(files, "files");
-      setButtonAvailable(true);
-      console.log(files, "files");
-    } else {
-      setButtonAvailable(false);
-    }
-  }, [files]);
+  // NOTE: This screen currently doesn't store files in `files`; uploads are tracked
+  // via `vehicleImgFile` and `idImgFile`. Leaving the button state driven elsewhere.
 
   return (
     <>

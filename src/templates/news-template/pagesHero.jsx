@@ -1,4 +1,3 @@
-import React from "react";
 import { Stack, Box, styled, Typography } from "@mui/material";
 import { colors } from "../../utils/globals";
 

@@ -1,41 +1,61 @@
 import useFaQmain from "./useFaQmain";
-import { IoMdAddCircleOutline } from "react-icons/io";
+import { IoMdAddCircleOutline, IoMdRemoveCircleOutline } from "react-icons/io";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function FaqMain() {
   const h = useFaQmain();
   return (
-    <div className="bg-white md:w-1/2 w-[98%] mt-[-150px] shadow-3xl flex flex-col items-center justify-center py-6 text-purpleblack absolute -top-11">
-      <div className=" w-[85% ]">
-        <p className=" text-purplebl text-xs text-center ">
-          LET’S ANSWER YOUR QUESTIONS
-        </p>
-        <h1 className=" text-center text-xl font-bold mt-4 text-purpleblack">
-          Frequently Asked Questions
-        </h1>
-        <div className="flex-col  m-auto  my-4 w-[450px] lg:w-[500px]  ">
-          {h.Faqs.map((faq, index) => (
-            <div key={index} className="flex flex-col    p-4 ">
-              <div className="flex justify-between items-center w-full gap-3">
-                <div>
-                  <h3 className="text-md font-medium  w-full">{faq.title}</h3>
-                </div>
-                <p
-                  className={`text-2xl ${
-                    h.activefaq === index ? "text-primary" : "text-[#D9D9D9]"
-                  } cursor-pointer`}
-                  onClick={() => h.handleFaqClick(index)}
-                >
+    <div className="bg-white w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] md:w-full max-w-2xl mx-auto shadow-xl rounded-xl p-6 sm:p-8">
+      <p className="text-primary text-xs text-center uppercase tracking-wide">
+        Let&apos;s Answer Your Questions
+      </p>
+      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mt-2 mb-6 text-purpleblack text-left">
+        Frequently Asked Questions
+      </h1>
+      <div className="space-y-2">
+        {h.Faqs.map((faq, index) => (
+          <div
+            key={index}
+            className="border border-gray-100 rounded-lg p-4 hover:bg-gray-50 transition-colors"
+          >
+            <button
+              className="flex justify-between items-center w-full gap-4 text-left"
+              onClick={() => h.handleFaqClick(index)}
+            >
+              <h3 className="text-sm sm:text-base font-medium text-purpleblack">
+                {faq.title}
+              </h3>
+              <motion.span
+                className={`text-xl sm:text-2xl flex-shrink-0 ${
+                  h.activefaq === index ? "text-primary" : "text-gray-300"
+                }`}
+                animate={{ rotate: h.activefaq === index ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                {h.activefaq === index ? (
+                  <IoMdRemoveCircleOutline />
+                ) : (
                   <IoMdAddCircleOutline />
-                </p>
-              </div>
+                )}
+              </motion.span>
+            </button>
+            <AnimatePresence>
               {h.activefaq === index && (
-                <p className="text-sm mt-2 text-primary font-extrabold border-t p-1">
-                  {faq.answer}
-                </p>
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.25, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <p className="text-xs sm:text-sm mt-3 pt-3 border-t text-primary border-gray-100">
+                    {faq.answer}
+                  </p>
+                </motion.div>
               )}
-            </div>
-          ))}
-        </div>
+            </AnimatePresence>
+          </div>
+        ))}
       </div>
     </div>
   );

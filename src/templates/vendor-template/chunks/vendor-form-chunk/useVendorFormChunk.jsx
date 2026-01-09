@@ -1,9 +1,18 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
+import axiosInstance from "../../../../config/axios.config";
 
 export default function useVendorFormChunk() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const validateEmailFormat = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/i;
+    return re.test(email);
+  };
   const vendorForm = [
     {
       title: "First Name",
@@ -96,18 +105,9 @@ export default function useVendorFormChunk() {
       ...prev,
       [e.target.name]: e.target.checked,
     }));
-
-    console.log(
-      e.target.name,
-      e.target.checked,
-      formData.accepted_privacy_policy,
-      "ertghgdh"
-    );
-    // console.log(event.target.checked)
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
     try {
       setLoading(true);
       if (error === "") {
@@ -127,15 +127,13 @@ export default function useVendorFormChunk() {
       }
     } catch (error) {
       setLoading(false);
-      const message = error.response.data.MESSAGE
+      const message = error?.response?.data?.MESSAGE
         ? error.response.data.MESSAGE
         : "Something went wrong";
-      console.log(error.response.data);
       toast.error(message);
     }
   };
   const handleBlur = (email) => {
-    console.log("fregbfgerberwrfeb");
     if (!validateEmailFormat(email)) {
       setError("Invalid email address");
     } else {

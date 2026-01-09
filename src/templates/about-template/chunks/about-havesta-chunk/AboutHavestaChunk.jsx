@@ -9,7 +9,13 @@ export default function AboutHavestaChunk() {
   return (
     <div className="grid gap-8 md:grid-cols-2 lg:p-24 ">
       <div className="p-4 flex flex-col items-center text-center">
-        <img src={IMG_CEO_NOEL} alt="ceo-image" className="w-full lg:w-2/3" />
+        <img
+          src={IMG_CEO_NOEL}
+          alt="ceo-image"
+          loading="lazy"
+          decoding="async"
+          className="w-full lg:w-2/3"
+        />
         <p className="pt-2 font-bold font-primary">Noel Amobeda</p>
         <p className="text-xs text-primary font-bold tracking-wide">
           Founder & CEO at Havesta

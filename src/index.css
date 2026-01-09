@@ -1,13 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Headland+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.cdnfonts.com/css/digital-numbers');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Headland+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.cdnfonts.com/css/digital-numbers");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -15,6 +14,27 @@
 
 * {
   scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100%;
+}
+
+/* Homepage-only background (opt-in via class) */
+.home-gradient {
+  background: radial-gradient(
+    51.99% 116.4% at 50.03% -0.51%,
+    #005231 0%,
+    #273f2b 95.14%
+  );
+  background-attachment: fixed;
 }
 
 .backgroundImage {
@@ -25,7 +45,6 @@
 }
 
 @keyframes iconBounce {
-
   0%,
   40% {
     transform: translateY(0);
@@ -40,7 +59,6 @@
   }
 }
 
-
 .rider_bg_img {
   background-image: url("https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957966/EatFood.com_4_ip6pcn.svg");
   background-repeat: none;
@@ -51,10 +69,10 @@
 .input-field::placeholder {
   font-style: italic;
 }
-.inter{
+.inter {
   font-family: "Inter", sans-serif;
 }
-.urbanist{
+.urbanist {
   font-family: "Urbanist", sans-serif;
 }
 .rider-field::placeholder {
@@ -76,7 +94,6 @@ select {
 }
 
 .MuiSelect-select-select {
-
   /* Target the actual select element */
   &::placeholder {
     color: lightgray;
@@ -98,35 +115,35 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* For Firefox */
 input[type="number"] {
+  appearance: textfield;
   -moz-appearance: textfield;
 }
 
-.custom-textfield  {
+.custom-textfield {
   width: 340px;
-  background-color: #F3F3F3;
-  border: 2px solid #DCDCDC;
-  
-
+  background-color: #f3f3f3;
+  border: 2px solid #dcdcdc;
 }
 
 .dim-vendor {
-  background-color: rgba(0,0,0,.3);
-  opacity: .4;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0.4;
 }
 .dim-rider {
-  opacity: .4;
-  
+  opacity: 0.4;
 }
 
 .custom-textfield input::placeholder {
   color: #787878;
 }
 
-.custom-textfield .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-  border: 2px solid #DCDCDC;
+.custom-textfield
+  .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border: 2px solid #dcdcdc;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   .custom-textfield input {
     width: 150px;
   }

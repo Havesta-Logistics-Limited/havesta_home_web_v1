@@ -1,4 +1,4 @@
-import { Bounce, toast, ToastContainer } from "react-toastify";
+import { Bounce, ToastContainer } from "react-toastify";
 
 import { useEffect } from "react";
 import { setIcon } from "../../redux/features/iconSlice.js";
@@ -18,38 +18,9 @@ export default function RiderTemplate() {
     return () => {
       dispatch(setIcon("home"));
     };
-  }, []);
+  }, [dispatch]);
 
-  useEffect(() => {
-    let input = document.querySelector(".phoneNum");
-
-    input.addEventListener("input", (e) => {
-      console.log(
-        !input.value.length >= 11 && document.activeElement !== input
-      );
-      if (input.value.length > 11) {
-        input.value = input.value.slice(0, 11);
-      }
-      if (input.value.length === 11 && document.activeElement === input) {
-        input.classList.add(
-          "focus:outline",
-          "focus:outline-harvestaLightGreen"
-        );
-        input.classList.remove("border-red-300", "focus:outline-none");
-      }
-
-      if (input.value.length < 11 && document.activeElement === input) {
-        input.classList.add("border-red-300", "focus:outline-none");
-        input.classList.remove(
-          "focus:outline",
-          "focus:outline-harvestaLightGreen"
-        );
-      }
-      setFormData((prev) => ({ ...prev, phone_number: input.value }));
-
-      input.value = input.value.replace(/[^0-9]/g, "");
-    });
-  }, []);
+  // NOTE: Avoid direct DOM listeners here; the form hook handles input state.
 
   return (
     <>

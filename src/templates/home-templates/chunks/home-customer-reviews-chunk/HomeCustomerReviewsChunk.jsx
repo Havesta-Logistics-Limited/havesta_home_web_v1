@@ -1,15 +1,14 @@
-import React from "react";
 import useHomeCustomerReviewsChunk from "./useHomeCustomerReviewsChunk";
 import { GoTriangleDown } from "react-icons/go";
 import { FaQuoteLeft } from "react-icons/fa";
 export default function HomeCustomerReviewsChunk() {
   const h = useHomeCustomerReviewsChunk();
   return (
-    <div className="inter bg-green-radial font-primary px-6 py-14 pt-32">
-      <h1 className="text-2xl md:text-3xl lg:text-4xl text-white font-bold  text-center">
+    <div className="inter font-primary px-6  ">
+      <h1 className="text-2xl md:text-3xl lg:text-4xl text-white font-bold text-center mb-6">
         Customer Reviews
       </h1>
-      <p className="text-white text-center font-light max-w-sm m-auto text-sm lg:text-base">
+      <p className="text-white text-center font-light max-w-sm m-auto text-sm lg:text-base my-4 leading-10">
         We are proud of our accomplishments. We will keep delivering excellence
         and satisfaction
       </p>

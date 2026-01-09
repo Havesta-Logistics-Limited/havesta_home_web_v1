@@ -1,4 +1,3 @@
-import React from "react";
 import useAboutStatsChunk from "./useAboutStatsChunk";
 
 export default function AboutStatsChunk() {

@@ -1,4 +1,3 @@
-import React from "react";
 import useVendorOverflowChunk from "./useVendorOverflowChunk";
 
 export default function VendorOverflowChunk() {

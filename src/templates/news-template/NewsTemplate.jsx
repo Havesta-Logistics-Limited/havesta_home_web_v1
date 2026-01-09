@@ -4,7 +4,7 @@ import Latest from "./latest";
 import useNewsTemplate from "./useNewsTemplate";
 
 export default function NewsTemplate() {
-  const h = useNewsTemplate();
+  useNewsTemplate();
   return (
     <>
       <ReuseableHero

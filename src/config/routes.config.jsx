@@ -7,7 +7,6 @@ import Marketplace from "../pages/Marketplace";
 import RouteWrapper from "../templates/news-template/RouteWrapper";
 
 import SingleNews from "../pages/SingleNews";
-import FinalMessageRider from "../pages/FinalMessage/FinalMessageRider";
 import PrivacyPolicy from "../pages/privacypolicy";
 import TermsOfUse from "../pages/termsOfUse";
 import AboutTemplate from "../templates/about-template/AboutTemplate";

@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function RiderHeroChunk() {
   return (
     <div className="relative pb-5">

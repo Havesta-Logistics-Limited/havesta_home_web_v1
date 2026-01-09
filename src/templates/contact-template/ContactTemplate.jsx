@@ -1,14 +1,11 @@
-import React from "react";
 // import PagesHero from "../templates/news-template/pagesHero";
 import { Stack, Box, styled, Typography, Button } from "@mui/material";
 
 import { colors } from "../../utils/globals";
 
-import Avatar from "@mui/material/Avatar";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
-import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import ReuseableHero from "../../common/ReuseableHero";
 import Faq from "../../common/faq/Faq";
 import ContactFormChunk from "./chunks/contact-form-chunk/ContactFormChunk";

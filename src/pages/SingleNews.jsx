@@ -1,9 +1,6 @@
 import { Box, Container, Typography, styled } from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css/effect-cards";
 import "swiper/css";
-import PagesHero from "../templates/news-template/pagesHero";
 import ReuseableHero from "../common/ReuseableHero";
 import Faq from "../common/faq/Faq";
 import SlidingNews from "../common/sliding-news/SlidingNews";
@@ -62,8 +59,8 @@ const SingleNews = () => {
           <StyledText>
             Maria’s journey into farming began several years ago. Growing up in
             a rural area, she was familiar with the rhythms of agricultural
-            life. However, it wasn't until a few years ago that she decided to
-            take up maize farming seriously. Determined to provide for her
+            life. However, it wasn&apos;t until a few years ago that she decided
+            to take up maize farming seriously. Determined to provide for her
             family and create a sustainable source of income, Maria invested her
             savings into a small plot of land. Despite her dedication, the path
             to success was fraught with challenges. Unpredictable weather,

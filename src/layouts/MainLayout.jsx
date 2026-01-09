@@ -1,16 +1,15 @@
 import { Outlet } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { Box } from "@mui/material";
-
 import Footer from "../common/Footer";
 import SideModal from "../common/SideModal";
-import { useSelector } from "react-redux";
-import NavbarTemplate from "../common/navbar-template/NavbarTemplate";
+import Navbar from "../common/navbar-template/Navbar";
 
 const MainLayout = () => {
-  const { modalOpen } = useSelector((state) => state.modalReducer);
+  useSelector((state) => state.modalReducer);
   return (
     <>
-      <NavbarTemplate />
+      <Navbar />
       <SideModal />
       <Box overflow="hidden" flexGrow={1}>
         <Outlet />

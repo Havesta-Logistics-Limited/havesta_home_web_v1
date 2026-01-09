@@ -16,11 +16,11 @@ import MobileReview from "../components/landing/Reviews-Fragment/MobileReview.js
 import axiosInstance from "../config/axios.config.js";
 import { CircularProgress } from "@mui/material/";
 const Rider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [phoneNumberError, setPhoneNumberError] = useState("");
+  const [phoneNumberError] = useState("");
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -51,15 +51,13 @@ const Rider = () => {
     return () => {
       dispatch(setIcon("home"));
     };
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
-    let input = document.querySelector(".phoneNum");
+    const input = document.querySelector(".phoneNum");
+    if (!input) return;
 
-    input.addEventListener("input", (e) => {
-      console.log(
-        !input.value.length >= 11 && document.activeElement !== input
-      );
+    const onInput = () => {
       if (input.value.length > 11) {
         input.value = input.value.slice(0, 11);
       }
@@ -81,7 +79,10 @@ const Rider = () => {
       setFormData((prev) => ({ ...prev, phone_number: input.value }));
 
       input.value = input.value.replace(/[^0-9]/g, "");
-    });
+    };
+
+    input.addEventListener("input", onInput);
+    return () => input.removeEventListener("input", onInput);
   }, []);
 
   const checkIfEmpty = () => {

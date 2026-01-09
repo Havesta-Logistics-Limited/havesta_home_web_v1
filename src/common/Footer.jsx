@@ -26,7 +26,7 @@ const Footer = () => {
           HAVESTA prioritizes convenience and transparency, enhancing the
           overall shopping experience. Our product also offers real-time order
           tracking, secure payment options, and eco-friendly delivery choices,
-          aligning with the values of today's environmentally conscious
+          aligning with the values of today&apos;s environmentally conscious
           consumers.
         </p>
       </div>

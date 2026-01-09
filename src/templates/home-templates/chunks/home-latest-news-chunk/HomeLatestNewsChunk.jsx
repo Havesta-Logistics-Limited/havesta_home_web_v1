@@ -1,10 +1,9 @@
-import React from "react";
 import SlidingNews from "../../../../common/sliding-news/SlidingNews";
 
 export default function HomeLatestNewsChunk() {
   return (
-    <div className=" bg-green-radial px-24 font-primary pb-36 py-10 ">
-      <h1 className="text-white text-2xl md:text3xl lg:text-4xl font-bold pt-10 mb-4">
+    <div className="px-4 sm:px-8 md:px-20 lg:px-32 font-primary pb-16 sm:pb-24 md:pb-20 lg:pb-10 pt-8 md:pt-12">
+      <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-center">
         Latest News
       </h1>
       <SlidingNews />

@@ -1,4 +1,4 @@
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect, Suspense } from "react";
 import { setIcon } from "../../redux/features/iconSlice.js";
@@ -29,7 +29,7 @@ const CongratulationsVendor = () => {
     return () => {
       dispatch(setIcon("home"));
     };
-  }, []);
+  }, [dispatch]);
   /* const params = useParams();
   const stringValue = params.id;
   const actualValue =
@@ -80,7 +80,11 @@ const CongratulationsVendor = () => {
           </div>
 
           <div>
-            <Suspense fallback={<div className="text-6xl text-red-600">Picture is loading</div>}>
+            <Suspense
+              fallback={
+                <div className="text-6xl text-red-600">Picture is loading</div>
+              }
+            >
               <img
                 src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1720271457/ride2_xrpjgv.svg"
                 alt="hero-image"

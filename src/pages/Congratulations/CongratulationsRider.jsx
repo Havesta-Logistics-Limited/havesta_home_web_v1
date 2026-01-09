@@ -29,7 +29,7 @@ const CongratulationsRider = () => {
     return () => {
       dispatch(setIcon("home"));
     };
-  }, []);
+  }, [dispatch]);
   /* const params = useParams();
   const stringValue = params.id;
   const actualValue =

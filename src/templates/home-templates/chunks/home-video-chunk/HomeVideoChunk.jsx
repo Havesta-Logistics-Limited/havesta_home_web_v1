@@ -1,11 +1,5 @@
-import VideoPlayer from "../../../../components/landing/Video";
 import useHomeVideoChunk from "./useHomeVideoChunk";
-import React, { useRef, useState } from "react";
-import { IconButton } from "@mui/material";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { FaPlay } from "react-icons/fa";
-import { FaPause } from "react-icons/fa6";
-import PauseIcon from "@mui/icons-material/Pause";
 
 export default function HomeVideoChunk() {
   const h = useHomeVideoChunk();

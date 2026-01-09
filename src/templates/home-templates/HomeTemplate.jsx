@@ -1,5 +1,5 @@
 import HomeHeroChunk from "./chunks/home-hero-chunk/HomeHeroChunk";
-import HomeDownloadChunk from "./chunks/home-hero-chunk/HomeDownloadChunk";
+import DownloadApp from "./chunks/home-hero-chunk/DownloadApp";
 import HomeChooseUsChunk from "./chunks/home-chooseus-chunk/HomeChooseUsChunk";
 import Faq from "../../common/faq/Faq";
 import HomeJoinChunk from "./chunks/home-join-chunk/HomeJoinChunk";
@@ -16,7 +16,7 @@ export default function HomeTemplate() {
 
       <HomeChooseUsChunk />
 
-      <HomeDownloadChunk />
+      <DownloadApp />
 
       <HomeJoinChunk />
       <HomeSeeTheWorldChunk />

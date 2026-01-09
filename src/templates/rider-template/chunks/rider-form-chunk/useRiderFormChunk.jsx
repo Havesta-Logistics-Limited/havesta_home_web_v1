@@ -1,14 +1,23 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
+import axiosInstance from "../../../../config/axios.config";
+
 export default function useRiderFormChunk() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [phoneNumberError, setPhoneNumberError] = useState("");
+  const navigate = useNavigate();
+
+  const validateEmailFormat = (email) => {
+    // keep it conservative and allow common domains
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/i;
+    return re.test(email);
+  };
+
   const checkIfEmpty = () => {
     const arr = Object.values(formData);
     const subArr = arr.filter((val) => typeof val == "string");
-    console.log(subArr, "sub");
-    // console.log(arr);
-
     return subArr.every((value) => value.trim() !== "");
 
     //find a way to not add those boolean to the arr
@@ -25,7 +34,6 @@ export default function useRiderFormChunk() {
     event.preventDefault();
 
     try {
-      console.log(formData);
       if (error === "") {
         setLoading(true);
         const { data } = await axiosInstance.post(
@@ -43,7 +51,7 @@ export default function useRiderFormChunk() {
       }
     } catch (error) {
       setLoading(false);
-      const message = error.response.data.MESSAGE
+      const message = error?.response?.data?.MESSAGE
         ? error.response.data.MESSAGE
         : "Something went wrong";
       toast.error(message);
@@ -63,14 +71,7 @@ export default function useRiderFormChunk() {
     }
   };
 
-  // const validateEmailFormat = (email) => {
-  //   // const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  //   const re = /^[^\s@]+@[^\s@]+\.(com|net|org)$/i;
-  //   return re.test(email);
-  // };
-
   const handleBlur = (email) => {
-    console.log(error);
     if (!validateEmailFormat(email)) {
       setError("Invalid email address");
     } else {
@@ -83,14 +84,6 @@ export default function useRiderFormChunk() {
       ...prev,
       [event.target.name]: event.target.checked,
     }));
-
-    console.log(
-      event.target.name,
-      event.target.checked,
-      formData.accepted_privacy_policy,
-      "ertghgdh"
-    );
-    // console.log(event.target.checked)
   };
 
   const [formData, setFormData] = useState({
@@ -153,7 +146,6 @@ export default function useRiderFormChunk() {
     handleCheckboxChange,
     handleSubmit,
     handleChange,
-    phoneNumberError,
     error,
     setError,
   };

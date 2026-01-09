@@ -1,4 +1,3 @@
-import React from "react";
 import useRiderFormChunk from "./useRiderFormChunk";
 import FormControl from "@mui/joy/FormControl";
 import FormLabel from "@mui/joy/FormLabel";
@@ -73,9 +72,6 @@ export default function RiderFormChunk() {
                   className={`border-[0.5px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline focus:outline-harvestaLightGreen  focus:outline-1 font-primary h-[56px] text-sm w-full ${
                     item.name == "phone_number"
                       ? "pl-10 phoneNum border-[1.2px]"
-                      : item.name === "phone_number" &&
-                        phoneNumberError === "error"
-                      ? "border-[1.2px] border-red-300 focus:border-transparent"
                       : ""
                   } ${
                     item.name === "email" && h.error === "Invalid email address"
