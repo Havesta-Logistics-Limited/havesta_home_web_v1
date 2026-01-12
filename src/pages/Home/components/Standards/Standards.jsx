@@ -8,7 +8,7 @@ export default function Standards() {
       <div className="bg-white/10 backdrop-blur-md border-white/20 rounded-md shadow-lg border w-[90%] sm:w-[85%] lg:w-[80%] py-6 lg:py-12 px-6 lg:px-14 relative">
         {/* Green section - extends down to overlap halfway into cards */}
         <div className="bg-primary text-center p-6 sm:p-8 pt-10 sm:pt-12 pb-24 sm:pb-28 lg:pb-32">
-          <h1 className="text-white font-bold text-2xl md:text-3xl lg:text-4xl mb-6 text-left">
+          <h1 className="text-white text-center font-bold text-2xl md:text-3xl lg:text-4xl mb-6 ">
             Our Standout Progress
           </h1>
           <p className="text-[#DEDEDE] text-sm md:text-base max-w-2xl mx-auto">

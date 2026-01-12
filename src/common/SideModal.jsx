@@ -26,11 +26,11 @@ const SideModal = () => {
     };
     document.addEventListener("pointerdown", onPointerDown);
     return () => document.removeEventListener("pointerdown", onPointerDown);
-  }, [modalOpen, dispatch]);
+  }, [modalOpen, closeModal]);
 
   return (
     <div
-      className={`max-[1000px]:block hidden fixed inset-0 z-50 transition-all duration-500 ${
+      className={`max-lg:block hidden fixed inset-0 z-50 transition-all duration-500 ${
         modalOpen ? "visible" : "invisible"
       }`}
     >
@@ -42,7 +42,7 @@ const SideModal = () => {
 
       <div
         ref={sideModalRef}
-        className={`absolute inset-x-0 sm:inset-x-4 sm:w-96 sm:max-w-[90vw] sm:right-4 sm:left-auto top-0 bg-[#273f2b] backdrop-blur-2xl transition-all duration-500 ease-out ${
+        className={`absolute inset-x-0 md:inset-x-4 md:w-96 md:max-w-[90vw] md:right-4 md:left-auto top-0 bg-[#273f2b] backdrop-blur-2xl transition-all duration-500 ease-out ${
           modalOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >

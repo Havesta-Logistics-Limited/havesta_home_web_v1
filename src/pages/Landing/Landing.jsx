@@ -15,33 +15,51 @@ const Landing = () => {
       <section className="py-8 md:py-12 px-4 sm:px-8">
         <WhyChooseSection />
       </section>
-      <section className="py-8 md:py-12 px-4 sm:px-8">
+      <section id="download" className="py-8 md:py-12 px-4 sm:px-8">
         <DownloadApp />
       </section>
       <section className="py-8 md:py-12 px-4 sm:px-8">
         <JoinUsSection />
       </section>
       <section className="py-8 md:py-12 px-4 sm:px-8">
-        <div className="flex justify-center items-center flex-col-reverse lg:flex-row font-primary gap-12 md:gap-20">
-          <div className="flex flex-row flex-wrap justify-center mb-8 md:mb-20 max-w-xl gap-4">
-            <div className="flex flex-col p-2 gap-4">
-              <img src="/images/Rectangle Copy 4.png" alt="harvesta" />
-              <img src="/images/Rectangle Copy 3.png" alt="harvesta" />
-            </div>
-            <div className="flex flex-col mt-8 md:mt-16 p-2 gap-4">
-              <img src="/images/Rectangle Copy.png" alt="harvesta" />
-              <img src="/icons/explore2.svg" alt="harvesta" />
-            </div>
-          </div>
-          <div className="w-full max-w-md py-4 md:py-8 lg:my-44">
-            <h1 className="text-3xl md:text-4xl font-extrabold w-full text-white mb-4">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-20 max-w-6xl mx-auto">
+          <div className="text-center lg:text-left order-2 lg:order-1">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4">
               Explore Our Store Today To Save Time & Energy.
             </h1>
-            <p className="text-xs leading-5 mb-6 text-white">
+            <p className="text-sm sm:text-base leading-relaxed mb-6 text-white/90 max-w-md mx-auto lg:mx-0">
               With just a few clicks or taps, you can browse a wide range of
               products, compare prices, and read reviews, all from the comfort
               of your home.
             </p>
+          </div>
+          <div className="order-1 lg:order-2 w-full max-w-sm lg:max-w-md">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <div className="space-y-3 sm:space-y-4">
+                <img
+                  src="/images/Rectangle Copy 4.png"
+                  alt="harvesta"
+                  className="w-full rounded-lg shadow-lg border border-harvestaYellow"
+                />
+                <img
+                  src="/images/Rectangle Copy 3.png"
+                  alt="harvesta"
+                  className="w-full rounded-lg shadow-lg border border-harvestaYellow"
+                />
+              </div>
+              <div className="space-y-3 sm:space-y-4 mt-6 sm:mt-8">
+                <img
+                  src="/images/Rectangle Copy.png"
+                  alt="harvesta"
+                  className="w-full rounded-lg shadow-lg border border-harvestaYellow"
+                />
+                <img
+                  src="/icons/explore2.svg"
+                  alt="harvesta"
+                  className="w-full rounded-lg border border-harvestaYellow"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -46,6 +46,8 @@ const VideoPlayer = () => {
         margin: "auto",
         cursor: "pointer",
         borderRadius: "10px",
+        border: "4px solid #FFC141",
+        padding: "4px",
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

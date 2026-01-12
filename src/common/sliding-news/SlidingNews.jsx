@@ -47,7 +47,7 @@ export default function SlidingNews() {
               <span className="font-bold text-lg md:text-xl flex justify-center align-center p-4 font-primary text-center">
                 {item.des}
               </span>
-              <span className="block text-base md:text-lg font-primary text-center">
+              <span className="block text-sm  font-extralight text-center">
                 {item.paragraph}
               </span>
             </div>

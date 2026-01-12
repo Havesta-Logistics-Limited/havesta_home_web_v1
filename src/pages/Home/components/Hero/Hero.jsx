@@ -16,7 +16,7 @@ export default function Hero() {
         }
       >
         <div className="w-full max-w-6xl mx-auto flex-1 flex items-center md:items-center">
-          <div className="text-white w-full max-w-xl md:max-w-2xl mx-auto lg:mx-0 lg:ml-52 mt-0 translate-y-6 md:translate-y-4">
+          <div className="text-white w-full max-w-xl md:max-w-2xl mx-auto lg:mx-0 lg:ml-52 mt-0 translate-y-6 md:translate-y-4 relative z-20">
             <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-[80px] font-bold inter w-fit relative">
               Find Your Healthy
               <img
@@ -33,13 +33,15 @@ export default function Hero() {
               Fresh fruits & veggies, grains, Tubers and More!
             </p>
 
-            <div className="mt-9 flex flex-wrap gap-4 items-center">
-              <img src={IMG_PEOPLE} alt="" className="w-32 md:w-36 " />
-              <div className="urbanist flex flex-col">
-                <h1 className="font-bold text-base md:text-lg">1000+</h1>
-                <p className="font-light text-base md:text-lg">Customers</p>
+            <div className="mt-9 flex flex-col gap-4">
+              <div className="flex gap-4 items-center">
+                <img src={IMG_PEOPLE} alt="" className="w-32 md:w-36 " />
+                <div className="urbanist flex flex-col">
+                  <h1 className="font-bold text-base md:text-lg">1000+</h1>
+                  <p className="font-light text-base md:text-lg">Customers</p>
+                </div>
               </div>
-              <div className="relative z-20 sm:ml-5">
+              <div className="relative z-20 w-full sm:w-fit mt-16 md:mt-6">
                 <div className="bg-harvestaYellow text-harvestaBlack flex items-center justify-center py-3 px-6 rounded-3xl font-bold z-50">
                   Learn more
                 </div>

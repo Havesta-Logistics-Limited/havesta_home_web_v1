@@ -1,6 +1,19 @@
+import { Link } from "react-router-dom";
 import joinUs from "../../../config/joinUs.config";
 
 const JoinUsSection = () => {
+  const getButtonLink = (count) => {
+    switch (count) {
+      case 1:
+        return "#download"; // Link to download section
+      case 2:
+        return "/riders"; // Link to rider page
+      case 3:
+        return "/vendors"; // Link to vendor page
+      default:
+        return "#";
+    }
+  };
   return (
     <>
       <div className="w-full flex flex-col items-center py-10 px-4">
@@ -40,9 +53,21 @@ const JoinUsSection = () => {
                 <div className="absolute inset-0 bg-black -translate-x-1 -translate-y-1 rounded-3xl"></div>
 
                 {/* Main button */}
-                <button className="relative z-10 text-sm bg-yellow-500 border-primary rounded-3xl px-4 py-2 hover:bg-yellow-600 cursor-pointer text-black md:text-base md:px-8 md:py-4 lg:text-md lg:px-10 lg:py-3 lg:w-56 transform hover:scale-105 transition-all duration-200">
-                  {item.button}
-                </button>
+                {item.count === 1 ? (
+                  <a
+                    href={getButtonLink(item.count)}
+                    className="relative z-10 text-sm bg-yellow-500 border-primary rounded-3xl px-4 py-2 hover:bg-yellow-600 cursor-pointer text-black md:text-base md:px-8 md:py-4 lg:text-md lg:px-10 lg:py-3 lg:w-56 transform hover:scale-105 transition-all duration-200 block text-center"
+                  >
+                    {item.button}
+                  </a>
+                ) : (
+                  <Link
+                    to={getButtonLink(item.count)}
+                    className="relative z-10 text-sm bg-yellow-500 border-primary rounded-3xl px-4 py-2 hover:bg-yellow-600 cursor-pointer text-black md:text-base md:px-8 md:py-4 lg:text-md lg:px-10 lg:py-3 lg:w-56 transform hover:scale-105 transition-all duration-200 block text-center"
+                  >
+                    {item.button}
+                  </Link>
+                )}
               </div>
             </div>
           ))}
