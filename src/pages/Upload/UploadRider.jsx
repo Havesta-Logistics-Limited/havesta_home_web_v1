@@ -1,5 +1,3 @@
-import { setIcon } from "../../redux/features/iconSlice.js";
-import { useDispatch } from "react-redux";
 import { useEffect, useRef, useState } from "react";
 import uploadList from "../../config/uploadrider.config.jsx";
 import checkIcon from "../../assets/icons/icon.png";
@@ -16,7 +14,6 @@ const UploadRider = () => {
   const [vehicleImgFile, setVehicleImgFile] = useState([]);
   const [idImgFile, setIdImgFile] = useState([]);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const fileVehicleInputRef = useRef();
   const fileIdInputRef = useRef();
 
@@ -145,13 +142,6 @@ const UploadRider = () => {
     }
   };
 
-  useEffect(() => {
-    dispatch(setIcon("rider"));
-
-    return () => {
-      dispatch(setIcon("home"));
-    };
-  }, [dispatch]);
 
   // NOTE: This screen currently doesn't store files in `files`; uploads are tracked
   // via `vehicleImgFile` and `idImgFile`. Leaving the button state driven elsewhere.

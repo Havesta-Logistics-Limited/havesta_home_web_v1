@@ -1,7 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useEffect, Suspense } from "react";
-import { setIcon } from "../../redux/features/iconSlice.js";
+import { Suspense } from "react";
 import { motion } from "framer-motion";
 import LogoNav from "../../common/LogoNav.jsx";
 
@@ -21,15 +19,6 @@ const CongratulationsVendor = () => {
       x: 0,
     },
   };
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(setIcon("rider"));
-
-    return () => {
-      dispatch(setIcon("home"));
-    };
-  }, [dispatch]);
   /* const params = useParams();
   const stringValue = params.id;
   const actualValue =

@@ -1,25 +1,27 @@
-import axios from 'axios'
+// External API endpoints (third-party services)
+// Note: These use direct axios calls as they're external services
+// For internal API calls, use the axiosInstance from config/axios.config.js
 
-const ridersApi = {
-    getAllCountry: async()=>{
-       const endpoint = "https://restcountries.com/v3.1/all"
-       const response = await axios.get(endpoint)
-       console.log(response)
-       return response
-    },
+import axios from "axios";
 
-    getBankNames: async() => {
-        const endpoint = "https://api.paystack.co/bank?country=nigeria";
-        const res = await axios.get(endpoint)
+const RIDER_ENDPOINTS = {
+  // Countries API (external service)
+  getAllCountries: async () => {
+    const endpoint = "https://restcountries.com/v3.1/all";
+    const response = await axios.get(endpoint);
+    return response.data;
+  },
 
-        const banksArray = res.data.data
+  // Paystack API (external service)
+  getBankNames: async () => {
+    const endpoint = "https://api.paystack.co/bank?country=nigeria";
+    const response = await axios.get(endpoint);
 
-        const response = banksArray.map(item => item.name)
-        
-        return response
+    if (response.data?.data) {
+      return response.data.data.map((item) => item.name);
     }
+    return [];
+  },
+};
 
-}
-
-
-export default ridersApi
+export default RIDER_ENDPOINTS;

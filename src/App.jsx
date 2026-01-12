@@ -4,9 +4,8 @@ import MainLayout from "./layouts/MainLayout.jsx";
 import ScrollToTop from "./common/scrollToTop";
 import routes from "./config/routes.config";
 
+// Standalone routes (lazy loaded to keep initial bundle small)
 const Landing = lazy(() => import("./pages/Landing/Landing"));
-
-// Standalone routes (lazy to keep initial bundle small)
 const CongratulationsRider = lazy(() =>
   import("./pages/Congratulations/CongratulationsRider")
 );
@@ -24,10 +23,9 @@ const FinalMessageVendor = lazy(() =>
 const CommissionPage = lazy(() => import("./pages/CommissionPage"));
 const TermsVendor = lazy(() => import("./pages/TermsVendor/TermsVendor"));
 const VendorModal = lazy(() =>
-  import("./templates/news-template/vendorModal.jsx")
+  import("./pages/News/vendorModal.jsx")
 );
 const Career = lazy(() => import("./pages/Career/Career"));
-const MarketPlace = lazy(() => import("./pages/MarketPlace/MarketPlace"));
 
 function RouteFallback() {
   // Lightweight fallback; avoids bringing in extra components.
@@ -76,7 +74,6 @@ function App() {
           />
           <Route path="/vendor/modal" element={<VendorModal />} />
           <Route path="/careers" element={<Career />} />
-          <Route path="/market" element={<MarketPlace />} />
         </Routes>
       </Suspense>
     </>

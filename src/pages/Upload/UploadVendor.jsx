@@ -1,5 +1,3 @@
-import { setIcon } from "../../redux/features/iconSlice.js";
-import { useDispatch } from "react-redux";
 import { useEffect, useRef, useState } from "react";
 
 import uploadIcon from "../../assets/icons/upload.png";
@@ -13,7 +11,6 @@ const UploadVendor = () => {
   const [files, setFiles] = useState([]);
   const navigate = useNavigate();
   const [buttonAvailable, setButtonAvailable] = useState(false);
-  const dispatch = useDispatch();
   const fileInputRef = useRef(null);
 
   const handleImageClick = () => {
@@ -64,13 +61,6 @@ const UploadVendor = () => {
     }
   };
 
-  useEffect(() => {
-    dispatch(setIcon("rider"));
-
-    return () => {
-      dispatch(setIcon("home"));
-    };
-  }, [dispatch]);
 
   useEffect(() => {
     if (files.length > 2) {

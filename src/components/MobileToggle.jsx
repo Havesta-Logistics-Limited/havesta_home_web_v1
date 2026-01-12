@@ -1,13 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
-import { openModal, closeModal } from "../redux/features/modalSlice";
+import { useModal } from "../contexts/ModalContext";
 
 const MobileToggle = () => {
-  const { modalOpen } = useSelector((state) => state.modalReducer);
-  const dispatch = useDispatch();
+  const { modalOpen, toggleModal } = useModal();
 
   return (
     <button
-      onClick={() => modalOpen ? dispatch(closeModal()) : dispatch(openModal())}
+      onClick={toggleModal}
       className="relative w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 rounded-xl flex items-center justify-center hover:scale-110 hover:rotate-3 active:scale-95 transition-all duration-300 group hover:bg-harvestaYellow/10"
     >
       <div className="w-5 h-4 sm:w-6 sm:h-5 flex flex-col justify-between">

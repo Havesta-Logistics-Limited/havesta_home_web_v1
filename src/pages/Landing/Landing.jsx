@@ -1,8 +1,8 @@
-import DownloadApp from "../../templates/home-templates/chunks/home-hero-chunk/DownloadApp";
-import Hero from "../../templates/home-templates/chunks/home-hero-chunk/HomeHeroChunk";
-import HomeStandardsChunk from "../../templates/home-templates/chunks/home-standards-chunk/HomeStandardsChunk";
-import HomeCustomerReviewsChunk from "../../templates/home-templates/chunks/home-customer-reviews-chunk/HomeCustomerReviewsChunk";
-import HomeLatestNewsChunk from "../../templates/home-templates/chunks/home-latest-news-chunk/HomeLatestNewsChunk";
+import DownloadApp from "../Home/components/Hero/DownloadApp";
+import Hero from "../Home/components/Hero/Hero";
+import Standards from "../Home/components/Standards/Standards";
+import CustomerReviews from "../Home/components/CustomerReviews/CustomerReviews";
+import LatestNews from "../Home/components/LatestNews/LatestNews";
 import WhyChooseSection from "../../components/landing/new/WhyChooseSection";
 import JoinUsSection from "../../components/landing/new/JoinUsSection";
 import VideoPlayer from "../../components/landing/Video";
@@ -51,13 +51,13 @@ const Landing = () => {
         </div>
       </section>
       <section className="py-8 md:py-12 px-4 sm:px-8">
-        <HomeStandardsChunk />
+        <Standards />
       </section>
       <section className="py-8 md:py-12 px-4 sm:px-8">
-        <HomeCustomerReviewsChunk />
+        <CustomerReviews />
       </section>
       <section className="py-8 md:py-12 px-4 sm:px-8">
-        <HomeLatestNewsChunk />
+        <LatestNews />
       </section>
       <section className="py-8 md:py-12 px-4 sm:px-8">
         <FaqMain />

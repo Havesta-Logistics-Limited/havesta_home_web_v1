@@ -1,15 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import navRoutes from "../../routes/navRoutes.jsx";
 import { useEffect, useRef, useState } from "react";
 import Logo from "../Logo.jsx";
 import MenuIcon from "@mui/icons-material/Menu";
-import { openModal } from "../../redux/features/modalSlice.js";
-import { useDispatch, useSelector } from "react-redux";
+import { useModal } from "../../contexts/ModalContext";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 
 export default function Navbar() {
-  const { icon } = useSelector((state) => state.iconReducer);
-  const dispatch = useDispatch();
+  const location = useLocation();
+  const { openModal } = useModal();
+  
+  // Determine icon color based on current route
+  const isRiderPage = location.pathname.includes('/rider') || location.pathname.includes('/riders');
+  const iconColor = isRiderPage ? "text-harvestaLightGreen" : "text-harvestaYellow";
 
   const navRef = useRef(null);
 
@@ -53,8 +56,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // keep --nav-h in sync with actual navbar height so page content can
-  // offset exactly and avoid visual jumps when nav style changes
   useEffect(() => {
     const el = navRef.current;
 
@@ -82,7 +83,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div ref={navRef} className="fixed top-0 left-0 z-50 w-full font-primary text-white">
+    <div
+      ref={navRef}
+      className="fixed top-0 left-0 z-50 w-full font-primary text-white"
+    >
       <div
         className={
           "px-6 py-4 transition-all duration-300 " +
@@ -191,12 +195,8 @@ export default function Navbar() {
 
             <div className="absolute right-0 text-xl md:hidden">
               <MenuIcon
-                onClick={() => dispatch(openModal())}
-                className={
-                  icon === "home"
-                    ? "text-harvestaYellow"
-                    : "text-harvestaLightGreen"
-                }
+                onClick={openModal}
+                className={iconColor}
                 sx={{
                   fontSize: "40px",
                 }}

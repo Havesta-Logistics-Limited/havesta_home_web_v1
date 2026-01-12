@@ -1,0 +1,22 @@
+import useOverflow from "./useOverflow";
+
+export default function Overflow() {
+  const h = useOverflow();
+  return (
+    <div className="w-full h-auto bg-harvestaYellow px-1 flex justify-center mt-20">
+      {" "}
+      {/* container */}
+      <div className="w-3/4 bg-white lg:grid grid-flow-col gap-3 border-2 border-white rounded-[20px]">
+        {h.riderStats.map((item, index) => (
+          <div
+            key={index}
+            className="grid grid-flow-col items-center font-primary text-[13px] gap-2 p-6 w-[300px] font-semibold "
+          >
+            <img src={item.image} alt="icon" className="w-10" />
+            <p>{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

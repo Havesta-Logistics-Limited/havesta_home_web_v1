@@ -1,15 +1,13 @@
 import { navRoutesMobile } from "../routes/navRoutes";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
-import { closeModal } from "../redux/features/modalSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useModal } from "../contexts/ModalContext";
 import { useEffect, useRef } from "react";
 import MobileToggle from "../components/MobileToggle";
 import "./SideModal.css";
 
 const SideModal = () => {
-  const { modalOpen } = useSelector((state) => state.modalReducer);
-  const dispatch = useDispatch();
+  const { modalOpen, closeModal } = useModal();
   const sideModalRef = useRef(null);
 
   useEffect(() => {
@@ -24,7 +22,7 @@ const SideModal = () => {
     const onPointerDown = (e) => {
       if (!sideModalRef.current) return;
       if (sideModalRef.current.contains(e.target)) return;
-      dispatch(closeModal());
+      closeModal();
     };
     document.addEventListener("pointerdown", onPointerDown);
     return () => document.removeEventListener("pointerdown", onPointerDown);
@@ -44,7 +42,7 @@ const SideModal = () => {
 
       <div
         ref={sideModalRef}
-        className={`absolute inset-x-0 sm:inset-x-4 sm:w-96 sm:max-w-[90vw] sm:right-4 sm:left-auto top-0 bg-harvestaDarkGreen/95 backdrop-blur-2xl transition-all duration-500 ease-out ${
+        className={`absolute inset-x-0 sm:inset-x-4 sm:w-96 sm:max-w-[90vw] sm:right-4 sm:left-auto top-0 bg-[#273f2b] backdrop-blur-2xl transition-all duration-500 ease-out ${
           modalOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >
@@ -59,7 +57,7 @@ const SideModal = () => {
               <Link
                 key={index}
                 to={item.path}
-                onClick={() => dispatch(closeModal())}
+                onClick={closeModal}
                 className={`group block text-2xl font-medium text-white hover:text-harvestaYellow transition-all duration-300 pb-2 ${
                   index < navRoutesMobile.length - 1
                     ? "border-b border-harvestaYellow/20 hover:border-harvestaYellow/60"

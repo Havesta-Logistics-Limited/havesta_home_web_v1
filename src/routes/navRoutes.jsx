@@ -85,11 +85,12 @@ export const navRoutesMobile = [
   },
   {
     name: "Marketplace",
-    path: "",
+    path: "/marketplace",
     hero:'/icons/contact.png',
     icon: <PermContactCalendarIcon/>
   },
 
   
 ]
+
 export default navRoutes;

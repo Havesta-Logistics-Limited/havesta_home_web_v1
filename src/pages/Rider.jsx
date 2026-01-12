@@ -8,9 +8,7 @@ import { Bounce, toast, ToastContainer } from "react-toastify";
 import Checkbox from "@mui/joy/Checkbox";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import FAQ from "../templates/home-templates/chunks/faq/Faq.jsx";
-import { setIcon } from "../redux/features/iconSlice.js";
-import { useDispatch } from "react-redux";
+import FAQ from "../common/faq/Faq.jsx";
 import WebReview from "../components/landing/Reviews-Fragment/WebReview.jsx";
 import MobileReview from "../components/landing/Reviews-Fragment/MobileReview.jsx";
 import axiosInstance from "../config/axios.config.js";
@@ -43,15 +41,6 @@ const Rider = () => {
     agreed_to_regular_updates: false,
     accepted_privacy_policy: false,
   });
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(setIcon("rider"));
-
-    return () => {
-      dispatch(setIcon("home"));
-    };
-  }, [dispatch]);
 
   useEffect(() => {
     const input = document.querySelector(".phoneNum");
