@@ -8,7 +8,7 @@ import { IMG_HAVESTALOGO } from "../assets/images";
 import SocialIcons from "./social-icons/SocialIcons";
 const Footer = () => {
   return (
-    <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-10 bg-black p-16  md:p-16 lg:p-24 lg:px-16 text-gray-400 font-body relative">
+    <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-10 bg-black p-8 lg:p-24 lg:px-16 text-gray-400 font-body relative">
       <div className=" p-4">
         <div className=" mb-4">
           <div className=" relative  font-bold  text-xl py-2 text-white  w-fit">
@@ -37,55 +37,65 @@ const Footer = () => {
         </h3>
         <ul className="text-sm leading-6 space-y-2 lg:grid grid-cols-2">
           <li className="flex items-center">
-            <ChevronRightIcon color="success" />
-            <span className="ml-2">Home</span>
+            <NavLink to="/" className="flex items-center">
+              <ChevronRightIcon color="success" />
+              <span className="ml-2">Home</span>
+            </NavLink>
           </li>
           <li className="flex items-center">
-            <ChevronRightIcon color="success" />
-            <span className="ml-2">About</span>
+            <NavLink to="/about" className="flex items-center">
+              <ChevronRightIcon color="success" />
+              <span className="ml-2">About</span>
+            </NavLink>
           </li>
 
           <li className="flex items-center">
-            <ChevronRightIcon color="success" />
-            <span className="ml-2">News</span>
+            <NavLink to="/news" className="flex items-center">
+              <ChevronRightIcon color="success" />
+              <span className="ml-2">News</span>
+            </NavLink>
           </li>
           <li className="flex items-center">
-            <NavLink to={"/contact"}>
+            <NavLink to="/contact" className="flex items-center">
               <ChevronRightIcon color="success" />
               <span className="ml-2">Contact</span>
             </NavLink>
           </li>
 
           <li className="flex items-center">
-            <ChevronRightIcon color="success" />
-            <span className="ml-2">Vendors</span>
+            <NavLink to="/vendors" className="flex items-center">
+              <ChevronRightIcon color="success" />
+              <span className="ml-2">Vendors</span>
+            </NavLink>
           </li>
           <li className="flex items-center">
-            <ChevronRightIcon color="success" />
-            <span className="ml-2">Riders</span>
+            <NavLink to="/riders" className="flex items-center">
+              <ChevronRightIcon color="success" />
+              <span className="ml-2">Riders</span>
+            </NavLink>
           </li>
           <li className="flex items-center">
-            <NavLink to={"/careers"}>
+            <NavLink to="/careers" className="flex items-center">
               <ChevronRightIcon color="success" />
               <span className="ml-2">Careers</span>
             </NavLink>
           </li>
           <li className="flex items-center">
-            <NavLink to={"/landing"}>
+            <NavLink to="/landing" className="flex items-center">
               <ChevronRightIcon color="success" />
               <span className="ml-2">Marketplace</span>
             </NavLink>
           </li>
           <li className="flex items-center">
-            <NavLink to={"/terms-of-use"}>
+            <NavLink to="/terms-of-use" className="flex items-center">
               <ChevronRightIcon color="success" />
               <span className="ml-2">Terms of use</span>
             </NavLink>
           </li>
-          <li className="flex items-center ">
-            <NavLink to={"/privacy-policy"} className={`flex items-center`}>
+          <li className="flex items-center">
+            <NavLink to="/privacy-policy" className="flex items-center">
               <ChevronRightIcon color="success" />
-              <span className="ml-1 ">Privacy Policy</span>
+              <span className="ml-1">Privacy Policy</span>
             </NavLink>
           </li>
         </ul>
@@ -128,7 +138,7 @@ const Footer = () => {
       </div>
       <div className="w-full h-auto bg-dim absolute bottom-0 left-0 text-xs text-center align-middle p-2 text-white  border-t-[0.5px] border-gray-900">
         <span>
-          © 2025 Havesta{". "}
+          © 2026 Havesta{". "}
           <span className=""> All Rights Reserved</span>
         </span>
       </div>

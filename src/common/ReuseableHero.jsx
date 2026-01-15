@@ -12,7 +12,7 @@ const ReuseableHero = ({
         </h2>
         <img
           src={image}
-          className="hidden lg:block absolute right-0 w-[400px] top-[17%]"
+          className=" absolute right-0 w-[400px] top-[17%]"
           alt="header-img"
         />
       </div>

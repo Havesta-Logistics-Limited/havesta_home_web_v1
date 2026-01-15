@@ -2,10 +2,11 @@ import { FiFacebook, FiLinkedin } from "react-icons/fi";
 import { FaXTwitter, FaInstagram, FaTiktok } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
-export default function SocialIcons({ color }) {
+export default function SocialIcons({ color = "white" }) {
   return (
     <div
-      className={`flex space-x-4 my-10 text-${color} text-xl cursor-pointer`}
+      className="flex space-x-4 my-10 text-xl cursor-pointer"
+      style={{ color }}
     >
       <Link to={"https://www.facebook.com/share/1BKct6DEEh/"}>
         <FiFacebook />

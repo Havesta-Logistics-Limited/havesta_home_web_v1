@@ -38,8 +38,8 @@ export default function CoreValues() {
         {h.coreValues.map((item, index) => (
           <SwiperSlide key={index}>
             <div
-              className="bg-harvestaLightGreen/10 rounded-xl
-              border-primary overflow-hidden hover:bg-primary/30 hover:border-primary text-white my-10 h-[480px]
+              className="bg-primary/30 rounded-xl
+              border-primary overflow-hidden hover:bg-harvestaLightGreen/10 hover:border-primary text-white my-10 h-[480px]
               transition-all hover:shadow-lg border-[1px] border-yellow-500/30"
             >
               <img

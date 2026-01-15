@@ -149,7 +149,12 @@ export default function Contact() {
           </StyledAboutBox>
         </Stack>
       </Box>
-      <Faq />
+      <div className="font-primary bg-green-radial py-20 md:py-40">
+        <Faq />
+        <div className="mt-16 md:mt-32">
+          <DownloadApp />
+        </div>
+      </div>
     </>
   );
 }

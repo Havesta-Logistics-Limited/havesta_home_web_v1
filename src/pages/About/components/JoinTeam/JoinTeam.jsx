@@ -16,7 +16,7 @@ export default function JoinTeam() {
           experimentation of the message and smart incentives.
         </p>
         <NavLink
-          to={"/careers"}
+          to={""}
           className="py-3 px-5  mt-4  text-sm rounded-lg bg-primary text-white cursor-pointer hover:bg-primaryHover capitalize"
         >
           See current openings

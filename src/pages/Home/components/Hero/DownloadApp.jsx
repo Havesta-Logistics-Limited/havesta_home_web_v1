@@ -1,8 +1,12 @@
 import phoneMockup from "../../../../../public/images/Mockup.png";
+import phoneMockupMobile from "../../../../../public/images/Mockup-mobile.png";
 
-export default function DownloadApp() {
+export default function DownloadApp(backgroundColor) {
   return (
-    <div className="px-4 sm:px-8 lg:px-16 py-12 my-10">
+    <div
+      className="px-4 sm:px-8 lg:px-16 "
+      style={{ backgroundColor: backgroundColor || "#ffffff" }}
+    >
       <section className="flex flex-col lg:flex-row justify-center items-center gap-2 lg:gap-2 max-w-6xl mx-auto">
         <div className="flex flex-col items-center text-center ">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-primary text-white mb-6 text-left">
@@ -12,7 +16,7 @@ export default function DownloadApp() {
             Get fresh farm produce delivered in minutes from a variety of
             trusted vendors offering fruits, veggies, tubers, grains, and nuts.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2">
             <img
               src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718623942/App_Store_brjnhq.svg"
               alt="Download on App Store"
@@ -26,7 +30,15 @@ export default function DownloadApp() {
           </div>
         </div>
 
-        <div className="hidden lg:block ">
+        <div className="lg:hidden block">
+          <img
+            src={phoneMockupMobile}
+            alt="Havesta mobile app preview"
+            className="w-[50%] max-w-xs mx-auto mt-10"
+          />
+        </div>
+
+        <div className="hidden lg:block">
           <img
             src={phoneMockup}
             alt="Havesta mobile app preview"

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useModal } from "../contexts/ModalContext";
 import { useEffect, useRef } from "react";
 import MobileToggle from "../components/MobileToggle";
+import SocialIcons from "./social-icons/SocialIcons";
 import "./SideModal.css";
 
 const SideModal = () => {
@@ -43,11 +44,11 @@ const SideModal = () => {
       <div
         ref={sideModalRef}
         className={`absolute inset-0 md:inset-x-0 md:w-96 md:max-w-[90vw] md:right-0
-           md:left-auto md:top-0 bg-[#273f2b] backdrop-blur-2xl transition-all duration-500 ease-out ${
+           md:left-auto md:top-0 bg-[#273f2b] backdrop-blur-2xl transition-all duration-500 ease-out flex flex-col ${
              modalOpen ? "translate-y-0" : "-translate-y-full"
            }`}
       >
-        <div className="px-6 py-8">
+        <div className="px-6 py-8 flex-1 overflow-y-auto">
           <div className="flex justify-between items-center mb-12">
             <Logo />
             <MobileToggle />
@@ -77,19 +78,24 @@ const SideModal = () => {
               </Link>
             ))}
           </nav>
+        </div>
 
-          <div
-            className={`mt-16 pt-8 ${
-              modalOpen ? "animate-fadeInUp" : "opacity-0"
-            }`}
-            style={
-              modalOpen
-                ? { animationDelay: "0.8s", animationFillMode: "both" }
-                : {}
-            }
-          >
-            <p className="text-sm text-white/60">© 2024 Harvesta</p>
+        <div
+          className={`px-6 py-6 border-t border-harvestaYellow/20 ${
+            modalOpen ? "animate-fadeInUp" : "opacity-0"
+          }`}
+          style={
+            modalOpen
+              ? { animationDelay: "0.8s", animationFillMode: "both" }
+              : {}
+          }
+        >
+          <div className="flex justify-center mb-4">
+            <SocialIcons color="#FFC141" />
           </div>
+          <p className="text-sm text-yellow-500/60 text-center">
+            © 2026 Harvesta
+          </p>
         </div>
       </div>
     </div>

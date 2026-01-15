@@ -2,7 +2,6 @@ import DownloadApp from "../Home/components/Hero/DownloadApp";
 import Hero from "../Home/components/Hero/Hero";
 import Standards from "../Home/components/Standards/Standards";
 import CustomerReviews from "../Home/components/CustomerReviews/CustomerReviews";
-import LatestNews from "../Home/components/LatestNews/LatestNews";
 import WhyChooseSection from "../../components/landing/new/WhyChooseSection";
 import JoinUsSection from "../../components/landing/new/JoinUsSection";
 import VideoPlayer from "../../components/landing/Video";
@@ -16,7 +15,7 @@ const Landing = () => {
       <section className="py-8 md:py-12 px-4 sm:px-8">
         <WhyChooseSection />
       </section>
-      <section id="download" className="py-8 md:py-20 px-4 sm:px-8">
+      <section id="download" className="py-8 md:py-44 px-4 sm:px-8 ">
         <DownloadApp />
       </section>
       <section className="py-8 md:py-20 px-4 sm:px-8">
