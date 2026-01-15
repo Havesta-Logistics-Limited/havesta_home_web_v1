@@ -15,19 +15,19 @@ export default function CustomerReviews() {
       
       {/* Glassmorphic container */}
       <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl p-6 lg:p-8 mt-8 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {h.reviews.map((rev, index) => (
             <div
               key={rev.name}
               className="group hover:scale-105 transition-all duration-300"
             >
-              <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30">
+              <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30 h-full flex flex-col">
                 <div className="flex justify-center mb-4">
                   <div className="bg-primary/10 p-3 rounded-full">
                     <FaQuoteLeft className="text-primary text-xl" />
                   </div>
                 </div>
-                <p className="text-gray-700 text-sm leading-relaxed mb-4 text-center">
+                <p className="text-gray-700 text-sm leading-relaxed mb-4 text-center flex-1">
                   {rev.review}
                 </p>
                 <div className="flex justify-center mb-4">
@@ -37,7 +37,7 @@ export default function CustomerReviews() {
                     </svg>
                   ))}
                 </div>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center mt-auto">
                   <div className="w-12 h-12 rounded-full overflow-hidden mb-3 border-2 border-primary/20">
                     <img src={rev.img} alt={rev.name} className="w-full h-full object-cover" />
                   </div>

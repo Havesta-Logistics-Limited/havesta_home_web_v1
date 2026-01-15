@@ -48,14 +48,6 @@ const Section5 = () => {
   return (
     <div className="flex justify-center items-center w-full h-max py-[5rem]  ">
       <div className="w-[327px] flex justify-center flex-col items-center gap-16 lg:w-5/6">
-        <div>
-          <p className="text-[28px] text-center font-career md:text-[50px] md:w-[753px]">
-            Don&apos;t just take our word for it!
-          </p>
-          <p className="text-16px text-[#646363] lg:font-career text-center lg:text-[24px] lg:w-[753px]">
-            See the feedback from your teammates.
-          </p>
-        </div>
         <div className="flex w-full h-max gap-4 flex-col">
           <div className="relative flex-col flex lg:flex-row justify-end lg:gap-0 items-center w-full lg:h-[537px]">
             <div className="flex-col gap-8 h-max flex lg:flex-row items-center left-0 justify-end lg:w-[78.78%] lg:h-[476px]">

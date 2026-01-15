@@ -9,7 +9,7 @@ export default function News() {
     <>
       <ReuseableHero
         text={
-          "get the latest updates and deeper shopping experience from havesta "
+          "Get the latest updates and deeper shopping experience from havesta "
         }
       />
 

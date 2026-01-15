@@ -42,9 +42,10 @@ const SideModal = () => {
 
       <div
         ref={sideModalRef}
-        className={`absolute inset-x-0 md:inset-x-4 md:w-96 md:max-w-[90vw] md:right-4 md:left-auto top-0 bg-[#273f2b] backdrop-blur-2xl transition-all duration-500 ease-out ${
-          modalOpen ? "translate-y-0" : "-translate-y-full"
-        }`}
+        className={`absolute inset-0 md:inset-x-0 md:w-96 md:max-w-[90vw] md:right-0
+           md:left-auto md:top-0 bg-[#273f2b] backdrop-blur-2xl transition-all duration-500 ease-out ${
+             modalOpen ? "translate-y-0" : "-translate-y-full"
+           }`}
       >
         <div className="px-6 py-8">
           <div className="flex justify-between items-center mb-12">

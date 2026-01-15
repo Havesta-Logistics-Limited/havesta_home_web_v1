@@ -1,4 +1,5 @@
-import { TbTruckDelivery, TbHeadset, TbCash } from 'react-icons/tb';
+import { TbTruckDelivery, TbHeadset, TbCash } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 const WhyChooseSection = () => {
   const list = [
@@ -39,13 +40,16 @@ const WhyChooseSection = () => {
                 ensuring that the highest quality fruits, vegetables, and other
                 farm-fresh products are just a click away.
               </p>
-              <button className="bg-harvestaLightGreen hover:bg-green-600 text-white px-6 py-2 rounded font-medium transition-colors">
+              <Link
+                to="/about"
+                className="inline-block bg-harvestaLightGreen hover:bg-green-600 text-white px-6 py-2 rounded font-medium transition-colors mt-8"
+              >
                 Read More
-              </button>
+              </Link>
             </div>
             <div className="hidden lg:block flex-shrink-0 -mb-6">
               <img
-                className="w-64 xl:w-72"
+                className="w-72 xl:w-80"
                 src="/images/fruit-basket.png"
                 alt="Fresh produce basket"
               />
@@ -61,7 +65,10 @@ const WhyChooseSection = () => {
             {list.map((value, index) => {
               const IconComponent = value.icon;
               return (
-                <div key={index} className="flex flex-col items-center text-center lg:items-start lg:text-left gap-3 p-4 border border-gray-200 rounded-lg hover:border-primary/30 transition-all shadow-sm hover:shadow-md">
+                <div
+                  key={index}
+                  className="flex flex-col items-center text-center lg:items-start lg:text-left gap-3 p-4 border border-gray-200 rounded-lg hover:border-primary/30 transition-all shadow-sm hover:shadow-md"
+                >
                   <div className="bg-primary/10 p-3 rounded-full">
                     <IconComponent className="w-6 h-6 flex-shrink-0 text-primary" />
                   </div>

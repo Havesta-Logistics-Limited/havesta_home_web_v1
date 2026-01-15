@@ -11,11 +11,9 @@ import JoinTeam from "./components/JoinTeam/JoinTeam";
 import Faq from "../../common/faq/Faq";
 
 export default function About() {
-  const h = useAbout();
-
   return (
     <>
-      <ReuseableHero text={h.headerText} image={h.imageUrl} />
+      <ReuseableHero text={"About Us"} />
       <div>
         <Havesta />
         <Stats />

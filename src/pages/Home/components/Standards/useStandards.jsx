@@ -8,13 +8,13 @@ export default function useStandards() {
     },
     {
       title: "Vendors",
-      number: "500+",
+      number: "15+",
       content: "Whether article spirits new her covered hastily sitting her. ",
       color: "bg-[#A7E3E3]",
     },
     {
       title: "Deliveries",
-      number: "5,000+",
+      number: "1,000+",
       content: "Whether article spirits new her covered hastily sitting her. ",
       color: "bg-[#CCF88E]",
     },

@@ -3,7 +3,6 @@ import navRoutes from "../../routes/navRoutes.jsx";
 import { useEffect, useRef, useState } from "react";
 import Logo from "../Logo.jsx";
 import MobileToggle from "../../components/MobileToggle.jsx";
-// NOTE: If the navbar needs Redux state, re-enable this import and consume the values.
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 
 export default function Navbar() {
@@ -93,8 +92,8 @@ export default function Navbar() {
         <div className="py-3 md:px-10">
           <div className="grid grid-cols-3 items-center max-w-6xl m-auto relative">
             <div className="justify-self-start">
-              <div className="h-12 flex items-center rounded-3xl px-4 border border-white/55 bg-transparent hover:bg-white/15 transition-all min-[1000px]:border min-[1000px]:px-4 max-[1000px]:border-0 max-[1000px]:px-0">
-                <Link to={"/"} className="flex items-center gap-2">
+              <div className="h-12 flex items-center rounded-3xl border border-white/55 bg-white/10 hover:bg-white/15 transition-all min-[1000px]:border min-[1000px]:px-4 max-[1000px]:border-0 max-[1000px]:px-0">
+                <Link to={"/"} className="flex items-center gap-2 px-3 sm:px-4">
                   {/* Logo */}
                   <Logo />
                 </Link>
@@ -114,7 +113,7 @@ export default function Navbar() {
                   >
                     <div
                       className={
-                        "flex items-center p-2 px-4 rounded-3xl transition-all duration-300 " +
+                        "flex items-center p-1 px-4 rounded-3xl transition-all duration-300 " +
                         (item.submenu
                           ? "hover:bg-white/10 focus-within:bg-white/10"
                           : "hover:bg-white/10")

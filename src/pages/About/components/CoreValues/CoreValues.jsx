@@ -5,8 +5,8 @@ import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 export default function CoreValues() {
   const h = useCoreValues();
   return (
-    <div className="my-14  mb-0 lg:p-24 ">
-      <h3 className="flex justify-center font-bold text-4xl mb-14">
+    <div className="my-3  mb-0 lg:p-24 ">
+      <h3 className="flex justify-center font-bold text-4xl mb-14 text-white">
         Our Core Values
       </h3>
       <Swiper
@@ -38,20 +38,20 @@ export default function CoreValues() {
         {h.coreValues.map((item, index) => (
           <SwiperSlide key={index}>
             <div
-              className="bg-primary rounded-xl
-              border-primary overflow-hidden hover:bg-harvestaLightGreen hover:border-primary text-white my-10 h-[480px]
-              transition-all hover:shadow-lg"
+              className="bg-harvestaLightGreen/10 rounded-xl
+              border-primary overflow-hidden hover:bg-primary/30 hover:border-primary text-white my-10 h-[480px]
+              transition-all hover:shadow-lg border-[1px] border-yellow-500/30"
             >
               <img
                 src={item.img}
                 alt=""
                 className="w-full h-40 sm:h-48 object-cover"
               />
-              <div className="m-10">
+              <div className="p-6">
                 <span className="font-bold text-[18px] flex justify-center align-center p-3 font-primary">
                   {item.title}
                 </span>
-                <span className="block text-md font-primary">
+                <span className="block text-md font-extralight text-center">
                   {item.paragraph}
                 </span>
               </div>

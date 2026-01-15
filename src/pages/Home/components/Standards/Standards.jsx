@@ -12,8 +12,8 @@ export default function Standards() {
             Our Standout Progress
           </h1>
           <p className="text-[#DEDEDE] text-sm md:text-base max-w-2xl mx-auto">
-            A good idiom for kids is &quot;It&apos;s raining cats and
-            dogs.&quot; Kids know what both cats and dogs are from an early age.
+            A snapshot of the growth, trust, and impact we’ve built across
+            customers, vendors, and deliveries.
           </p>
         </div>
 
