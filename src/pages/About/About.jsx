@@ -7,8 +7,7 @@ import Havesta from "./components/Havesta/Havesta";
 import Stats from "./components/Stats/Stats";
 import MeetTeam from "./components/MeetTeam/MeetTeam";
 import JoinTeam from "./components/JoinTeam/JoinTeam";
-import Faq from "../../common/faq/Faq";
-import DownloadApp from "../Home/components/Hero/DownloadApp";
+import PageFooter from "../../common/PageFooter";
 
 export default function About() {
   return (
@@ -22,12 +21,7 @@ export default function About() {
         <MeetTeam />
         <JoinTeam />
       </div>
-      <div className="font-primary bg-green-radial py-20 md:py-40">
-        <Faq />
-        <div className="mt-16 md:mt-32">
-          <DownloadApp />
-        </div>
-      </div>
+      <PageFooter />
     </>
   );
 }

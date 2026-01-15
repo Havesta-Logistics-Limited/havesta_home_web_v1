@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { FiLinkedin } from "react-icons/fi";
 import data from "../../config/section5.config";
 
 const Section5 = () => {
@@ -79,19 +80,19 @@ const Section5 = () => {
                         alt=""
                       />
                       <div className="lg:w-[73.97%] w-full flex-col justify-start gap-4 lg:gap-0 lg:justify-between h-[430px] lg:flex-row px-[30px] lg:p-0 pt-[30px] pb-[45px] items-start flex lg:h-[334px]">
-                        <img
-                          className="w-[33.82px] object-contain"
-                          src="/images/quote 1.png"
-                          alt=""
-                        />
+                        <span className="text-7xl text-harvestaDarkGreen font-serif leading-none">
+                          “
+                        </span>
                         <div className="w-full lg:w-[89.41%] h-[350px] lg:h-full justify-between flex flex-col">
                           <p className="text-16 lg:text-20">{el.text}</p>
                           <div>
                             <p className="text-20 font-bold">{el.name}</p>
                             <p className="text-16">{el.title}</p>
                           </div>
-                          <p className="flex gap-2">
-                            <img src="/images/linkedin.png" alt="" />
+                          <p className="flex gap-2 items-center">
+                            <span className="bg-harvestaDarkGreen text-white p-2 rounded">
+                              <FiLinkedin className="text-xl" />
+                            </span>
                             {"LinkedIn profile"}
                           </p>
                         </div>
@@ -116,7 +117,7 @@ const Section5 = () => {
               );
             })}
           </div>
-          <div className="relative z-40 flex justify-end w-full h-[41px]">
+          <div className="relative z-40 hidden lg:flex justify-end w-full h-[41px]">
             <div className="w-[63.97%] hidden md:flex justify-between h-full">
               <div className="flex flex-col justify-between">
                 <p className="text-[16px]">

@@ -31,11 +31,11 @@ export default function Stats() {
 
     useEffect(() => {
       if (!isVisible) return;
-      
+
       let start = 0;
       const duration = 2000;
       const increment = target / (duration / 16);
-      
+
       const timer = setInterval(() => {
         start += increment;
         if (start >= target) {
@@ -47,13 +47,21 @@ export default function Stats() {
       }, 16);
 
       return () => clearInterval(timer);
-    }, [isVisible, target]);
+    }, [target]);
 
-    return <>{count}{suffix}</>;
+    return (
+      <>
+        {count}
+        {suffix}
+      </>
+    );
   };
 
   return (
-    <div ref={sectionRef} className="bg-harvestaDarkGreen flex justify-center items-center font-primary py-8 relative mt-10">
+    <div
+      ref={sectionRef}
+      className="bg-harvestaDarkGreen flex justify-center items-center font-primary py-8 relative mt-10"
+    >
       <div className="absolute inset-0 bg-white/15 backdrop-blur-md border-y border-white/20"></div>
       <div className="grid grid-cols-1 justify-items-center md:grid-cols-4 gap-16 text-white relative z-10">
         {h.aboutStats.map((item, index) => {

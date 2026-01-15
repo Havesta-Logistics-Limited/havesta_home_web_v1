@@ -1,5 +1,3 @@
-import { IMG_CUSTOMER } from "../../../../assets/images";
-
 export default function useCustomerReviews() {
   const reviews = [
     {

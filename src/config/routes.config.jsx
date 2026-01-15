@@ -2,6 +2,9 @@ import NotFound from "../pages/NotFound";
 import Home from "../pages/Home/Home";
 import MarketPlace from "../pages/MarketPlace/MarketPlace";
 import SingleNews from "../pages/SingleNews";
+import PoultryNews from "../pages/News/PoultryNews";
+import FishNews from "../pages/News/FishNews";
+import GingerNews from "../pages/News/GingerNews";
 import PrivacyPolicy from "../pages/privacypolicy";
 import TermsOfUse from "../pages/termsOfUse";
 import About from "../pages/About/About";
@@ -38,6 +41,18 @@ const routes = [
   {
     path: "/news/:id",
     element: <SingleNews />,
+  },
+  {
+    path: "/ginger-news",
+    element: <GingerNews />,
+  },
+  {
+    path: "/fish-news",
+    element: <FishNews />,
+  },
+  {
+    path: "/poultry-news",
+    element: <PoultryNews />,
   },
   {
     path: "/privacy-policy",

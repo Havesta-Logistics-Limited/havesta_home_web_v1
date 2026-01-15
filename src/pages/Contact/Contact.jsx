@@ -4,9 +4,9 @@ import { FaPhoneVolume } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import ReuseableHero from "../../common/ReuseableHero";
-import Faq from "../../common/faq/Faq";
 import ContactForm from "./components/ContactForm/ContactForm";
 import SocialIcons from "../../common/social-icons/SocialIcons";
+import PageFooter from "../../common/PageFooter";
 
 const StyledAboutBox = styled(Box)({
   borderRadius: "10px",
@@ -149,12 +149,7 @@ export default function Contact() {
           </StyledAboutBox>
         </Stack>
       </Box>
-      <div className="font-primary bg-green-radial py-20 md:py-40">
-        <Faq />
-        <div className="mt-16 md:mt-32">
-          <DownloadApp />
-        </div>
-      </div>
+      <PageFooter />
     </>
   );
 }

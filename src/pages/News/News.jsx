@@ -1,5 +1,4 @@
 import ReuseableHero from "../../common/ReuseableHero";
-import Faq from "../../common/faq/Faq";
 import Latest from "./latest";
 import useNews from "./useNewsTemplate";
 
@@ -13,10 +12,9 @@ export default function News() {
         }
       />
 
-      <div className="full mb-[250px]">
+      <div className="full">
         <Latest />
       </div>
-      <Faq />
     </>
   );
 }
