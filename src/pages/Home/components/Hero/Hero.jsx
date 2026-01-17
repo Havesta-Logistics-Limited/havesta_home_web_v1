@@ -29,9 +29,9 @@ export default function Hero() {
               <img
                 src={IMG_LEAFTOP}
                 alt=""
-                className="hidden lg:flex absolute -top-12 -right-12 animate-[float_3s_ease-in-out_infinite]"
+                className="hidden lg:flex absolute -top-12 -right-12 animate-[float_1.5s_ease-in-out_infinite]"
                 style={{
-                  animation: "float 3s ease-in-out infinite",
+                  animation: "float 1.5s ease-in-out infinite",
                 }}
               />
             </h2>
@@ -75,17 +75,17 @@ export default function Hero() {
         <img
           src={IMG_LEAFRIGHT}
           alt=""
-          className="absolute hidden lg:block right-48 w-56 top-96 animate-[float_4s_ease-in-out_infinite]"
+          className="absolute hidden lg:block right-48 w-56 top-96 animate-[float_2s_ease-in-out_infinite]"
           style={{
-            animation: "float 4s ease-in-out infinite",
+            animation: "float 2s ease-in-out infinite",
           }}
         />
         <img
           src={IMG_LEAFLEFT}
           alt=""
-          className="hidden lg:flex absolute top-64 left-0 animate-[float_3.5s_ease-in-out_infinite]"
+          className="hidden lg:flex absolute top-64 left-0 animate-[float_1.75s_ease-in-out_infinite]"
           style={{
-            animation: "float 3.5s ease-in-out infinite",
+            animation: "float 1.75s ease-in-out infinite",
           }}
         />
 
