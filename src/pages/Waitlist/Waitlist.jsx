@@ -362,7 +362,7 @@ const Footer = () => (
     <div className="border-t border-green-600 border-opacity-30 bg-black bg-opacity-20">
       <div className="px-4 sm:px-6 lg:px-8 py-4 flex justify-center">
         <p className="text-green-200 text-xs sm:text-sm text-center">
-          © 2025 Havesta. All Rights Reserved
+          © 2026 Havesta. All Rights Reserved
         </p>
       </div>
     </div>
