@@ -138,7 +138,7 @@ const FloatingLeaves = () => (
         >
           <Component />
         </div>
-      )
+      ),
     )}
   </div>
 );
