@@ -9,9 +9,18 @@ const WebReview = ({ type, image }) => {
 
   return (
     <>
-      <div className="hidden p-4 w-full lg:grid grid-flow-row justify-items-center font-primary mb-16">
+      <div className="hidden p-4 w-full lg:flex justify-center items-center font-primary mb-16">
+        <ArrowCircleLeftIcon
+          fontSize="large"
+          sx={{
+            color: "#005231",
+            cursor: "pointer",
+          }}
+          className="mr-4"
+        />
+
         <div
-          className={`${background} grid grid-flow-col place-content-center items-center w-[55%] rounded-lg`}
+          className={`${background} grid grid-flow-col place-content-center items-center w-[55%] rounded-lg relative`}
         >
           <div>
             <img src={image} className="w-[70%]  ml-3 my-3" alt="" />
@@ -38,22 +47,15 @@ const WebReview = ({ type, image }) => {
             </div>
           </div>
         </div>
-        <div className="grid grid-flow-col gap-5 mt-1 ">
-          <ArrowCircleLeftIcon
-            fontSize="large"
-            sx={{
-              color: "#005231",
-              cursor: "pointer",
-            }}
-          />
-          <ArrowCircleRightIcon
-            fontSize="large"
-            sx={{
-              color: "#005231",
-              cursor: "pointer",
-            }}
-          />
-        </div>
+
+        <ArrowCircleRightIcon
+          fontSize="large"
+          sx={{
+            color: "#005231",
+            cursor: "pointer",
+          }}
+          className="ml-4"
+        />
       </div>
     </>
   );

@@ -55,7 +55,7 @@ const Section4 = () => {
                                 </div>
                                 <div className="h-1/3 bg-[#FFFFFF1A] p-5 flex flex-col justify-end items-start">
                                     <p className="text-[17.26px] text-[#fff] md:text-[24px] ">
-                                        Explore more
+                                        more
                                     </p>
                                     <img
                                         className="w-[34px] h-[34px] object-contain"

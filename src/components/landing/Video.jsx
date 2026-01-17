@@ -42,7 +42,7 @@ const VideoPlayer = () => {
         position: "relative",
         width: "100%",
         height: "auto",
-        maxWidth: "800px", // Adjust as needed
+        maxWidth: "1100px",
         margin: "auto",
         cursor: "pointer",
         borderRadius: "10px",

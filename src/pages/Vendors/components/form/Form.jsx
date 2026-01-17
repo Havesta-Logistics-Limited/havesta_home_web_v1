@@ -106,7 +106,7 @@ export default function Form() {
                   />
                 </div>
               </FormControl>
-            )
+            ),
           )}
         </div>
       </form>
@@ -165,12 +165,14 @@ export default function Form() {
         </button>
         <p className="text-xs">
           Want to become a Rider?{" "}
-          <Link
-            to="/rider"
-            className="text-harvestaLightGreen font-bold hover:text-primaryHover"
-          >
-            Register Here
-          </Link>{" "}
+          <span className="block text-center mt-1">
+            <Link
+              to="/vendor"
+              className="text-harvestaLightGreen font-bold hover:text-primaryHover"
+            >
+              Register Here
+            </Link>
+          </span>
         </p>
       </div>
     </div>

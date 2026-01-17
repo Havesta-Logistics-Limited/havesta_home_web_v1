@@ -12,8 +12,9 @@ export default function Form() {
   const h = useForm();
   return (
     <div className="grid grid-cols-1 justify-items-center mt-10 font-primary">
-      <h2 className="text-[54px] font-bold font-primary">Complete The Form</h2>
-
+      <h2 className=" text-3xl lg:text-4xl font-bold font-primary mt-10">
+        Complete The Form
+      </h2>
       <form className="my-4 lg:w-[70%] w-full p-8">
         <p className="text-xs pb-4">
           Fields marked with<span className="text-red-400"> * </span> are
@@ -93,7 +94,7 @@ export default function Form() {
                   }
                 />
               </FormControl>
-            )
+            ),
           )}
         </div>
       </form>
@@ -153,12 +154,14 @@ export default function Form() {
         </button>
         <p className="text-xs">
           Want to become a Vendor?{" "}
-          <Link
-            to="/vendor"
-            className="text-harvestaLightGreen font-bold hover:text-primaryHover"
-          >
-            Register Here
-          </Link>{" "}
+          <span className="block text-center mt-1">
+            <Link
+              to="/vendor"
+              className="text-harvestaLightGreen font-bold hover:text-primaryHover"
+            >
+              Register Here
+            </Link>
+          </span>
         </p>
       </div>
     </div>

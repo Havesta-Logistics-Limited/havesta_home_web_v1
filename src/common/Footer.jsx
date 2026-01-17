@@ -75,7 +75,7 @@ const Footer = () => {
             </NavLink>
           </li>
           <li className="flex items-center">
-            <NavLink to="/careers" className="flex items-center">
+            <NavLink to="#" className="flex items-center">
               <ChevronRightIcon color="success" />
               <span className="ml-2">Careers</span>
             </NavLink>

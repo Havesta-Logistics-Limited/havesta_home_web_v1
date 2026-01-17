@@ -24,11 +24,11 @@ export default function Havesta() {
           <h5 className="p-4 font-bold text-lg uppercase border-l-4 border-harvestaLightGreen text-left">
             Why choose Havesta?
           </h5>
-          <ul className="pl-8 text-left">
+          <ul className="mt-5 text-left">
             {h.aboutListItems.map((item, index) => (
               <li
                 key={index}
-                className="p-2 font-primary flex items-start md:leading-relaxed"
+                className=" mt-5 font-primary flex items-start md:leading-relaxed"
               >
                 <ChevronRightIcon color="success" />
                 <div className="ml-2">

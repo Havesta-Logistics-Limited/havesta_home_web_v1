@@ -1,22 +1,22 @@
 import useCustomerReviews from "./useCustomerReviews";
 import { GoTriangleDown } from "react-icons/go";
 import { FaQuoteLeft } from "react-icons/fa";
-export default function CustomerReviews() {
+export default function CustomerReviews({ title = "Customer Reviews", subtitle = "We are proud of our accomplishments. We will keep delivering excellence and satisfaction", reviewType = "customer" }) {
   const h = useCustomerReviews();
+  const reviews = h[reviewType] || h.reviews;
   return (
     <div className="inter font-primary px-6 relative">
       <h1 className="text-2xl md:text-3xl lg:text-4xl text-white font-bold text-center mb-6">
-        Customer Reviews
+        {title}
       </h1>
       <p className="text-white text-center font-light max-w-sm m-auto text-sm lg:text-base my-4 leading-relaxed">
-        We are proud of our accomplishments. We will keep delivering excellence
-        and satisfaction
+        {subtitle}
       </p>
       
       {/* Glassmorphic container */}
       <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl p-6 lg:p-8 mt-8 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-          {h.reviews.map((rev, index) => (
+          {reviews.map((rev, index) => (
             <div
               key={rev.name}
               className="group hover:scale-105 transition-all duration-300"

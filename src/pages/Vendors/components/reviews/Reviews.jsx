@@ -4,7 +4,7 @@ import WebReview from "../../../../components/landing/Reviews-Fragment/WebReview
 export default function Reviews() {
   return (
     <div>
-      <div className="font-primary p-0 grid grid-flow-row justify-items-center mt-28">
+      <div className="font-primary p-0 grid grid-flow-row justify-items-center">
         <h2 className="text-3xl font-semibold">Vendor Reviews</h2>
         <p className="text-gray-600 text-sm mt-4 text-center">
           We are proud of our accomplishments. We will keep <br /> delivering
@@ -19,20 +19,6 @@ export default function Reviews() {
               "https://res.cloudinary.com/dtc89xi2r/image/upload/v1721823042/Imagev_zvxpgl.png"
             }
           />
-        </div>
-      </div>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-10 p-14 lg:w-1/2 mx-auto  mb-40 text-center ">
-        <div className="items-center flex flex-col gap-1">
-          <h1 className="text-6xl text-harvestaDarkGreen font-semibold">3K+</h1>
-          <h3 className="">Monthly Customer Visit</h3>
-        </div>
-        <div className="flex flex-col items-center gap-1">
-          <h1 className="text-6xl text-harvestaDarkGreen font-semibold">92%</h1>
-          <h3 className="">Customer Satisfaction Rate</h3>
-        </div>
-        <div className="flex flex-col items-center gap-1 ">
-          <h1 className="text-6xl text-harvestaDarkGreen font-semibold">4.9</h1>
-          <h3 className="">Average Customer Ratings</h3>
         </div>
       </div>
     </div>

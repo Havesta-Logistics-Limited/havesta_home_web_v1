@@ -15,11 +15,17 @@ export default function Navbar() {
   const dropdownRef = useRef(null);
 
   function toggleDropdown(index) {
-    setDropdownOpen((prev) => {
-      const nextOpen = activeDropdownIndex !== index ? true : !prev;
-      return nextOpen;
-    });
-    setActiveDropdownIndex((prev) => (prev === index ? null : index));
+    if (activeDropdownIndex === index) {
+      // If clicking the same dropdown, toggle it
+      setDropdownOpen(!dropdownOpen);
+      if (dropdownOpen) {
+        setActiveDropdownIndex(null);
+      }
+    } else {
+      // If clicking a different dropdown, open it
+      setDropdownOpen(true);
+      setActiveDropdownIndex(index);
+    }
   }
 
   useEffect(() => {
@@ -92,7 +98,7 @@ export default function Navbar() {
         <div className="py-3 md:px-10">
           <div className="grid grid-cols-3 items-center max-w-6xl m-auto relative">
             <div className="justify-self-start">
-              <div className="h-12 flex items-center rounded-3xl border border-white/55 bg-white/10 hover:bg-white/15 transition-all min-[1000px]:border min-[1000px]:px-4 max-[1000px]:border-0 max-[1000px]:px-0">
+              <div className="h-12 flex items-center rounded-3xl border border-white/55 bg-white/10 hover:bg-white/15 transition-all min-[1000px]:border min-[1000px]:px-4 min-[1000px]:bg-white/10 max-[1000px]:border-0 max-[1000px]:px-0 max-[1000px]:bg-transparent">
                 <Link to={"/"} className="flex items-center gap-2 px-3 sm:px-4">
                   {/* Logo */}
                   <Logo />

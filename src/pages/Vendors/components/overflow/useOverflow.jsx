@@ -1,18 +1,17 @@
+import { TbShoppingCart, TbSettings, TbTrendingUp } from "react-icons/tb";
+
 export default function useOverflow() {
   const vendorStats = [
     {
-      image:
-        "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719608563/Group_1000001828_1_fzmhwi.svg",
+      icon: TbShoppingCart,
       text: "Sell your products to customers around you. ",
     },
     {
-      image:
-        "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719608562/Group_1000001829_hqn2cj.svg",
+      icon: TbSettings,
       text: "Manage you store/products with our management platform",
     },
     {
-      image:
-        "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719608561/Group_1000001830_ewkhqd.svg",
+      icon: TbTrendingUp,
       text: "Grow your business and improve your online presence. ",
     },
   ];

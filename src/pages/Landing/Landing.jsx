@@ -23,11 +23,11 @@ const Landing = () => {
       </section>
       <section className="py-8 md:py-20 px-4 sm:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-20 max-w-6xl mx-auto">
-          <div className="text-center lg:text-left order-2 lg:order-1">
+          <div className="text-center ">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 text-center">
               Explore Our Store Today To Save Time & Energy.
             </h1>
-            <p className="text-sm sm:text-base leading-relaxed mb-6 text-white/90 max-w-md mx-auto lg:mx-0">
+            <p className="text-sm sm:text-base leading-relaxed mb-6 text-white/90 max-w-md mx-auto text-center">
               With just a few clicks or taps, you can browse a wide range of
               products, compare prices, and read reviews, all from the comfort
               of your home.

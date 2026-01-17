@@ -118,10 +118,10 @@ export const TermsOfuse = [
         text: "If you have any questions about these Terms and Conditions, please contact us at:",
       },
       {
-        text: "Email: terms@havesta.com",
+        text: "Email: info@havesta.com",
       },
       {
-        text: "Phone: 080HAVESTA",
+        text: "Whatsapp Only: 08109511825",
       },
     ],
   },

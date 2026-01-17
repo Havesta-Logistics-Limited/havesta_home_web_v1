@@ -1,32 +1,26 @@
 const data = [
-    {
-        id: 1,
-        name: "James Olson",
-        title: "Product Designer",
-        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda veritatis labore quas. Iusto possimus laudantium molestiae quo? Molestias minus placeat natus harum in error officia, sapiente tenetur iure possimus necessitatibus.",
-        image: "/images/Rectangle 5522.png"
-    },
-    {
-        id: 2,
-        name: "John doe",
-        title: "Product Designer",
-        text: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque accusantium fugiat quia enim officia repudiandae inventore nihil error aliquid! Aspernatur ut vel neque. Molestiae est voluptate illum fugit. Unde, corporis.",
-        image: "/images/Rectangle 5524.png"
-    },
-    {
-        id: 3,
-        name: "James Olson",
-        title: "Product Designer",
-        text: "I do admire the company culture and, I like that. Havesta is truly the place where good attitudes have blended with proficiency. If you’re going to craft something great and you have a strong eagerness to do that, Havesta will remove all hassles in your journey.",
-        image: "/images/Rectangle 5525.png"
-    },
-    {
-        id: 4,
-        name: "Jane doe",
-        title: "Product Designer",
-        text: "I do admire the company culture and, I like that. Havesta is truly the place where good attitudes have blended with proficiency. If you’re going to craft something great and you have a strong eagerness to do that, Havesta will remove all hassles in your journey.",
-        image: "/images/Rectangle 5526.png"
-    }
+  {
+    id: 1,
+    name: "Noel Amobeda",
+    title: "CEO and Founder ",
+    text: `Failure is simply the opportunity to begin again. This time, more intelligently. 
+                - Henry Ford`,
+    image: "src/assets/images/Noel.png",
+  },
+  {
+    id: 2,
+    name: "Jubril Babatunde Olanrewaju",
+    title: "Creative Designer",
+    text: " Train your mind to see oppoprtunities and not obstacles",
+    image: "src/assets/images/Jubril.jpg",
+  },
+  {
+    id: 3,
+    name: "Omotosho David A.",
+    title: "Software Engineer",
+    text: 'Striving for excellence because "good enough" never is',
+    image: "src/assets/images/Omotosho.JPG",
+  },
 ];
 
 export default data;
