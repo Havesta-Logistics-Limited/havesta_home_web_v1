@@ -48,7 +48,7 @@ const Section5 = () => {
 
   return (
     <div className="flex justify-center items-center w-full h-max py-[5rem]  ">
-      <div className="w-[327px] flex justify-center flex-col items-center gap-16 lg:w-[90%] xl:w-[85%]">
+      <div className="w-full max-w-sm mx-auto flex justify-center flex-col items-center gap-16 lg:w-[90%] lg:max-w-6xl xl:w-[85%]">
         <div className="flex w-full h-max gap-4 flex-col">
           <div className="relative flex-col flex lg:flex-row justify-end lg:gap-0 items-center w-full lg:h-[537px]">
             <div className="flex-col gap-8 h-max flex lg:flex-row items-center left-0 justify-end lg:w-[78.78%] lg:h-[476px]">
@@ -75,11 +75,11 @@ const Section5 = () => {
                       }
                     >
                       <img
-                        className="h-[175px] w-[327px] object-cover flex lg:hidden"
+                        className="h-full w-full object-cover object-top rounded-t-lg lg:hidden"
                         src={el.image}
                         alt=""
                       />
-                      <div className="lg:w-[73.97%] w-full flex-col justify-start gap-4 lg:gap-0 lg:justify-between h-[430px] lg:flex-row px-[30px] lg:pl-36 lg:pr-8 pt-[30px] pb-[45px] items-start flex lg:h-[334px]">
+                      <div className="lg:w-[73.97%] w-full flex-col justify-start gap-4 lg:gap-0 lg:justify-between h-auto lg:h-[334px] lg:flex-row px-6 lg:pl-36 lg:pr-8 py-6 lg:py-[71px] items-start flex rounded-b-lg lg:rounded-none">
                         <span className="text-7xl text-harvestaDarkGreen font-serif leading-none">
                           “
                         </span>
