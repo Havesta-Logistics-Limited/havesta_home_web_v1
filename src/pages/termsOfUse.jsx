@@ -2,6 +2,7 @@ import { Box, Container, Typography, styled } from "@mui/material";
 import { TermsOfuse } from "../config/termsOfUse.config";
 import ReuseableHero from "../common/ReuseableHero";
 import Faq from "../common/faq/Faq";
+import PageFooter from "../common/PageFooter";
 
 const StyledText = styled(Typography)({
   fontSize: "1rem",
@@ -32,7 +33,7 @@ const TermsOfUse = () => {
           ))}
         </Container>
       </div>
-      <Faq />
+      <PageFooter />{" "}
     </>
   );
 };

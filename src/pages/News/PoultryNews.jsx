@@ -3,6 +3,7 @@ import "swiper/css/effect-cards";
 import "swiper/css";
 import ReuseableHero from "../../common/ReuseableHero";
 import Faq from "../../common/faq/Faq";
+import PageFooter from "../../common/PageFooter";
 
 const StyledText = styled(Typography)({
   fontSize: "1rem",
@@ -28,7 +29,6 @@ const PoultryNews = () => {
       <ReuseableHero
         text={"The Benefits of Owning a Poultry Farm in Nigeria"}
       />
-
       <Container>
         <StyledBox
           height={["40vh", "50vh"]}
@@ -103,8 +103,7 @@ const PoultryNews = () => {
           </StyledText>
         </Box>
       </Container>
-
-      <Faq />
+      <PageFooter />{" "}
     </>
   );
 };

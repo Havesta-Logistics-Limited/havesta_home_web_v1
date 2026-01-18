@@ -3,25 +3,26 @@ export default function useStandards() {
     {
       title: "Customers",
       number: "500+",
-      content: "Whether article spirits new her covered hastily sitting her. ",
+      content: "Serving 500+ satisfied customers with fresh produce delivery.",
       color: "bg-[#ECCFF6] ",
     },
     {
       title: "Vendors",
       number: "15+",
-      content: "Whether article spirits new her covered hastily sitting her. ",
+      content: "15+ verified farmers and vendors actively selling on Havesta.",
       color: "bg-[#A7E3E3]",
     },
     {
       title: "Deliveries",
       number: "1,000+",
-      content: "Whether article spirits new her covered hastily sitting her. ",
+      content:
+        "Over 1,000 successful deliveries completed from farm to doorstep.",
       color: "bg-[#CCF88E]",
     },
     {
       title: "Success",
       number: "99%",
-      content: "Whether article spirits new her covered hastily sitting her. ",
+      content: "Maintaining a 99% order fulfillment and delivery success rate.",
       color: "bg-[#FFA477]",
     },
   ];

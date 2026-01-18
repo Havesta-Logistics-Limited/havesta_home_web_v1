@@ -21,7 +21,7 @@ export default function useCustomerReviews() {
         "I've been using Harvesta for 6 months now and I'm amazed by the consistent quality. The customer service is excellent and they really care about their customers' satisfaction.",
       name: "Folake Adebayo",
       role: "Nutritionist",
-      img: "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=150&h=150&fit=crop&crop=face",
+      img: "https://img.freepik.com/free-photo/portrait-gorgeous-girl-standing-with-arms-crossed-studio_482257-104554.jpg?semt=ais_hybrid&w=740&q=80",
       rating: 5,
     },
   ];

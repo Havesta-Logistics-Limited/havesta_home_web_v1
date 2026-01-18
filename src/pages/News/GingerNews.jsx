@@ -2,8 +2,8 @@ import { Box, Container, Typography, styled } from "@mui/material";
 import "swiper/css/effect-cards";
 import "swiper/css";
 import ReuseableHero from "../../common/ReuseableHero";
-import Faq from "../../common/faq/Faq";
 import { newsArticles } from "../../data/newsData";
+import PageFooter from "../../common/PageFooter";
 
 const StyledText = styled(Typography)({
   fontSize: "1rem",
@@ -25,7 +25,7 @@ const StyledBox = styled(Box)({
 
 const GingerNews = () => {
   const gingerArticle = newsArticles.find(
-    (article) => article.id === "ginger-farming"
+    (article) => article.id === "ginger-farming",
   );
 
   return (
@@ -102,7 +102,7 @@ const GingerNews = () => {
         </Box>
       </Container>
 
-      <Faq />
+      <PageFooter />
     </>
   );
 };

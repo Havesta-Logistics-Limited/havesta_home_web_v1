@@ -4,6 +4,7 @@ import "swiper/css";
 import ReuseableHero from "../../common/ReuseableHero";
 import Faq from "../../common/faq/Faq";
 import { newsArticles } from "../../data/newsData";
+import PageFooter from "../../common/PageFooter";
 
 const StyledText = styled(Typography)({
   fontSize: "1rem",
@@ -25,7 +26,7 @@ const StyledBox = styled(Box)({
 
 const FishNews = () => {
   const fishArticle = newsArticles.find(
-    (article) => article.id === "fish-farming"
+    (article) => article.id === "fish-farming",
   );
 
   return (
@@ -98,7 +99,7 @@ const FishNews = () => {
         </Box>
       </Container>
 
-      <Faq />
+      <PageFooter />
     </>
   );
 };

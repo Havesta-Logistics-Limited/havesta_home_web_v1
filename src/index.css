@@ -68,6 +68,15 @@ body {
   }
 }
 
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
 .rider_bg_img {
   background-image: url("https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957966/EatFood.com_4_ip6pcn.svg");
   background-repeat: none;

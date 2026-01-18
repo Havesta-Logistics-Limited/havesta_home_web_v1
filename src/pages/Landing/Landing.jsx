@@ -56,7 +56,7 @@ const Landing = () => {
                 <img
                   src="/icons/explore2.svg"
                   alt="harvesta"
-                  className="w-full rounded-lg border-1 border-harvestaYellow"
+                  className="w-full rounded-lg border-2 border-harvestaYellow"
                 />
               </div>
             </div>

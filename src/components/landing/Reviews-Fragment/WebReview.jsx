@@ -1,7 +1,36 @@
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import { useState } from "react";
 
 const WebReview = ({ type, image }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const reviews = [
+    {
+      text: "Shopping for groceries has never been easier! Hervesta offers an incredible selection of fresh produce delivered right to my doorstep.",
+      name: "Adekanbi Adeoluwa",
+      role: "Iyaola Farms",
+    },
+    {
+      text: "Amazing service and quality products! The delivery is always on time and the produce is incredibly fresh.",
+      name: "Sarah Johnson",
+      role: "Butcher",
+    },
+    {
+      text: "I've been using Hervesta for months now and I'm consistently impressed with their service and product quality.",
+      name: "Michael Olawale",
+      role: " Fish Vendor",
+    },
+  ];
+
+  const nextReview = () => {
+    setCurrentIndex((prev) => (prev + 1) % reviews.length);
+  };
+
+  const prevReview = () => {
+    setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+  };
+
   const background =
     type === "rider" ? "bg-harvestaYellow" : "bg-harvestaDarkGreen";
   const textColor = type === "rider" ? "text-white" : "text-white";
@@ -17,6 +46,7 @@ const WebReview = ({ type, image }) => {
             cursor: "pointer",
           }}
           className="mr-4"
+          onClick={prevReview}
         />
 
         <div
@@ -32,17 +62,21 @@ const WebReview = ({ type, image }) => {
               alt=""
             />{" "}
             {/* Quote icon */}
-            <p className={`text-center text-[16px] font-semibold ${textColor}`}>
-              Shopping for groceries has never been easier! Hervesta offers an
-              incredible selection of fresh produce delivered right to my
-              doorstep.
+            <p
+              className={`text-center text-[16px] font-semibold ${textColor} min-h-[4rem] flex items-center`}
+            >
+              {reviews[currentIndex].text}
             </p>
             <div>
-              <h6 className={`text-[14px] font-semibold ${textTag}`}>
-                Noel Amobeda
+              <h6
+                className={`text-[14px] font-semibold text-center ${textTag}`}
+              >
+                {reviews[currentIndex].name}
               </h6>
-              <h6 className={`text-[12px] font-bold ${textTag}`}>
-                Founder & CEO at Havesta
+              <h6
+                className={`text-[12px] text-center italic font-light ${textTag}`}
+              >
+                {reviews[currentIndex].role}
               </h6>
             </div>
           </div>
@@ -55,6 +89,7 @@ const WebReview = ({ type, image }) => {
             cursor: "pointer",
           }}
           className="ml-4"
+          onClick={nextReview}
         />
       </div>
     </>

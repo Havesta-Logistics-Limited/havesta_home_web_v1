@@ -25,7 +25,7 @@ export default function useFaQmain() {
     {
       title: "How do I contact customer support?",
       answer:
-        "You can reach our support team through multiple channels: in-app chat, email at support@havesta.com, phone at ‪+234-810-951-1825‬, or social media. We're available 24/7 to help.",
+        "You can reach our support team through multiple channels: in-app chat, email at support@havesta.com, phone at ‪+2348109511825‬, or social media. We're available 24/7 to help.",
     },
 
     {

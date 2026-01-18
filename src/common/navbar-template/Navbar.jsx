@@ -148,7 +148,7 @@ export default function Navbar() {
                                 className="ml-1 transition-transform duration-200 rotate-180"
                               />
                             </button>
-                            <div className="border-t border-white/20">
+                            <div className=" border-white/20">
                               {item.submenu.map((subItem, subIndex) => (
                                 <Link
                                   key={subIndex}

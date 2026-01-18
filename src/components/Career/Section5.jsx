@@ -22,7 +22,7 @@ const Section5 = () => {
 
   const nextTes = (numerator, denominator) => {
     setActiveIndex((prevIndex) =>
-      prevIndex >= data.length ? 1 : prevIndex + 1
+      prevIndex >= data.length ? 1 : prevIndex + 1,
     );
     setProgress(reduceFraction(numerator, denominator));
     setList((prevList) => {
@@ -48,7 +48,7 @@ const Section5 = () => {
 
   return (
     <div className="flex justify-center items-center w-full h-max py-[5rem]  ">
-      <div className="w-[327px] flex justify-center flex-col items-center gap-16 lg:w-5/6">
+      <div className="w-[327px] flex justify-center flex-col items-center gap-16 lg:w-[90%] xl:w-[85%]">
         <div className="flex w-full h-max gap-4 flex-col">
           <div className="relative flex-col flex lg:flex-row justify-end lg:gap-0 items-center w-full lg:h-[537px]">
             <div className="flex-col gap-8 h-max flex lg:flex-row items-center left-0 justify-end lg:w-[78.78%] lg:h-[476px]">
@@ -79,7 +79,7 @@ const Section5 = () => {
                         src={el.image}
                         alt=""
                       />
-                      <div className="lg:w-[73.97%] w-full flex-col justify-start gap-4 lg:gap-0 lg:justify-between h-[430px] lg:flex-row px-[30px] lg:p-0 pt-[30px] pb-[45px] items-start flex lg:h-[334px]">
+                      <div className="lg:w-[73.97%] w-full flex-col justify-start gap-4 lg:gap-0 lg:justify-between h-[430px] lg:flex-row px-[30px] lg:pl-36 lg:pr-8 pt-[30px] pb-[45px] items-start flex lg:h-[334px]">
                         <span className="text-7xl text-harvestaDarkGreen font-serif leading-none">
                           “
                         </span>
@@ -89,12 +89,17 @@ const Section5 = () => {
                             <p className="text-20 font-bold">{el.name}</p>
                             <p className="text-16">{el.title}</p>
                           </div>
-                          <p className="flex gap-2 items-center">
+                          <a
+                            href={el.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex gap-2 items-center hover:text-harvestaDarkGreen transition-colors cursor-pointer"
+                          >
                             <span className="bg-harvestaDarkGreen text-white p-2 rounded">
                               <FiLinkedin className="text-xl" />
                             </span>
                             {"LinkedIn profile"}
-                          </p>
+                          </a>
                         </div>
                       </div>
                     </div>

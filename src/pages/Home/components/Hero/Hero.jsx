@@ -13,12 +13,42 @@ export default function Hero() {
   const h = useHero();
   const [scrollY, setScrollY] = useState(0);
   const { modalOpen } = useModal();
+  const [displayText, setDisplayText] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const words = ["Healthy", "Fresh"];
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const currentWord = words[wordIndex];
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting) {
+          if (displayText.length < currentWord.length) {
+            setDisplayText(currentWord.slice(0, displayText.length + 1));
+          } else {
+            setTimeout(() => setIsDeleting(true), 2500);
+          }
+        } else {
+          if (displayText.length > 0) {
+            setDisplayText(displayText.slice(0, -1));
+          } else {
+            setIsDeleting(false);
+            setWordIndex((prev) => (prev + 1) % words.length);
+          }
+        }
+      },
+      isDeleting ? 100 : 150,
+    );
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, wordIndex, words]);
   return (
     <>
       <div className="relative w-full min-h-screen bg-cover px-4 sm:px-6 md:px-8 lg:px-10 py-4 flex items-center justify-center">
@@ -26,8 +56,9 @@ export default function Hero() {
           <div className="text-white w-full text-center lg:text-left lg:ml-52 relative z-20 mt-20">
             <h2 className="text-4xl sm:text-6xl md:text-6xl lg:text-[90px] font-bold inter relative">
               Find Your{" "}
-              <span className="text-4xl sm:text-6xl md:text-6xl lg:text-[90px] text-harvestaYellow font-bold mb-6">
-                Healthy
+              <span className="text-4xl sm:text-6xl md:text-6xl lg:text-[90px] text-harvestaYellow italic font-bold mb-6">
+                {displayText}
+                <span className="inline-block animate-[blink_1s_infinite]" style={{animation: 'blink 1s infinite'}}>|</span>
               </span>
               <img
                 src={IMG_LEAFTOP}

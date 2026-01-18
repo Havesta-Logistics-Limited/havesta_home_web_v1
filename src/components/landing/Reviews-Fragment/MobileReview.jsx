@@ -1,4 +1,16 @@
+import { useState } from "react";
+import reviewsData from "../../../config/reviews.config.js";
+
 const MobileReview = ({ type }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  const nextReview = () => {
+    setCurrentIndex((prev) => (prev + 1) % reviewsData.length);
+  };
+  
+  const prevReview = () => {
+    setCurrentIndex((prev) => (prev - 1 + reviewsData.length) % reviewsData.length);
+  };
   const backgroundColor =
     type === "customer" || type === "rider"
       ? "bg-harvestaYellow"
@@ -19,30 +31,35 @@ const MobileReview = ({ type }) => {
           alt="Quote"
         />
         
-        <p className={`text-center text-sm md:text-base font-medium ${headingText} max-w-sm leading-relaxed`}>
-          Shopping for groceries has never been easier! Hervesta offers an
-          incredible selection of fresh produce delivered right to my doorstep.
+        <p className={`text-center text-sm md:text-base font-medium ${headingText} max-w-sm leading-relaxed min-h-[5rem] flex items-center justify-center`}>
+          {reviewsData[currentIndex].text}
         </p>
         
         <div className="flex items-center justify-center gap-4 mt-6">
           <img
-            src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1721822422/Rectangle_12_bc6elk.png"
+            src={reviewsData[currentIndex].image}
             className="w-16 h-16 rounded-full object-cover border-2 border-white/20"
             alt="Profile"
           />
           <div className="text-left">
-            <h4 className={`font-semibold text-sm ${nameText}`}>Noel Amobeda</h4>
-            <h5 className={`text-xs font-medium ${roleText}`}>Founder & CEO at Havesta</h5>
+            <h4 className={`font-semibold text-sm ${nameText}`}>{reviewsData[currentIndex].name}</h4>
+            <h5 className={`text-xs font-medium ${roleText}`}>{reviewsData[currentIndex].role}</h5>
           </div>
         </div>
         
         <div className="flex justify-center gap-4 mt-6">
-          <button className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors">
+          <button 
+            className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+            onClick={prevReview}
+          >
             <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
           </button>
-          <button className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors">
+          <button 
+            className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+            onClick={nextReview}
+          >
             <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
             </svg>
