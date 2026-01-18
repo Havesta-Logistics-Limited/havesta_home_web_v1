@@ -23,9 +23,12 @@ export default function Hero() {
     <>
       <div className="relative w-full min-h-screen bg-cover px-4 sm:px-6 md:px-8 lg:px-10 py-4 flex items-center justify-center">
         <div className="w-full">
-          <div className="text-white w-full text-center lg:text-left lg:ml-52 relative z-20">
+          <div className="text-white w-full text-center lg:text-left lg:ml-52 relative z-20 mt-20">
             <h2 className="text-4xl sm:text-6xl md:text-6xl lg:text-[90px] font-bold inter relative">
-              Find Your Healthy
+              Find Your{" "}
+              <span className="text-4xl sm:text-6xl md:text-6xl lg:text-[90px] text-harvestaYellow font-bold mb-6">
+                Healthy
+              </span>
               <img
                 src={IMG_LEAFTOP}
                 alt=""
@@ -35,7 +38,7 @@ export default function Hero() {
                 }}
               />
             </h2>
-            <h2 className="text-4xl sm:text-6xl md:text-6xl lg:text-[90px] text-harvestaYellow font-bold mb-6">
+            <h2 className="text-4xl sm:text-6xl md:text-6xl lg:text-[90px] font-bold inter">
               Groceries
             </h2>
             <p className="text-base md:text-lg mb-8 max-w-lg mx-auto lg:mx-0">
