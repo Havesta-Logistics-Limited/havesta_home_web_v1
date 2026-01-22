@@ -1,18 +1,22 @@
-import { TbTruck, TbChartLine, TbCoin } from "react-icons/tb";
-
 export default function useOverflow() {
   const riderStats = [
     {
-      icon: TbTruck,
-      text: "Accept Delivery Orders at your convenience. ",
+      image: "/src/assets/images/rider-overflow-1.png",
+      title: "Accept Delivery Orders at your convenience.",
+      description:
+        "Accept delivery orders at your convenience and manage your schedule with ease. Choose when you’re available and handle deliveries without pressure.",
     },
     {
-      icon: TbChartLine,
-      text: "Manage your Rides and Income with our management platform",
+      image: "/src/assets/images/rider-overflow-2.png",
+      title: "Manage your Rides and Income with our management platform",
+      description:
+        "Manage your rides and income easily with our smart management platform. Track deliveries, monitor earnings, and stay in control of your daily activities from one simple dashboard.",
     },
     {
-      icon: TbCoin,
-      text: "Grow your income Daily, Weekly, or Montly with Havesta.",
+      image: "/src/assets/images/rider-overflow-3.png",
+      title: "Grow your income Daily, Weekly, or Monthly with Havesta.",
+      description:
+        "Earn more with steady sales and flexible income timelines. With Havesta, you can grow your income daily, weekly, or monthly while focusing on what you do best.",
     },
   ];
 

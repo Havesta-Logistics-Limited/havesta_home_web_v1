@@ -50,20 +50,19 @@ const WebReview = ({ type, image }) => {
         />
 
         <div
-          className={`${background} grid grid-flow-col place-content-center items-center w-[55%] rounded-lg relative`}
+          className={`${background} flex items-center justify-center w-[85%] rounded-lg relative h-[350px] overflow-hidden`}
         >
-          <div>
-            <img src={image} className="w-[70%]  ml-3 my-3" alt="" />
+          <div className="flex-shrink-0 w-[40%] h-full flex items-center justify-center p-4">
+            <img src={image} className="w-full h-full object-contain" alt="" />
           </div>
 
-          <div className="  mr-10 grid grid-flow-row justify-items-center items-center space-y-8">
+          <div className="flex-1 px-4 py-4 flex flex-col justify-center items-center space-y-4 max-w-md">
             <img
               src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719784065/Shape_f1kllb.svg"
               alt=""
-            />{" "}
-            {/* Quote icon */}
+            />
             <p
-              className={`text-center text-[16px] font-semibold ${textColor} min-h-[4rem] flex items-center`}
+              className={`text-center text-[16px] font-semibold ${textColor} flex items-center justify-center`}
             >
               {reviews[currentIndex].text}
             </p>

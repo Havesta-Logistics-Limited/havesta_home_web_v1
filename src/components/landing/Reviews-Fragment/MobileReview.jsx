@@ -22,7 +22,7 @@ const MobileReview = ({ type }) => {
 
   return (
     <div
-      className={`p-6 w-full flex flex-col justify-center items-center font-primary mb-16 lg:hidden min-h-[400px] ${backgroundColor} relative rounded-lg mx-auto max-w-md`}
+      className={`p-6 w-full flex flex-col justify-center items-center font-primary mb-16 lg:hidden h-[400px] ${backgroundColor} relative rounded-lg mx-auto max-w-md`}
     >
       <div className="text-center space-y-6 z-10">
         <img
@@ -31,7 +31,7 @@ const MobileReview = ({ type }) => {
           alt="Quote"
         />
         
-        <p className={`text-center text-sm md:text-base font-medium ${headingText} max-w-sm leading-relaxed min-h-[5rem] flex items-center justify-center`}>
+        <p className={`text-center text-sm md:text-base font-medium ${headingText} max-w-sm leading-relaxed h-[5rem] flex items-center justify-center`}>
           {reviewsData[currentIndex].text}
         </p>
         

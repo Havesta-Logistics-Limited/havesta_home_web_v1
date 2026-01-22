@@ -11,14 +11,33 @@ const data = [
   },
   {
     id: 2,
-    name: "Jubril Babatunde Olanrewaju",
-    title: "Creative Designer",
-    text: " Train your mind to see oppoprtunities and not obstacles",
-    image: "src/assets/images/Jubril.jpg",
-    linkedin: "www.linkedin.com/in/babatunde-olanrewaju-09ab46243",
+    name: "Adetayo Onilogbo",
+    title: "Chief Marketing Officer",
+    text: " Do the work. Even on the days you don’t feel ready. Progress shows up after consistency, not before.",
+    image: "src/assets/images/Adetayo.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/adetayo-onilogbo?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
     id: 3,
+    name: "Charles Amobeda",
+    title: "Chief Technology Officer",
+    text: " You don’t have to be great to start, but you have to start to be great.",
+    image: "src/assets/images/Charles.png",
+    linkedin:
+      "https://www.linkedin.com/in/charles-amobeda-096887231?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+  },
+  {
+    id: 4,
+    name: "Gabriel Oriakhi",
+    title: "Growth & Operations Specialist",
+    text: "The most important battles is the one you fight inside your head",
+    image: "src/assets/images/Gabriel.png",
+    linkedin:
+      "https://www.linkedin.com/in/gabriel-oriakhi-296931332?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  {
+    id: 5,
     name: "Omotosho David A.",
     title: "Software Engineer",
     text: 'Striving for excellence because "good enough" never is',
@@ -27,7 +46,7 @@ const data = [
       "https://www.linkedin.com/in/omotosho-david?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
   },
   {
-    id: 4,
+    id: 6,
     name: "Godson Nwaubani",
     title: "DevOps Engineer",
     text: "Focus on progress, not applause. The results will speak.",
@@ -35,7 +54,7 @@ const data = [
     linkedin: "https://linkedin.com/in/godson-nwaubani",
   },
   {
-    id: 5,
+    id: 7,
     name: "John Offia-Chukwu",
     title: "Mobile Developer",
     text: "What you do speaks so loudly that I cannot hear what you say — Ralph Waldo Emerson",
@@ -43,7 +62,7 @@ const data = [
     linkedin: "https://www.linkedin.com/in/john-offia-chukwu-26a9503a1/",
   },
   {
-    id: 6,
+    id: 8,
     name: "Helen Amobeda",
     title: "Social Media Manager",
     text: "Life unfolds not in leaps but in the gentle rhythm of thoughtful choices. Be patient with yourself, embrace each small step, and trust that consistent effort and reflection will guide you toward your best self.",

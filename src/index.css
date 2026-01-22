@@ -77,6 +77,31 @@ body {
   }
 }
 
+/* Tawk.to Widget Styling */
+#tawk-bubble {
+  background-color: #10B981 !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
+}
+
+#tawk-bubble:hover {
+  background-color: #059669 !important;
+  transform: scale(1.05) !important;
+  transition: all 0.3s ease !important;
+}
+
+.tawk-min-container {
+  bottom: 20px !important;
+  right: 20px !important;
+}
+
+@media (max-width: 768px) {
+  .tawk-min-container {
+    bottom: 15px !important;
+    right: 15px !important;
+  }
+}
+
 .rider_bg_img {
   background-image: url("https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957966/EatFood.com_4_ip6pcn.svg");
   background-repeat: none;

@@ -3,22 +3,31 @@ import useOverflow from "./useOverflow";
 export default function Overflow() {
   const h = useOverflow();
   return (
-    <div className="w-full h-auto bg-harvestaDarkGreen px-3 flex justify-center mt-20">
-      {" "}
-      {/* container */}
-      <div className="w-full max-w-4xl bg-white rounded-[20px] shadow-sm p-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+    <div className="w-full h-auto px-4 py-16">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {h.vendorStats.map((item, index) => {
-            const IconComponent = item.icon;
             return (
               <div
                 key={index}
-                className="flex flex-col items-center text-center font-primary text-[13px] gap-4 p-6 font-semibold text-harvestaGreen"
+                className="rounded-2xl overflow-hidden shadow-lg border-2 border-black"
+                style={{ backgroundColor: "#2D2D2D" }}
               >
-                <div className="bg-harvestaDarkGreen p-3 rounded-full">
-                  <IconComponent className="w-12 h-12 text-white" />
+                <div className="h-48 bg-gray-200 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <p>{item.text}</p>
+                <div className="p-6 text-white">
+                  <h3 className="text-xl text-center my-3 font-semibold mb-4 leading-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm text-center leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             );
           })}
