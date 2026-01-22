@@ -2,11 +2,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import useCoreValues from "./useCoreValues";
 import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 
-export default function CoreValues() {
+export default function CoreValues({ variant = "dark" }) {
   const h = useCoreValues();
+  const titleColor = variant === "light" ? "text-gray-900" : "text-white";
+
   return (
-    <div className="my-3  mb-0 lg:p-24 ">
-      <h3 className="flex justify-center font-bold text-4xl mb-14 text-white">
+    <div className="m-3  mb-0 lg:p-24 ">
+      <h3 className={`flex justify-center font-bold text-4xl ${titleColor}`}>
         Our Core Values
       </h3>
       <Swiper
@@ -38,8 +40,8 @@ export default function CoreValues() {
         {h.coreValues.map((item, index) => (
           <SwiperSlide key={index}>
             <div
-              className="bg-primary/30 rounded-xl
-              border-primary overflow-hidden hover:bg-harvestaLightGreen/10 hover:border-primary text-white my-10 h-[480px]
+              className="bg-primary rounded-xl
+              border-primary overflow-hidden hover:bg-green-700 hover:border-primary text-white my-10 h-[480px]
               transition-all hover:shadow-lg border-[1px] border-yellow-500/30"
             >
               <img

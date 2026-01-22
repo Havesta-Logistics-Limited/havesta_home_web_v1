@@ -6,14 +6,14 @@ import Navbar from "../common/navbar-template/Navbar";
 
 const MainLayout = () => {
   return (
-    <>
+    <div className="max-w-[1920px] mx-auto">
       <Navbar />
       <SideModal />
       <Box overflow="hidden" flexGrow={1}>
         <Outlet />
       </Box>
       <Footer />
-    </>
+    </div>
   );
 };
 

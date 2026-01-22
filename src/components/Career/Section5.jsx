@@ -52,59 +52,56 @@ const Section5 = () => {
         <div className="flex w-full h-max gap-4 flex-col">
           <div className="relative flex-col flex lg:flex-row justify-end lg:gap-0 items-center w-full lg:h-[537px]">
             <div className="flex-col gap-8 h-max flex lg:flex-row items-center left-0 justify-end lg:w-[78.78%] lg:h-[476px]">
-              {data
-                .slice()
-                .reverse()
-                .map((el, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className={`w-full transition relative flex-col duration-500 ease-in-out lg:absolute lg:flex-row flex justify-end h-max lg:py-[71px] lg:pr-[71px] shadow-section5 bg-white lg:w-[63.97%] ${
-                        el.id !== activeIndex
-                          ? el.id === data.length
-                            ? "z-10 opacity-1 delay-500"
-                            : "z-20 opacity-1 delay-500"
-                          : "z-30 opacity-1"
-                      }`}
-                      data-type={
-                        el.id !== activeIndex
-                          ? el.id === data.length
-                            ? "after-active-no"
-                            : "before-active-no"
-                          : "active-no"
-                      }
-                    >
-                      <img
-                        className="h-full w-full object-cover object-top rounded-t-lg lg:hidden"
-                        src={el.image}
-                        alt=""
-                      />
-                      <div className="lg:w-[73.97%] w-full flex-col justify-start gap-4 lg:gap-0 lg:justify-between h-auto lg:h-[334px] lg:flex-row px-6 lg:pl-36 lg:pr-8 py-6 lg:py-[71px] items-start flex rounded-b-lg lg:rounded-none">
-                        <span className="text-7xl text-harvestaDarkGreen font-serif leading-none">
-                          “
-                        </span>
-                        <div className="w-full lg:w-[89.41%] h-[350px] lg:h-full justify-between flex flex-col">
-                          <p className="text-16 lg:text-20">{el.text}</p>
-                          <div>
-                            <p className="text-20 font-bold">{el.name}</p>
-                            <p className="text-16">{el.title}</p>
-                          </div>
-                          <a
-                            href={el.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex gap-2 items-center hover:text-harvestaDarkGreen transition-colors cursor-pointer"
-                          >
-                            <span className="bg-harvestaDarkGreen text-white p-2 rounded">
-                              <FiLinkedin className="text-xl" />
-                            </span>
-                            {"LinkedIn profile"}
-                          </a>
+              {data.slice().map((el, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={`w-full transition relative flex-col duration-500 ease-in-out lg:absolute lg:flex-row flex justify-end h-max lg:py-[71px] lg:pr-[71px] shadow-section5 bg-white lg:w-[63.97%] ${
+                      el.id !== activeIndex
+                        ? el.id === data.length
+                          ? "z-10 opacity-1 delay-500"
+                          : "z-20 opacity-1 delay-500"
+                        : "z-30 opacity-1"
+                    }`}
+                    data-type={
+                      el.id !== activeIndex
+                        ? el.id === data.length
+                          ? "after-active-no"
+                          : "before-active-no"
+                        : "active-no"
+                    }
+                  >
+                    <img
+                      className="h-full w-full object-cover object-top rounded-t-lg lg:hidden"
+                      src={el.image}
+                      alt=""
+                    />
+                    <div className="lg:w-[73.97%] w-full flex-col justify-start gap-4 lg:gap-0 lg:justify-between h-auto lg:h-[334px] lg:flex-row px-6 lg:pl-36 lg:pr-8 py-6 lg:py-[71px] items-start flex rounded-b-lg lg:rounded-none">
+                      <span className="text-7xl text-harvestaDarkGreen font-serif leading-none">
+                        “
+                      </span>
+                      <div className="w-full lg:w-[89.41%] h-[350px] lg:h-full justify-between flex flex-col">
+                        <p className="text-16 lg:text-20">{el.text}</p>
+                        <div>
+                          <p className="text-20 font-bold">{el.name}</p>
+                          <p className="text-16">{el.title}</p>
                         </div>
+                        <a
+                          href={el.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex gap-2 items-center hover:text-harvestaDarkGreen transition-colors cursor-pointer"
+                        >
+                          <span className="bg-harvestaDarkGreen text-white p-2 rounded">
+                            <FiLinkedin className="text-xl" />
+                          </span>
+                          {"LinkedIn profile"}
+                        </a>
                       </div>
                     </div>
-                  );
-                })}
+                  </div>
+                );
+              })}
             </div>
             {list.map((el, index) => {
               return (
