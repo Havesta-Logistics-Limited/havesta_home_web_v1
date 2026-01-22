@@ -112,7 +112,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-2">
             <LocalPhoneIcon fontSize="small" color="success" />
-            <span>080HAVESTA</span>
+            <span>08109511825</span>
           </div>
           <div className="flex items-center gap-2">
             <MailOutlineIcon fontSize="small" color="success" />

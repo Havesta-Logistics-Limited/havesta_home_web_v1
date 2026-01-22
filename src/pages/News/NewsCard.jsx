@@ -37,7 +37,7 @@ const NewsCard = ({ title, description, summary, image, link }) => {
       <Box
         marginY={"1rem"}
         marginLeft={["0", "2rem"]}
-        sx={{ order: ["1", "2"] }}
+        sx={{ order: ["2", "2"] }}
       >
         <StyledTextBox textAlign={["center", "left"]} paddingRight={[0, 5]}>
           <Typography
@@ -83,7 +83,7 @@ const NewsCard = ({ title, description, summary, image, link }) => {
       </Box>
       <StyledAboutBox
         sx={{
-          order: ["2", "1"],
+          order: ["1", "1"],
           background: `url(${image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",

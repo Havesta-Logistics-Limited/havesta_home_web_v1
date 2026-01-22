@@ -34,7 +34,7 @@ export default function Contact() {
                     <div className="w-6 h-6 flex items-center justify-center">
                       <FaPhoneVolume size={20} />
                     </div>
-                    <span className="text-lg">080HAVESTA</span>
+                    <span className="text-lg">08109511825</span>
                   </div>
 
                   <div className="flex items-center space-x-4">
@@ -159,7 +159,7 @@ export default function Contact() {
                             {subject}
                           </span>
                         </label>
-                      )
+                      ),
                     )}
                   </div>
                 </div>

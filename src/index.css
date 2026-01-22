@@ -161,6 +161,17 @@ input[type="number"] {
   border: 2px solid #dcdcdc;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media screen and (max-width: 600px) {
   .custom-textfield input {
     width: 150px;
