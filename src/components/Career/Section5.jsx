@@ -18,15 +18,6 @@ const TestimonialCarousel = () => {
   return (
     <section className="relative w-full py-16 sm:py-20 bg-white">
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 sm:mb-10">
-          <p className="text-sm font-semibold tracking-widest text-emerald-700 uppercase">
-            Testimonials
-          </p>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-gray-900">
-            What our team says
-          </h2>
-        </div>
-
         {/* Mobile View */}
         <div className="lg:hidden">
           <div className="rounded-2xl overflow-hidden bg-gray-50 ring-1 ring-black/5">
@@ -79,7 +70,9 @@ const TestimonialCarousel = () => {
                       onClick={() => handleSelect(i)}
                       className={[
                         "h-2 w-2 rounded-full transition-all",
-                        i === activeIndex ? "bg-emerald-600 w-5" : "bg-gray-300",
+                        i === activeIndex
+                          ? "bg-emerald-600 w-5"
+                          : "bg-gray-300",
                       ].join(" ")}
                       aria-label={`Go to testimonial ${i + 1}`}
                     />
