@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { toast } from "react-toastify";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
@@ -8,6 +10,58 @@ import Faq from "../../common/faq/Faq";
 import DownloadApp from "../Home/components/Hero/DownloadApp";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    subject: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const form = new FormData();
+    for (const key in formData) {
+      form.append(key, formData[key]);
+    }
+
+    fetch(
+      "https://script.google.com/macros/s/AKfycbx9WyyzzshpfolfQxAF-hfZWlGkexHSio3XmsVxkxuAZI4-_UP4ilNaZpUW0tgORD2m/exec",
+      {
+        method: "POST",
+        body: form,
+        mode: "no-cors",
+      }
+    )
+      .then(() => {
+        toast.success("Message sent successfully!");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phoneNumber: "",
+          subject: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Error!", error.message);
+        toast.error("An error occurred. Please try again later.");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
   return (
     <div className="font-primary">
       <ReuseableHero
@@ -91,7 +145,7 @@ export default function Contact() {
 
             {/* Contact Form Section */}
             <div className="lg:w-3/5 p-8 lg:p-12">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-normal text-gray-700 mb-2">
@@ -99,8 +153,12 @@ export default function Contact() {
                     </label>
                     <input
                       type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
                       className="w-full px-0 py-3 border-0 border-b-2 border-gray-300 focus:border-harvestaDarkGreen focus:outline-none transition-colors bg-transparent"
                       placeholder=""
+                      required
                     />
                   </div>
                   <div>
@@ -109,8 +167,12 @@ export default function Contact() {
                     </label>
                     <input
                       type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
                       className="w-full px-0 py-3 border-0 border-b-2 border-gray-300 focus:border-harvestaDarkGreen focus:outline-none transition-colors bg-transparent"
                       placeholder=""
+                      required
                     />
                   </div>
                 </div>
@@ -122,8 +184,12 @@ export default function Contact() {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       className="w-full px-0 py-3 border-0 border-b-2 border-gray-300 focus:border-harvestaDarkGreen focus:outline-none transition-colors bg-transparent"
                       placeholder=""
+                      required
                     />
                   </div>
                   <div>
@@ -132,6 +198,9 @@ export default function Contact() {
                     </label>
                     <input
                       type="tel"
+                      name="phoneNumber"
+                      value={formData.phoneNumber}
+                      onChange={handleChange}
                       className="w-full px-0 py-3 border-0 border-b-2 border-gray-300 focus:border-harvestaDarkGreen focus:outline-none transition-colors bg-transparent"
                       placeholder=""
                     />
@@ -153,6 +222,8 @@ export default function Contact() {
                             type="radio"
                             name="subject"
                             value={subject}
+                            checked={formData.subject === subject}
+                            onChange={handleChange}
                             className="w-4 h-4 border-2 border-harvestaDarkGreen bg-white checked:bg-white checked:border-harvestaDarkGreen focus:ring-harvestaDarkGreen focus:ring-0 focus:ring-offset-0 appearance-none rounded-full relative checked:after:content-[''] checked:after:w-2.5 checked:after:h-2.5 checked:after:bg-harvestaDarkGreen checked:after:rounded-full checked:after:absolute checked:after:top-1/2 checked:after:left-1/2 checked:after:transform checked:after:-translate-x-1/2 checked:after:-translate-y-1/2"
                           />
                           <span className="text-sm font-normal text-gray-700">
@@ -170,17 +241,22 @@ export default function Contact() {
                   </label>
                   <textarea
                     rows={6}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-harvestaDarkGreen focus:outline-none transition-colors resize-none"
                     placeholder="write your message"
+                    required
                   ></textarea>
                 </div>
 
                 <div className="flex justify-center pt-4">
                   <button
                     type="submit"
-                    className="bg-harvestaDarkGreen text-white px-8 py-3 rounded-lg font-normal hover:bg-green-700 transition-colors"
+                    disabled={loading}
+                    className="bg-harvestaDarkGreen text-white px-8 py-3 rounded-lg font-normal hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Send Message
+                    {loading ? "Sending..." : "Send Message"}
                   </button>
                 </div>
               </form>

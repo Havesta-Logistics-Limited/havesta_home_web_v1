@@ -1,7 +1,9 @@
 import { lazy, Suspense } from "react";
+import { ToastContainer } from "react-toastify";
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout.jsx";
 import ScrollToTop from "./common/scrollToTop";
+import Loader from "./common/Loader.jsx";
 import routes from "./config/routes.config";
 
 // Standalone routes (lazy loaded to keep initial bundle small)
@@ -28,18 +30,14 @@ const VendorModal = lazy(() =>
 const Career = lazy(() => import("./pages/Career/Career"));
 
 function RouteFallback() {
-  // Lightweight fallback; avoids bringing in extra components.
-  return (
-    <div className="min-h-[40vh] grid place-items-center px-6">
-      <div className="text-slate-700 dark:text-white/80">Loading…</div>
-    </div>
-  );
+  return <Loader />;
 }
 
 function App() {
   return (
     <>
       <ScrollToTop />
+      <ToastContainer />
       <Suspense fallback={<RouteFallback />}>
         <Routes>
           <Route path="/" element={<MainLayout />}>
