@@ -2,8 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import axiosInstance from "../../../../config/axios.config";
-
 export default function useForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -20,7 +18,7 @@ export default function useForm() {
     const subArr = arr.filter((val) => typeof val == "string");
     return subArr.every((value) => value.trim() !== "");
 
-    //find a way to not add those boolean to the arr
+
   };
   const formTitleStyle = {
     fontSize: "11px",
@@ -30,32 +28,36 @@ export default function useForm() {
     fontFamily: "Plus Jakarta Sans",
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
-    try {
-      if (error === "") {
-        setLoading(true);
-        const { data } = await axiosInstance.post(
-          `${
-            import.meta.env.VITE_AUTH_ENDPOINT
-          }/auth_service/api/riders/signup`,
-          formData
-        );
-        if (data.status === "success") {
-          navigate(`/riders/congratulations`);
-        }
-      } else {
-        setLoading(false);
-        toast.error("Invalid Email Format");
-      }
-    } catch (error) {
-      setLoading(false);
-      const message = error?.response?.data?.MESSAGE
-        ? error.response.data.MESSAGE
-        : "Something went wrong";
-      toast.error(message);
+    if (error !== "") {
+          toast.error("Invalid Email Format");
+          return;
     }
+
+    setLoading(true);
+
+
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyPU51Ycs0MvN7EduviDO6_qbaLSrvKlNuqM3E0vmWOYkxvU5-2-8wQpa6Uw_1Jfufe/exec";
+
+    fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then(() => {
+        setLoading(false);
+        navigate(`/riders/congratulations`);
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoading(false);
+        toast.error("Something went wrong. Please try again.");
+      });
   };
 
   const handleChange = (event) => {

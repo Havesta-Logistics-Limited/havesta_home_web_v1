@@ -29,20 +29,24 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
 
-    const form = new FormData();
-    for (const key in formData) {
-      form.append(key, formData[key]);
-    }
+    // Prepare data for Google Apps Script (phoneNumber -> phone)
+    const payload = {
+      ...formData,
+      phone: formData.phoneNumber,
+    };
 
     fetch(
-      "https://script.google.com/macros/s/AKfycbx9WyyzzshpfolfQxAF-hfZWlGkexHSio3XmsVxkxuAZI4-_UP4ilNaZpUW0tgORD2m/exec",
+      "https://script.google.com/macros/s/AKfycbw8rHVGoyWZzjISmcEvtk0FiTOdyRsTKn0ZFPF0BUkOsPM3oIFps8sWyfjtstPfyrOf/exec",
       {
         method: "POST",
-        body: form,
         mode: "no-cors",
-      }
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        body: JSON.stringify(payload),
+      },
     )
-      .then(() => {
+      .then((res) => {
         toast.success("Message sent successfully!");
         setFormData({
           firstName: "",

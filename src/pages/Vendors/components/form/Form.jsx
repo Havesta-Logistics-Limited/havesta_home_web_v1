@@ -78,7 +78,7 @@ export default function Form() {
                   <input
                     type={item.type}
                     placeholder={item.placeholder}
-                    className={`border-[0.5px] w-full h-[56px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline focus:outline-1 focus:outline-harvestaLightGreen font-primary text-sm ${
+                    className={`border w-full h-[56px] border-gray-300 p-2 rounded-md bg-gray-100 rider-field focus:outline focus:outline-1 focus:outline-harvestaLightGreen font-primary text-sm ${
                       item.title == "Phone Number"
                         ? "pl-12 phoneNum border-[1.2px]"
                         : ""
@@ -167,7 +167,7 @@ export default function Form() {
           Want to become a Rider?{" "}
           <span className="block text-center mt-1">
             <Link
-              to="/vendor"
+              to="/riders"
               className="text-harvestaLightGreen font-bold hover:text-primaryHover"
             >
               Register Here

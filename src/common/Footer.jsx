@@ -103,7 +103,7 @@ const Footer = () => {
 
       <div className=" p-4">
         <h3 className="text-xl font-semibold text-white mb-4">
-          Information HQ
+           Contact
         </h3>
         <div className="text-sm space-y-4">
           <div className="flex items-start gap-2">

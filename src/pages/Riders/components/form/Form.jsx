@@ -70,7 +70,7 @@ export default function Form() {
                 <input
                   type={item.type}
                   placeholder={item.placeholder}
-                  className={`border-[0.5px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline focus:outline-harvestaLightGreen  focus:outline-1 font-primary h-[56px] text-sm w-full ${
+                  className={`border border-gray-300 p-2 rounded-md bg-gray-100 rider-field focus:outline focus:outline-harvestaLightGreen  focus:outline-1 font-primary h-[56px] text-sm w-full ${
                     item.name == "phone_number"
                       ? "pl-10 phoneNum border-[1.2px]"
                       : ""
@@ -156,7 +156,7 @@ export default function Form() {
           Want to become a Vendor?{" "}
           <span className="block text-center mt-1">
             <Link
-              to="/vendor"
+              to="/vendors"
               className="text-harvestaLightGreen font-bold hover:text-primaryHover"
             >
               Register Here

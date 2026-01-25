@@ -88,11 +88,7 @@ export default function useForm() {
       ...prev,
       [event.target.name]: event.target.value,
     }));
-    // console.log(
-    //   e.target.value,
-    //   formData[event.target.name],
-    //   formData.firstname
-    // );
+ 
     checkIfEmpty();
 
     if (event.target.name === "email") {
@@ -106,32 +102,35 @@ export default function useForm() {
       [e.target.name]: e.target.checked,
     }));
   };
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      setLoading(true);
-      if (error === "") {
-        const { data } = await axiosInstance.post(
-          `${
-            import.meta.env.VITE_AUTH_ENDPOINT
-          }/auth_service/api/vendors/signup`,
-          formData
-        );
-        setLoading(false);
-        if (data) {
-          navigate("/vendors/congratulations");
-        }
-      } else {
-        setLoading(false);
-        toast.error("Invalid Email Format");
-      }
-    } catch (error) {
-      setLoading(false);
-      const message = error?.response?.data?.MESSAGE
-        ? error.response.data.MESSAGE
-        : "Something went wrong";
-      toast.error(message);
+    if (error !== "") {
+      toast.error("Invalid Email Format");
+      return;
     }
+
+    setLoading(true);
+
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz2hrktLKM3o6zYGn6ThKJitm7G13S_QgxON7XJ3plWN5nTe15QkMCqRjZ077klNd0g/exec";
+
+    fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then(() => {
+        setLoading(false);
+        // With no-cors, we assume success if the network request didn't fail
+        navigate("/vendors/congratulations");
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+        toast.error("Something went wrong. Please try again.");
+      });
   };
   const handleBlur = (email) => {
     if (!validateEmailFormat(email)) {

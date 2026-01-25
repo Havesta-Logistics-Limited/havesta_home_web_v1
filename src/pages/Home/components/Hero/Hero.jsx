@@ -72,7 +72,7 @@ export default function Hero() {
             <h2 className="text-4xl sm:text-6xl md:text-6xl lg:text-[90px] font-bold inter">
               Groceries
             </h2>
-            <p className="text-base md:text-lg mb-8 max-w-lg mx-auto lg:mx-0">
+            <p className="text-base mt-5 md:text-lg mb-8 max-w-lg mx-auto lg:mx-0">
               Fresh fruits & veggies, grains, Tubers and More!
             </p>
 
@@ -86,14 +86,14 @@ export default function Hero() {
                 </div>
               </div>
               <Link
-                to="/about"
+                to="/"
                 className="relative w-full sm:w-fit mt-28 md:mt-6 inline-block"
               >
                 <div className="bg-harvestaYellow text-harvestaBlack flex items-center justify-center py-3 px-6 rounded-3xl font-bold z-50">
-                  Learn more
+                 Shop Now
                 </div>
                 <div className="bg-black text-harvestaDarkGreen flex items-center justify-center py-3 px-6 rounded-3xl font-bold absolute top-1 -z-10 left-1 w-full">
-                  Learn more
+                  Shop Now
                 </div>
               </Link>
             </div>
