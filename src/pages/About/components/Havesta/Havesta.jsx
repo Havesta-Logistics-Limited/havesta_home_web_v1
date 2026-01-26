@@ -18,7 +18,7 @@ export default function Havesta() {
         />
         <p className="pt-2 font-bold font-primary">Noel Amobeda</p>
         <p className="text-xs text-primary font-bold tracking-wide">
-          Founder & CEO at Havesta
+          Founder & CEO
         </p>
         <div className="w-full mt-12 lg:w-2/3">
           <h5 className="p-4 font-bold text-lg uppercase border-l-4 border-harvestaLightGreen text-left">

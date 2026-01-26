@@ -54,7 +54,7 @@ const TestimonialCarousel = () => {
                 </a>
                 <button
                   onClick={handleNext}
-                  className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
+                  className="inline-flex items-center gap-2 rounded-full bg-harvestaDarkGreen px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
                   aria-label="Next testimonial"
                 >
                   Next
@@ -134,7 +134,7 @@ const TestimonialCarousel = () => {
 
                     <button
                       onClick={handleNext}
-                      className="inline-flex items-center gap-3 rounded-full bg-emerald-600 px-6 py-3 text-base font-semibold text-white hover:bg-emerald-700 transition-colors"
+                      className="inline-flex items-center gap-3 rounded-full bg-harvestaDarkGreen px-6 py-3 text-base font-semibold text-white hover:bg-emerald-700 transition-colors"
                       aria-label="Next testimonial"
                     >
                       Next
@@ -151,7 +151,7 @@ const TestimonialCarousel = () => {
                           className={[
                             "h-2 w-2 rounded-full transition-all",
                             i === activeIndex
-                              ? "bg-emerald-600 w-6"
+                              ? "bg-harvestaDarkGreen w-6"
                               : "bg-gray-300 hover:bg-gray-400",
                           ].join(" ")}
                           aria-label={`Go to testimonial ${i + 1}`}

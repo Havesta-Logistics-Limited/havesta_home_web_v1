@@ -7,7 +7,7 @@ const WebReview = ({ type, image }) => {
 
   const reviews = [
     {
-      text: "Shopping for groceries has never been easier! Hervesta offers an incredible selection of fresh produce delivered right to my doorstep.",
+      text: "Shopping for groceries has never been easier! Havesta offers an incredible selection of fresh produce delivered right to my doorstep.",
       name: "Adekanbi Adeoluwa",
       role: "Iyaola Farms",
     },
@@ -17,7 +17,7 @@ const WebReview = ({ type, image }) => {
       role: "Butcher",
     },
     {
-      text: "I've been using Hervesta for months now and I'm consistently impressed with their service and product quality.",
+      text: "I've been using Havesta for months now and I'm consistently impressed with their service and product quality.",
       name: "Michael Olawale",
       role: " Fish Vendor",
     },

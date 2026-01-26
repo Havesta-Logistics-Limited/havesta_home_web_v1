@@ -1,6 +1,6 @@
 const reviewsData = [
   {
-    text: "Shopping for groceries has never been easier! Hervesta offers an incredible selection of fresh produce delivered right to my doorstep.",
+    text: "Shopping for groceries has never been easier! Havesta offers an incredible selection of fresh produce delivered right to my doorstep.",
     name: "Adekanbi Adeoluwa",
     role: "Iyaola Farms",
     image:

@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import Footer from "../common/Footer";
 import SideModal from "../common/SideModal";
 import Navbar from "../common/navbar-template/Navbar";
+import ChatWidget from "../common/ChatWidget";
 
 const MainLayout = () => {
   return (
@@ -13,6 +14,7 @@ const MainLayout = () => {
         <Outlet />
       </Box>
       <Footer />
+      <ChatWidget />
     </div>
   );
 };

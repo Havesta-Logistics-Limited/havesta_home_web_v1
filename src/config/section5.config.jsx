@@ -2,10 +2,10 @@ const data = [
   {
     id: 1,
     name: "Noel Amobeda",
-    title: "CEO and Founder ",
+    title: "Founder & CEO ",
     text: `Failure is simply the opportunity to begin again. This time, more intelligently. 
                 - Henry Ford`,
-    image: "src/assets/images/Noel.png",
+    image: "src/assets/images/Noel.svg",
     linkedin:
       "https://www.linkedin.com/in/noelamobeda?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
   },
