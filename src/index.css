@@ -60,7 +60,8 @@ body {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -69,36 +70,50 @@ body {
 }
 
 @keyframes blink {
-  0%, 50% {
+  0%,
+  50% {
     opacity: 1;
   }
-  51%, 100% {
+  51%,
+  100% {
     opacity: 0;
   }
 }
 
-/* Tawk.to Widget Styling */
+/* Tawk.to Widget Styling - Modernized */
 #tawk-bubble {
-  background-color: #10B981 !important;
+  background: linear-gradient(135deg, #01be72 0%, #ffc141 100%) !important;
   border-radius: 50% !important;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25) !important;
+  border: 2px solid #fff !important;
+  width: 64px !important;
+  height: 64px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 #tawk-bubble:hover {
-  background-color: #059669 !important;
-  transform: scale(1.05) !important;
-  transition: all 0.3s ease !important;
+  background: linear-gradient(135deg, #01be72 40%, #ffc141 100%) !important;
+  transform: scale(1.08) !important;
+  box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.35) !important;
 }
 
 .tawk-min-container {
-  bottom: 20px !important;
-  right: 20px !important;
+  bottom: 32px !important;
+  right: 32px !important;
+  z-index: 9999 !important;
 }
 
 @media (max-width: 768px) {
   .tawk-min-container {
-    bottom: 15px !important;
-    right: 15px !important;
+    bottom: 16px !important;
+    right: 16px !important;
+  }
+  #tawk-bubble {
+    width: 48px !important;
+    height: 48px !important;
   }
 }
 
