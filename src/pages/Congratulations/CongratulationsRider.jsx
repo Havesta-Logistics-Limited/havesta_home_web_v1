@@ -1,7 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useEffect, Suspense } from "react";
-import { setIcon } from "../../redux/features/iconSlice.js";
+import { Suspense } from "react";
 import { motion } from "framer-motion";
 import LogoNav from "../../common/LogoNav.jsx";
 
@@ -21,15 +19,6 @@ const CongratulationsRider = () => {
       x: 0,
     },
   };
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(setIcon("rider"));
-
-    return () => {
-      dispatch(setIcon("home"));
-    };
-  }, []);
   /* const params = useParams();
   const stringValue = params.id;
   const actualValue =
@@ -41,7 +30,7 @@ const CongratulationsRider = () => {
   }
  */
   const nextPage = () => {
-    navigate("/rider/upload");
+    navigate("/");
   };
   return (
     <>
@@ -61,7 +50,7 @@ const CongratulationsRider = () => {
             </motion.h1>
 
             <motion.p
-              className="p-2 font-primary text-sm font-semibold"
+              className="py-5 font-primary text-sm font-semibold"
               initial={animationConfig.initialLeft}
               whileInView={animationConfig.whileInView}
               transition={{ duration: 0.5 }}
@@ -80,17 +69,17 @@ const CongratulationsRider = () => {
                     fill="#12141D"
                   />
                 </svg>
-                Complete your registration process
+                We'll be in touch soon!
               </div>
             </motion.p>
             <motion.button
-              className="p-3 bg-harvestaBlack text-white rounded-full text-sm font-primary w-1/4 mt-4 font-semibold hover:bg-black"
+              className="p-3 bg-harvestaBlack text-white rounded-full text-sm font-primary  mt-4 font-semibold hover:bg-black"
               initial={animationConfig.initialLeft}
               whileInView={animationConfig.whileInView}
               transition={{ duration: 0.6 }}
               onClick={() => nextPage()}
             >
-              Continue
+              Go back home
             </motion.button>
           </div>
 

@@ -8,19 +8,17 @@ import { Bounce, toast, ToastContainer } from "react-toastify";
 import Checkbox from "@mui/joy/Checkbox";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import FAQ from "../components/faq..jsx";
-import { setIcon } from "../redux/features/iconSlice.js";
-import { useDispatch } from "react-redux";
+import FAQ from "../common/faq/Faq.jsx";
 import WebReview from "../components/landing/Reviews-Fragment/WebReview.jsx";
 import MobileReview from "../components/landing/Reviews-Fragment/MobileReview.jsx";
 import axiosInstance from "../config/axios.config.js";
 import { CircularProgress } from "@mui/material/";
 const Rider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [phoneNumberError, setPhoneNumberError] = useState("");
+  const [phoneNumberError] = useState("");
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -43,23 +41,12 @@ const Rider = () => {
     agreed_to_regular_updates: false,
     accepted_privacy_policy: false,
   });
-  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setIcon("rider"));
+    const input = document.querySelector(".phoneNum");
+    if (!input) return;
 
-    return () => {
-      dispatch(setIcon("home"));
-    };
-  }, []);
-
-  useEffect(() => {
-    let input = document.querySelector(".phoneNum");
-
-    input.addEventListener("input", (e) => {
-      console.log(
-        !input.value.length >= 11 && document.activeElement !== input
-      );
+    const onInput = () => {
       if (input.value.length > 11) {
         input.value = input.value.slice(0, 11);
       }
@@ -81,18 +68,11 @@ const Rider = () => {
       setFormData((prev) => ({ ...prev, phone_number: input.value }));
 
       input.value = input.value.replace(/[^0-9]/g, "");
-    });
+    };
+
+    input.addEventListener("input", onInput);
+    return () => input.removeEventListener("input", onInput);
   }, []);
-
-  // const inputChange = (e) => {
-  //   const input = e.target;
-  //   if (input.length > 11) {
-  //     input.value = input.value.slice(0, 11);
-  //   }
-
-  //   setFormData((prev) => ({ ...prev, phone_number: input.value }));
-  //   input.value = input.value.replace(/[^0-9]/g, "");
-  // };
 
   const checkIfEmpty = () => {
     const arr = Object.values(formData);
@@ -120,14 +100,16 @@ const Rider = () => {
       if (error === "") {
         setLoading(true);
         const { data } = await axiosInstance.post(
-          `${import.meta.env.VITE_AUTH_ENDPOINT}/auth_service/api/riders/signup`,
+          `${
+            import.meta.env.VITE_AUTH_ENDPOINT
+          }/auth_service/api/riders/signup`,
           formData
         );
         if (data.status === "success") {
-        navigate(`/riders/congratulations`);
+          navigate(`/riders/congratulations`);
         }
       } else {
-        setLoading(false)
+        setLoading(false);
         toast.error("Invalid Email Format");
       }
     } catch (error) {
@@ -230,7 +212,7 @@ const Rider = () => {
                 <h2 className="p-3 text-[50px] font-primary font-bold lg:leading-tight lg:text-[55px] text-[#242424] text-6xl">
                   Become a Delivery <br />
                   <span className="text-white font-[700]">AGENT </span>with
-                  Harvesta
+                  Havesta
                 </h2>
                 <p className=" p-3  text-[#242424] font-primary">
                   Be your Boss. Build your income daily, weekly, or monthly.

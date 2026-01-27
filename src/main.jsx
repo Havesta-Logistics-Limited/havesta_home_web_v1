@@ -1,20 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "react-toastify/dist/ReactToastify.css";
-import "./index.css";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { IntercomProvider } from "react-use-intercom";
-import { Provider } from "react-redux";
-import store from "./redux/store.js";
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <React.StrictMode>
-        <IntercomProvider appId={"d7aozhso"} autoBoot>
+import App from "./App.jsx";
+import { ModalProvider } from "./contexts/ModalContext";
+import { Environment } from "./config/env.config.js";
+import "react-toastify/dist/ReactToastify.css";
+import "./index.css";
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <BrowserRouter>
+      <ModalProvider>
+        <IntercomProvider appId={Environment.INTERCOM_APP_ID} autoBoot>
           <App />
         </IntercomProvider>
-      </React.StrictMode>
-    </Provider>
-  </BrowserRouter>
+      </ModalProvider>
+    </BrowserRouter>
+  </StrictMode>
 );

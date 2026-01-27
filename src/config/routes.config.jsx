@@ -1,91 +1,79 @@
-import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
-import Home from "../pages/Home";
-import Rider from "../pages/Rider";
-import Marketplace from "../pages/Marketplace";
-import News from "../pages/News";
-import RouteWrapper from "../components/RouteWrapper";
-import Partner from "../pages/Vendor";
-import About from "../pages/About/About";
+import Home from "../pages/Home/Home";
+import MarketPlace from "../pages/MarketPlace/MarketPlace";
 import SingleNews from "../pages/SingleNews";
-import FinalMessageRider from "../pages/FinalMessage/FinalMessageRider";
+import PoultryNews from "../pages/News/PoultryNews";
+import FishNews from "../pages/News/FishNews";
+import GingerNews from "../pages/News/GingerNews";
 import PrivacyPolicy from "../pages/privacypolicy";
 import TermsOfUse from "../pages/termsOfUse";
+import About from "../pages/About/About";
+import News from "../pages/News/News";
+import Contact from "../pages/Contact/Contact";
+import Vendors from "../pages/Vendors/Vendors";
+import Riders from "../pages/Riders/Riders";
+
 const routes = [
   {
     path: "/home",
-
-    element: <RouteWrapper component={Home} hero="" />,
+    element: <Home />,
   },
   {
     path: "/about",
-    element: (
-      <RouteWrapper
-        component={About}
-        hero={
-          "https://res.cloudinary.com/dtc89xi2r/image/upload/v1718624097/EatFood.com_7_yexfzh.png"
-        }
-      />
-    ),
+    element: <About />,
   },
   {
     path: "/contact",
-    element: <RouteWrapper component={Contact} hero="/icons/contact.png" />,
-  },
-  {
-    index: true,
-
-    element: (
-      <RouteWrapper
-        component={Home}
-        hero="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718725096/Group_3733_vyipoo.png"
-      />
-    ),
+    element: <Contact />,
   },
   {
     path: "/vendors",
-    element: <RouteWrapper component={Partner} hero="/icons/vendorHero.png" />,
+    element: <Vendors />,
   },
   {
     path: "/riders",
-    element: (
-      <RouteWrapper
-        component={Rider}
-        hero="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719527266/EatFood.com_8_exoobu.svg"
-      />
-    ),
+    element: <Riders />,
   },
   {
     path: "/news",
-    element: <RouteWrapper component={News} hero="/icons/news.svg" />,
+    element: <News />,
   },
   {
     path: "/news/:id",
-    element: <RouteWrapper component={SingleNews} hero="/icons/news.svg" />,
+    element: <SingleNews />,
+  },
+  {
+    path: "/ginger-news",
+    element: <GingerNews />,
+  },
+  {
+    path: "/fish-news",
+    element: <FishNews />,
+  },
+  {
+    path: "/poultry-news",
+    element: <PoultryNews />,
   },
   {
     path: "/privacy-policy",
-    element: <RouteWrapper component={PrivacyPolicy} />,
+    element: <PrivacyPolicy />,
   },
   {
     path: "/terms-of-use",
-    element: <RouteWrapper component={TermsOfUse} />,
+    element: <TermsOfUse />,
   },
   {
     path: "/marketplace",
-    element: <Marketplace />,
+    element: <MarketPlace />,
+  },
+  {
+    path: "/market",
+    element: <MarketPlace />,
   },
   {
     path: "*",
-    element: <RouteWrapper component={NotFound} hero="/icons/news.svg" />,
+    element: <NotFound />,
   },
-
-  /*  {
-    path: "/riders/congratulations/:id",
-    element: (
-      <RouteWrapper component={CongratulationsRider} hero="/icons/news.svg" />
-    ),
-  }, */
 ];
 
 export default routes;
