@@ -1,7 +1,7 @@
 import { Bounce, ToastContainer } from "react-toastify";
-import Hero from "./components/Hero/Hero";
-import Form from "./components/Form/Form";
-import Overflow from "./components/Overflow/Overflow";
+import Hero from "./components/hero/Hero";
+import Form from "./components/form/Form";
+import Overflow from "./components/overflow/Overflow";
 import Reviews from "./components/reviews/Reviews";
 import PageFooter from "../../common/PageFooter";
 
