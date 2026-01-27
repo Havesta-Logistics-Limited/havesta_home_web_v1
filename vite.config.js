@@ -12,6 +12,7 @@ export default defineConfig({
       },
     },
   },
+  assetsInclude: ["**/*.JPG"],
   server: {
     host: true,
     strictPort: true,
