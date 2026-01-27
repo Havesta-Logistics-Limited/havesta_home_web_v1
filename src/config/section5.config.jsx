@@ -58,7 +58,7 @@ const data = [
     id: 6,
     name: "Godson Nwaubani",
     title: "DevOps Engineer",
-    text: "Focus on progress, not applause. The results will speak.",
+    text: "The best way to predict the future is to create it. — Peter Drucker",
     image: imgGodson,
     linkedin: "https://linkedin.com/in/godson-nwaubani",
   },
