@@ -1,9 +1,19 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { visualizer } from "rollup-plugin-visualizer";
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
+export default defineConfig(({ mode }) => ({
+  plugins: [
+    react(),
+    mode === "analyze" &&
+      visualizer({
+        filename: "dist/bundle-report.html",
+        open: true,
+        gzipSize: true,
+        brotliSize: true,
+      }),
+  ].filter(Boolean),
   base: "/",
   build: {
     rollupOptions: {
@@ -53,6 +63,6 @@ export default defineConfig({
   server: {
     host: true,
     strictPort: true,
-    port: 8080,
+    port: 3000, // Changed from 8080 to 3000 to avoid port conflict
   },
-});
+}));

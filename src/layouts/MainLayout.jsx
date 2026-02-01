@@ -7,7 +7,7 @@ import Navbar from "../common/navbar-template/Navbar";
 
 const MainLayout = () => {
   return (
-    <div className="max-w-[1920px] mx-auto">
+    <div className="max-w-7xl mx-auto">
       <Navbar />
       <SideModal />
       <Box overflow="hidden" flexGrow={1}>

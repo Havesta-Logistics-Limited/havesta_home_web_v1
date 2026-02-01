@@ -11,20 +11,20 @@ import { CircularProgress } from "@mui/material/";
 export default function Form() {
   const h = useForm();
   return (
-    <div className="grid grid-cols-1 justify-items-center mt-10 font-primary">
-      <h2 className=" text-3xl lg:text-4xl font-bold font-primary mt-10">
+    <div className="grid grid-cols-1 justify-items-center mt-6 sm:mt-10 font-primary px-4 sm:px-6 lg:px-8">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-primary mt-6 sm:mt-10 text-center">
         Complete The Form
       </h2>
-      <form className="my-4 lg:w-[70%] w-full p-8">
-        <p className="text-xs pb-4">
+      <form className="my-4 w-full max-w-4xl p-4 sm:p-6 lg:p-8">
+        <p className="text-xs sm:text-sm pb-4 text-center sm:text-left">
           Fields marked with<span className="text-red-400"> * </span> are
           required
         </p>
-        <div className="lg:grid grid-cols-2 gap-6 lg:mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-4 sm:mt-6">
           {h.riderForm.map((item, index) =>
             item.options ? (
-              <FormControl key={index} className="max-w-[542px] ">
-                <FormLabel style={h.formTitleStyle} className="font-primary">
+              <FormControl key={index} className="w-full">
+                <FormLabel style={h.formTitleStyle} className="font-primary text-sm sm:text-base">
                   {item.title}
                 </FormLabel>
 
@@ -39,8 +39,9 @@ export default function Form() {
                     padding: "8px",
                     backgroundColor: "#f3f4f6",
                     fontFamily: "Helvetica",
-                    fontSize: "12px",
-                    height: "56px",
+                    fontSize: { xs: "14px", sm: "16px" },
+                    height: { xs: "48px", sm: "56px" },
+                    width: "100%",
                   }}
                 >
                   {item.subItems &&
@@ -54,15 +55,14 @@ export default function Form() {
                 </Select>
               </FormControl>
             ) : (
-              <FormControl key={index} className="relative max-w-[542px]">
-                <FormLabel style={h.formTitleStyle}>
+              <FormControl key={index} className="relative w-full">
+                <FormLabel style={h.formTitleStyle} className="text-sm sm:text-base">
                   {item.title} &nbsp;{" "}
                   <span className="text-[12px] text-red-400"> * </span>
                 </FormLabel>
-                {/* <div className="w-full bg-red-500 absolute"> */}
                 {item.name == "phone_number" ? (
-                  <div className="absolute bottom-[18px] left-2.5">
-                    <img src="/icons/naija-flag.svg" alt="flag" />
+                  <div className="absolute bottom-[14px] sm:bottom-[18px] left-2.5">
+                    <img src="/icons/naija-flag.svg" alt="flag" className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                 ) : (
                   <div></div>
@@ -70,9 +70,9 @@ export default function Form() {
                 <input
                   type={item.type}
                   placeholder={item.placeholder}
-                  className={`border border-gray-300 p-2 rounded-md bg-gray-100 rider-field focus:outline focus:outline-harvestaLightGreen  focus:outline-1 font-primary h-[56px] text-sm w-full ${
+                  className={`border border-gray-300 p-2 sm:p-3 rounded-md bg-gray-100 rider-field focus:outline focus:outline-harvestaLightGreen focus:outline-1 font-primary h-[48px] sm:h-[56px] text-sm sm:text-base w-full ${
                     item.name == "phone_number"
-                      ? "pl-10 phoneNum border-[1.2px]"
+                      ? "pl-8 sm:pl-10 phoneNum border-[1.2px]"
                       : ""
                   } ${
                     item.name === "email" && h.error === "Invalid email address"
@@ -99,12 +99,13 @@ export default function Form() {
         </div>
       </form>
 
-      <div className="grid grid-col-1 gap-5 p-3 justify-items-center">
+      <div className="grid grid-cols-1 gap-4 sm:gap-5 p-3 sm:p-4 justify-items-center w-full max-w-md mx-auto">
         <Checkbox
           sx={{
             fontFamily: "Plus Jakarta Sans",
-            fontSize: "12px",
+            fontSize: { xs: "12px", sm: "14px" },
             marginLeft: "-5px",
+            alignItems: "flex-start",
           }}
           color="success"
           size="sm"
@@ -116,11 +117,12 @@ export default function Form() {
         <Checkbox
           sx={{
             fontFamily: "Plus Jakarta Sans",
-            fontSize: "12px",
+            fontSize: { xs: "12px", sm: "14px" },
+            alignItems: "flex-start",
           }}
           color="success"
           size="sm"
-          label="By clicking this, you accept the  privacy policy "
+          label="By clicking this, you accept the privacy policy"
           name="accepted_privacy_policy"
           onChange={h.handleCheckboxChange}
           checked={h.formData.accepted_privacy_policy}
@@ -131,8 +133,8 @@ export default function Form() {
             h.loading == false &&
             h.formData.accepted_privacy_policy == true &&
             h.checkIfEmpty()
-              ? "mt-10 font-primary rounded-full bg-primary p-3 text-white text-xs font-bold shadow-md w-[100px] hover:bg-primaryHover"
-              : "mt-10 font-primary rounded-full bg-[#005231] opacity-50 p-3 text-white text-xs font-bold shadow-md w-[100px] cursor-not-allowed"
+              ? "mt-6 sm:mt-10 font-primary rounded-full bg-primary p-3 sm:p-4 text-white text-xs sm:text-sm font-bold shadow-md w-[120px] sm:w-[140px] hover:bg-primaryHover transition-colors duration-200"
+              : "mt-6 sm:mt-10 font-primary rounded-full bg-[#005231] opacity-50 p-3 sm:p-4 text-white text-xs sm:text-sm font-bold shadow-md w-[120px] sm:w-[140px] cursor-not-allowed"
           }
           onClick={h.handleSubmit}
           disabled={
@@ -152,12 +154,12 @@ export default function Form() {
             )}
           </p>
         </button>
-        <p className="text-xs">
+        <p className="text-xs sm:text-sm text-center">
           Want to become a Vendor?{" "}
-          <span className="block text-center mt-1">
+          <span className="block mt-1">
             <Link
               to="/vendors"
-              className="text-harvestaLightGreen font-bold hover:text-primaryHover"
+              className="text-harvestaLightGreen font-bold hover:text-primaryHover transition-colors duration-200"
             >
               Register Here
             </Link>

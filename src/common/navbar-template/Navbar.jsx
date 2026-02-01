@@ -54,8 +54,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Publish the navbar's real rendered height as --nav-h on :root.
-  // This lets specific pages/sections offset content cleanly without guessing.
+
   useEffect(() => {
     const el = navRef.current;
 

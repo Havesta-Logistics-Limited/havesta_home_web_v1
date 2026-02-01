@@ -5,16 +5,12 @@ export default function Video() {
   const h = useVideo();
 
   return (
-    <div className=" bg-green-radial pb-8 px-6">
+    <div className="bg-green-radial pb-8 px-6">
       <div className="border border-harvestaYellow w-fit m-auto rounded-md">
         <div
+          className="relative w-full max-w-2xl mx-auto cursor-pointer rounded-[10px]"
           style={{
-            position: "relative",
-            width: "100%",
-            height: "auto",
-            maxWidth: "800px", // Adjust as needed
-            margin: "auto",
-            cursor: "pointer",
+            // fallback for borderRadius if needed
             borderRadius: "10px",
           }}
           onMouseEnter={h.handleMouseEnter}

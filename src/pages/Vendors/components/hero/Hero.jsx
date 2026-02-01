@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
     <div className="relative pb-5 ">
-      <div className="w-full bg-cover h-[30%] py-20 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1721823045/Group_1000002049_bjs7ez.png')]">
+      <div className="w-full bg-cover h-[30%] py-20 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/f_auto,q_auto/v1721823045/Group_1000002049_bjs7ez.png')]">
         {/* HERO SECTION */}
         <div className="mt-32 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative lg:ml-44 ">
           <div className=" p-2">
@@ -16,13 +16,6 @@ export default function Hero() {
             {/*  <button className="mb-10 font-primary rounded-full bg-white p-3 text-black text-xs font-bold shadow-md w-[100px] ml-2 hover:bg-primary hover:text-white transition-all">
                     Get Started
                   </button> */}
-          </div>
-          <div className="lg:absolute right-52">
-            <img
-              src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719527040/Ellipse_69_2_n4dk4u.svg"
-              alt=""
-              className="w-[400px] "
-            />
           </div>
         </div>
       </div>

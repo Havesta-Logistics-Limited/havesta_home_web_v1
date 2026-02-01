@@ -1,5 +1,5 @@
-import phoneMockup from "../../../../../public/images/Mockup.png";
-import phoneMockupMobile from "../../../../../public/images/Mockup-mobile.png";
+import phoneMockup from "../../../../../public/images/Mockup.webp";
+import phoneMockupMobile from "../../../../../public/images/Mockup-mobile.webp";
 
 export default function DownloadApp(backgroundColor) {
   return (
@@ -35,6 +35,8 @@ export default function DownloadApp(backgroundColor) {
             src={phoneMockupMobile}
             alt="Havesta mobile app preview"
             className="w-[50%] max-w-xs mx-auto mt-10"
+            loading="lazy"
+            decoding="async"
           />
         </div>
 
@@ -43,6 +45,8 @@ export default function DownloadApp(backgroundColor) {
             src={phoneMockup}
             alt="Havesta mobile app preview"
             className="w-full max-w-sm xl:max-w-md mx-auto"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </section>

@@ -1,9 +1,12 @@
+import { lazy, Suspense } from "react";
 import { Bounce, ToastContainer } from "react-toastify";
 import Hero from "./components/Hero/Hero";
-import Form from "./components/Form/Form";
-import Overflow from "./components/Overflow/Overflow";
-import Reviews from "./components/reviews/Reviews";
-import PageFooter from "../../common/PageFooter";
+import Loader from "../../common/Loader.jsx";
+
+const Form = lazy(() => import("./components/Form/Form"));
+const Overflow = lazy(() => import("./components/Overflow/Overflow"));
+const Reviews = lazy(() => import("./components/reviews/Reviews"));
+const PageFooter = lazy(() => import("../../common/PageFooter"));
 
 export default function Riders() {
   return (
@@ -16,14 +19,16 @@ export default function Riders() {
       />
       <section>
         <Hero />
-        <Form />
-        <div className="my-32">
-          <Overflow />
-        </div>
-        <section className="py-8 md:py-10 px-4 sm:px-8">
-          <Reviews />
-        </section>
-        <PageFooter />
+        <Suspense fallback={<Loader />}>
+          <Form />
+          <div className="my-32">
+            <Overflow />
+          </div>
+          <section className="py-8 md:py-10 px-4 sm:px-8">
+            <Reviews />
+          </section>
+          <PageFooter />
+        </Suspense>
       </section>
     </>
   );
