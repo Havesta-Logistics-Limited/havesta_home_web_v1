@@ -3,7 +3,17 @@ import navRoutes from "../../routes/navRoutes.jsx";
 import { useEffect, useRef, useState } from "react";
 import Logo from "../Logo.jsx";
 import MobileToggle from "../../components/MobileToggle.jsx";
-import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
+
+const ArrowDown = ({ className = "" }) => (
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    className={`h-4 w-4 ${className}`}
+    fill="currentColor"
+  >
+    <path d="M7 10l5 5 5-5" />
+  </svg>
+);
 
 export default function Navbar() {
   const navRef = useRef(null);
@@ -54,7 +64,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-
   useEffect(() => {
     const el = navRef.current;
 
@@ -98,7 +107,11 @@ export default function Navbar() {
           <div className="grid grid-cols-3 items-center max-w-6xl m-auto relative">
             <div className="justify-self-start">
               <div className="h-12 flex items-center rounded-3xl border border-white/55 bg-white/10 hover:bg-white/15 transition-all min-[1000px]:border min-[1000px]:px-4 min-[1000px]:bg-white/10 max-[1000px]:border-0 max-[1000px]:px-0 max-[1000px]:bg-transparent">
-                <Link to={"/"} className="flex items-center gap-2 px-3 sm:px-4">
+                <Link
+                  to={"/"}
+                  className="flex items-center gap-2 px-3 sm:px-4"
+                  aria-label="Havesta home"
+                >
                   {/* Logo */}
                   <Logo />
                 </Link>
@@ -122,8 +135,7 @@ export default function Navbar() {
                             className="flex items-center justify-center w-full p-1 px-4 h-10 text-sm lg:text-base text-white/90 hover:text-white focus:outline-none"
                           >
                             {item.name}
-                            <KeyboardArrowDownRoundedIcon
-                              sx={{ fontSize: 18 }}
+                            <ArrowDown
                               className={
                                 "ml-1 transition-transform duration-200 " +
                                 (dropdownOpen && activeDropdownIndex === index
@@ -141,7 +153,7 @@ export default function Navbar() {
                                 key={subIndex}
                                 className="opacity-0 translate-y-[-5px]"
                                 style={{
-                                  animation: `fadeInUp 0.2s ease-out ${subIndex * 0.1}s forwards`
+                                  animation: `fadeInUp 0.2s ease-out ${subIndex * 0.1}s forwards`,
                                 }}
                               >
                                 <Link

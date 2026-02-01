@@ -52,6 +52,8 @@ const WhyChooseSection = () => {
                 className="w-72 xl:w-80"
                 src="/images/fruit-basket.webp"
                 alt="Fresh produce basket"
+                width="288"
+                height="288"
               />
             </div>
           </div>

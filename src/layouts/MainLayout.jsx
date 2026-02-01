@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import { Box } from "@mui/material";
 import Footer from "../common/Footer";
 import SideModal from "../common/SideModal";
 import Navbar from "../common/navbar-template/Navbar";
@@ -10,11 +9,12 @@ const MainLayout = () => {
     <div className="max-w-7xl mx-auto">
       <Navbar />
       <SideModal />
-      <Box overflow="hidden" flexGrow={1}>
-        <Outlet />
-      </Box>
+      <main id="main-content">
+        <div className="overflow-hidden flex-grow">
+          <Outlet />
+        </div>
+      </main>
       <Footer />
-      {/* Custom ChatWidget removed. Default Tawk.to widget will be shown. */}
     </div>
   );
 };

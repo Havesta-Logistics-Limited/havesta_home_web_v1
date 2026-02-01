@@ -28,7 +28,9 @@ export default function Riders() {
             <Reviews />
           </section>
           <PageFooter />
+          <div>Suspense Placeholder</div>
         </Suspense>
+        <div>Riders Placeholder</div>
       </section>
     </>
   );

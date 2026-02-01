@@ -75,7 +75,7 @@ const VideoPlayer = () => {
             borderRadius: "10px",
           }}
         >
-          <IconButton onClick={togglePlay}>
+          <IconButton onClick={togglePlay} aria-label="Play video">
             <PlayArrowIcon style={{ fontSize: 64, color: "#FFC141" }} />
           </IconButton>
         </div>
@@ -84,6 +84,7 @@ const VideoPlayer = () => {
       {hovered && playing && (
         <IconButton
           onClick={togglePlay}
+          aria-label="Pause video"
           style={{
             position: "absolute",
             top: "50%",

@@ -11,13 +11,13 @@ import { useModal } from "../../../../contexts/ModalContext";
 
 export default function Hero() {
   const h = useHero();
+  const words = ["Healthy", "Fresh"];
   const [scrollY, setScrollY] = useState(0);
   const { modalOpen } = useModal();
-  const [displayText, setDisplayText] = useState("");
+  const [displayText, setDisplayText] = useState(words[0]);
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-
-  const words = ["Healthy", "Fresh"];
+  const [startTyping, setStartTyping] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -26,6 +26,28 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    let idleId;
+    let timeoutId;
+
+    if ("requestIdleCallback" in window) {
+      idleId = window.requestIdleCallback(() => setStartTyping(true));
+    } else {
+      timeoutId = window.setTimeout(() => setStartTyping(true), 1200);
+    }
+
+    return () => {
+      if (idleId) window.cancelIdleCallback?.(idleId);
+      if (timeoutId) window.clearTimeout(timeoutId);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!startTyping) return;
     const currentWord = words[wordIndex];
     const timeout = setTimeout(
       () => {
@@ -72,6 +94,8 @@ export default function Hero() {
                 style={{
                   animation: "float 3.5s ease-in-out infinite",
                 }}
+                width="80"
+                height="80"
               />
             </h2>
             <h2 className="text-4xl sm:text-6xl md:text-6xl lg:text-[90px] font-bold inter">
@@ -89,6 +113,9 @@ export default function Hero() {
                   className="w-32 md:w-36"
                   srcSet={`${IMG_PEOPLE.replace(".png", ".webp")} 320w, ${IMG_PEOPLE} 640w`}
                   sizes="(max-width: 600px) 320px, 640px"
+                  width="144"
+                  height="144"
+                  decoding="async"
                 />
                 <div className="urbanist flex flex-col">
                   <h1 className="font-bold text-base md:text-lg">
@@ -115,6 +142,10 @@ export default function Hero() {
             src={h.heroImage}
             alt=""
             className="hidden lg:block lg:w-[350px] w-[200px]"
+            width="350"
+            height="350"
+            decoding="async"
+            fetchPriority="high"
           />
         </div>
         <img
@@ -125,6 +156,8 @@ export default function Hero() {
             animation: "float 4s ease-in-out infinite",
           }}
           loading="lazy"
+          width="192"
+          height="192"
         />
         <img
           src={IMG_LEAFLEFT}
@@ -134,6 +167,8 @@ export default function Hero() {
             animation: "float 4.5s ease-in-out infinite",
           }}
           loading="lazy"
+          width="160"
+          height="160"
         />
 
         {/* Scroll indicator */}

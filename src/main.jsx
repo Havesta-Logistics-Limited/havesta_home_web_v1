@@ -4,7 +4,6 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import { ModalProvider } from "./contexts/ModalContext";
 import { Environment } from "./config/env.config.js";
-import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
 
 function IntercomLazyProvider({ children }) {

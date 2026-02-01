@@ -15,7 +15,14 @@ export default function SeeWorld() {
           className="m-auto   max-w-sm    md:w-[40rem] lg:w-[45rem]"
         >
           {inView ? (
-            <img src={IMG_SEEWORLD} alt="" loading="lazy" decoding="async" />
+            <img
+              src={IMG_SEEWORLD}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              width="320"
+              height="320"
+            />
           ) : (
             <div className="w-full h-[220px] md:h-[280px] lg:h-[320px] bg-white/5 rounded-lg" />
           )}

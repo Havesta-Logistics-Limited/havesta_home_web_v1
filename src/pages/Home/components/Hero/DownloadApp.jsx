@@ -37,6 +37,8 @@ export default function DownloadApp(backgroundColor) {
             className="w-[50%] max-w-xs mx-auto mt-10"
             loading="lazy"
             decoding="async"
+            width="320"
+            height="630"
           />
         </div>
 
@@ -47,6 +49,8 @@ export default function DownloadApp(backgroundColor) {
             className="w-full max-w-sm xl:max-w-md mx-auto"
             loading="lazy"
             decoding="async"
+            width="300"
+            height="600"
           />
         </div>
       </section>

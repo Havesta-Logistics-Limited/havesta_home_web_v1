@@ -1,32 +1,30 @@
 import { lazy, Suspense } from "react";
-import { ToastContainer } from "react-toastify";
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout.jsx";
 import ScrollToTop from "./common/scrollToTop";
 import Loader from "./common/Loader.jsx";
 import routes from "./config/routes.config";
+import LazyToastContainer from "./common/LazyToastContainer.jsx";
 
 // Standalone routes (lazy loaded to keep initial bundle small)
 const Landing = lazy(() => import("./pages/Landing/Landing"));
-const CongratulationsRider = lazy(() =>
-  import("./pages/Congratulations/CongratulationsRider")
+const CongratulationsRider = lazy(
+  () => import("./pages/Congratulations/CongratulationsRider"),
 );
-const CongratulationsVendor = lazy(() =>
-  import("./pages/Congratulations/CongratulationsVendor")
+const CongratulationsVendor = lazy(
+  () => import("./pages/Congratulations/CongratulationsVendor"),
 );
 const UploadRider = lazy(() => import("./pages/Upload/UploadRider"));
 const UploadVendor = lazy(() => import("./pages/Upload/UploadVendor"));
-const FinalMessageRider = lazy(() =>
-  import("./pages/FinalMessage/FinalMessageRider")
+const FinalMessageRider = lazy(
+  () => import("./pages/FinalMessage/FinalMessageRider"),
 );
-const FinalMessageVendor = lazy(() =>
-  import("./pages/FinalMessage/FinalMessageVendor")
+const FinalMessageVendor = lazy(
+  () => import("./pages/FinalMessage/FinalMessageVendor"),
 );
 const CommissionPage = lazy(() => import("./pages/CommissionPage"));
 const TermsVendor = lazy(() => import("./pages/TermsVendor/TermsVendor"));
-const VendorModal = lazy(() =>
-  import("./pages/News/vendorModal.jsx")
-);
+const VendorModal = lazy(() => import("./pages/News/vendorModal.jsx"));
 const Career = lazy(() => import("./pages/Career/Career"));
 
 function RouteFallback() {
@@ -37,7 +35,7 @@ function App() {
   return (
     <>
       <ScrollToTop />
-      <ToastContainer />
+      <LazyToastContainer />
       <Suspense fallback={<RouteFallback />}>
         <Routes>
           <Route path="/" element={<MainLayout />}>
