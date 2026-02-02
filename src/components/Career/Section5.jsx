@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Linkedin, ArrowRight } from "lucide-react";
 import data from "../../config/section5.config";
+import Loader from "../../common/Loader"; // Import the Loader component
 
 const TestimonialCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [imageLoading, setImageLoading] = useState(true); // State to track image loading
+
+  useEffect(() => {
+    setImageLoading(true);
+  }, [activeIndex]);
 
   const handleNext = () => {
     setActiveIndex((prev) => (prev + 1) % data.length);
@@ -21,12 +27,22 @@ const TestimonialCarousel = () => {
         {/* Mobile View */}
         <div className="lg:hidden">
           <div className="rounded-2xl overflow-hidden bg-gray-50 ring-1 ring-black/5">
-            <img
-              src={activeTestimonial.image}
-              alt={activeTestimonial.name}
-              className="w-full h-72 sm:h-80 object-cover object-center"
-              loading="lazy"
-            />
+            <div className="relative w-full h-72 sm:h-80">
+              {imageLoading && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Loader />
+                </div>
+              )}
+              <img
+                src={activeTestimonial.image}
+                alt={activeTestimonial.name}
+                className={`w-full h-full object-cover object-center ${
+                  imageLoading ? "hidden" : "block"
+                }`}
+                onLoad={() => setImageLoading(false)}
+                loading="lazy"
+              />
+            </div>
             <div className="p-6">
               <p className="text-sm font-semibold text-gray-900">
                 {activeTestimonial.name}
@@ -92,10 +108,18 @@ const TestimonialCarousel = () => {
             <div className="grid grid-cols-12 items-stretch">
               {/* Image */}
               <div className="col-span-5 relative h-[520px]">
+                {imageLoading && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Loader />
+                  </div>
+                )}
                 <img
                   src={activeTestimonial.image}
                   alt={activeTestimonial.name}
-                  className="w-full h-full object-cover object-top"
+                  className={`w-full h-full object-cover object-top ${
+                    imageLoading ? "hidden" : "block"
+                  }`}
+                  onLoad={() => setImageLoading(false)}
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />

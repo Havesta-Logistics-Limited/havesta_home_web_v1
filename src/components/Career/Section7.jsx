@@ -119,7 +119,7 @@ const Section7 = () => {
       setCleanData(
         activeIndex === 0
           ? data.slice(0, 5)
-          : data.filter((x) => x.section === category).slice(0, 5)
+          : data.filter((x) => x.section === category).slice(0, 5),
       );
     };
 
@@ -220,7 +220,7 @@ const Section7 = () => {
                       Read more{" "}
                       <img
                         className="w-[24px] h-[24px] object-contain"
-                        src="/images/arrow.png"
+                        src="/images/arrow.webp"
                         alt="arrow"
                       />
                     </button>

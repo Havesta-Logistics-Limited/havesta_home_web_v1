@@ -21,6 +21,8 @@ export default function Join() {
                     <img
                       src={item.image}
                       className="w-[200px] h-[180px] lg:w-[328px] m-2 lg:m-0 object-cover rounded-lg border-primary border-b-4"
+                      width="328"
+                      height="330"
                     />
                   </div>
 

@@ -9,6 +9,8 @@ const Logo = () => {
         src={IMG_HAVESTALOGO}
         alt="havesta"
         className="w-6 sm:w-7 lg:w-8 -mt-1.5"
+        width="24"
+        height="21"
       />
     </div>
   );

@@ -38,16 +38,10 @@ const VideoPlayer = () => {
 
   return (
     <div
+      className="relative w-full max-w-3xl mx-auto cursor-pointer rounded-[10px] border-4 border-[#FFC141] p-1"
       style={{
-        position: "relative",
-        width: "100%",
-        height: "auto",
-        maxWidth: "1100px",
-        margin: "auto",
-        cursor: "pointer",
+        // fallback for borderRadius if needed
         borderRadius: "10px",
-        border: "4px solid #FFC141",
-        padding: "4px",
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -81,7 +75,7 @@ const VideoPlayer = () => {
             borderRadius: "10px",
           }}
         >
-          <IconButton onClick={togglePlay}>
+          <IconButton onClick={togglePlay} aria-label="Play video">
             <PlayArrowIcon style={{ fontSize: 64, color: "#FFC141" }} />
           </IconButton>
         </div>
@@ -90,6 +84,7 @@ const VideoPlayer = () => {
       {hovered && playing && (
         <IconButton
           onClick={togglePlay}
+          aria-label="Pause video"
           style={{
             position: "absolute",
             top: "50%",

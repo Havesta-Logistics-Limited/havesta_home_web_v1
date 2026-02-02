@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { toast } from "react-toastify";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
@@ -6,8 +6,10 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FiFacebook, FiLinkedin } from "react-icons/fi";
 import { FaXTwitter, FaInstagram, FaTiktok } from "react-icons/fa6";
 import ReuseableHero from "../../common/ReuseableHero";
-import Faq from "../../common/faq/Faq";
-import DownloadApp from "../Home/components/Hero/DownloadApp";
+import Loader from "../../common/Loader.jsx";
+
+const Faq = lazy(() => import("../../common/faq/Faq"));
+const DownloadApp = lazy(() => import("../Home/components/Hero/DownloadApp"));
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -270,10 +272,12 @@ export default function Contact() {
       </div>
 
       <div className="font-primary bg-green-radial py-20 md:py-40">
-        <Faq />
-        <div className="mt-16 md:mt-32">
-          <DownloadApp />
-        </div>
+        <Suspense fallback={<Loader />}>
+          <Faq />
+          <div className="mt-16 md:mt-32">
+            <DownloadApp />
+          </div>
+        </Suspense>
       </div>
     </div>
   );

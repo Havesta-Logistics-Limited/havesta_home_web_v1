@@ -11,13 +11,13 @@ import { useModal } from "../../../../contexts/ModalContext";
 
 export default function Hero() {
   const h = useHero();
+  const words = ["Healthy", "Fresh"];
   const [scrollY, setScrollY] = useState(0);
   const { modalOpen } = useModal();
-  const [displayText, setDisplayText] = useState("");
+  const [displayText, setDisplayText] = useState(words[0]);
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-
-  const words = ["Healthy", "Fresh"];
+  const [startTyping, setStartTyping] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -26,6 +26,28 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    let idleId;
+    let timeoutId;
+
+    if ("requestIdleCallback" in window) {
+      idleId = window.requestIdleCallback(() => setStartTyping(true));
+    } else {
+      timeoutId = window.setTimeout(() => setStartTyping(true), 1200);
+    }
+
+    return () => {
+      if (idleId) window.cancelIdleCallback?.(idleId);
+      if (timeoutId) window.clearTimeout(timeoutId);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!startTyping) return;
     const currentWord = words[wordIndex];
     const timeout = setTimeout(
       () => {
@@ -58,15 +80,22 @@ export default function Hero() {
               Find Your{" "}
               <span className="text-4xl sm:text-6xl md:text-6xl lg:text-[90px] text-harvestaYellow italic font-bold mb-6">
                 {displayText}
-                <span className="inline-block animate-[blink_1s_infinite]" style={{animation: 'blink 1s infinite'}}>|</span>
+                <span
+                  className="inline-block animate-[blink_1s_infinite]"
+                  style={{ animation: "blink 1s infinite" }}
+                >
+                  |
+                </span>
               </span>
               <img
                 src={IMG_LEAFTOP}
                 alt=""
-                className="hidden lg:flex absolute -top-12 -right-12 animate-[float_1.5s_ease-in-out_infinite]"
+                className="hidden lg:flex absolute -top-6 right-4 xl:right-10 w-16 xl:w-20 opacity-70 pointer-events-none animate-[float_3.5s_ease-in-out_infinite]"
                 style={{
-                  animation: "float 1.5s ease-in-out infinite",
+                  animation: "float 3.5s ease-in-out infinite",
                 }}
+                width="80"
+                height="80"
               />
             </h2>
             <h2 className="text-4xl sm:text-6xl md:text-6xl lg:text-[90px] font-bold inter">
@@ -78,7 +107,16 @@ export default function Hero() {
 
             <div className="flex flex-col items-center lg:items-start gap-8 mt-12">
               <div className="flex gap-4 items-center">
-                <img src={IMG_PEOPLE} alt="" className="w-32 md:w-36" />
+                <img
+                  src={IMG_PEOPLE}
+                  alt=""
+                  className="w-32 md:w-36"
+                  srcSet={`${IMG_PEOPLE.replace(".png", ".webp")} 320w, ${IMG_PEOPLE} 640w`}
+                  sizes="(max-width: 600px) 320px, 640px"
+                  width="144"
+                  height="144"
+                  decoding="async"
+                />
                 <div className="urbanist flex flex-col">
                   <h1 className="font-bold text-base md:text-lg">
                     500+ customers
@@ -87,10 +125,10 @@ export default function Hero() {
               </div>
               <Link
                 to="/"
-                className="relative w-full sm:w-fit mt-28 md:mt-6 inline-block"
+                className="relative w-full sm:w-fit mt-20 md:mt-6 inline-block"
               >
                 <div className="bg-harvestaYellow text-harvestaBlack flex items-center justify-center py-3 px-6 rounded-3xl font-bold z-50">
-                 Shop Now
+                  Shop Now
                 </div>
                 <div className="bg-black text-harvestaDarkGreen flex items-center justify-center py-3 px-6 rounded-3xl font-bold absolute top-1 -z-10 left-1 w-full">
                   Shop Now
@@ -104,23 +142,33 @@ export default function Hero() {
             src={h.heroImage}
             alt=""
             className="hidden lg:block lg:w-[350px] w-[200px]"
+            width="350"
+            height="350"
+            decoding="async"
+            fetchPriority="high"
           />
         </div>
         <img
           src={IMG_LEAFRIGHT}
           alt=""
-          className="absolute hidden lg:block right-48 w-56 top-96 animate-[float_2s_ease-in-out_infinite]"
+          className="absolute hidden lg:block right-10 xl:right-24 w-40 xl:w-48 top-80 opacity-60 pointer-events-none animate-[float_4s_ease-in-out_infinite]"
           style={{
-            animation: "float 2s ease-in-out infinite",
+            animation: "float 4s ease-in-out infinite",
           }}
+          loading="lazy"
+          width="192"
+          height="192"
         />
         <img
           src={IMG_LEAFLEFT}
           alt=""
-          className="hidden lg:flex absolute top-64 left-0 animate-[float_1.75s_ease-in-out_infinite]"
+          className="hidden lg:flex absolute top-52 -left-6 w-32 xl:w-40 opacity-60 pointer-events-none animate-[float_4.5s_ease-in-out_infinite]"
           style={{
-            animation: "float 1.75s ease-in-out infinite",
+            animation: "float 4.5s ease-in-out infinite",
           }}
+          loading="lazy"
+          width="160"
+          height="160"
         />
 
         {/* Scroll indicator */}

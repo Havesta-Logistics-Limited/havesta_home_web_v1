@@ -1,8 +1,8 @@
 export { default as IMG_HAVESTALOGO } from "./havestalogo.svg";
-export { default as IMG_CEO_NOEL } from "./Noel.png";
-export { default as IMG_PEOPLE } from "./people.png";
+export { default as IMG_CEO_NOEL } from "./Noel.webp";
+export { default as IMG_PEOPLE } from "./people.webp";
 export { default as IMG_UNSPLASH } from "./unsplash.svg";
-export { default as IMG_SEEWORLD } from "./seeworld.svg";
+export { default as IMG_SEEWORLD } from "./seeworld.webp";
 export { default as IMG_CUSTOMER } from "./customer.svg";
 export { default as IMG_LEAFTOP } from "./leaf-top.svg";
 export { default as IMG_LEAFRIGHT } from "./leaf-right.svg";

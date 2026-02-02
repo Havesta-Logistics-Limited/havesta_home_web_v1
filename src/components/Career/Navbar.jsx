@@ -7,12 +7,12 @@ const Navbar = () => {
         <div className="flex w-[327px] justify-between items-center lg:w-5/6 h-full">
           <img
             className="w-[91px] object-contain lg:w-[138.3px]"
-            src="/images/harvestaLogo.png"
+            src="/images/harvestaLogo.webp"
             alt=""
           />
           <img
             className="w-[24px] object-contain lg:hidden"
-            src="/images/Group 3821.png"
+            src="/images/Group 3821.webp"
             alt=""
           />
           <div className="hidden gap-16 justify-between h-max lg:flex">

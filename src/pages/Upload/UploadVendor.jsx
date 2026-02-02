@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
-import uploadIcon from "../../assets/icons/upload.png";
-import cancelSend from "../../assets/icons/cancel.png";
+import uploadIcon from "../../assets/icons/upload.webp";
+import cancelSend from "../../assets/icons/cancel.webp";
 import LogoNav from "../../common/LogoNav.jsx";
 import { useNavigate } from "react-router-dom";
 import vendorUploadList from "../../config/uploadvendor.config.jsx";
@@ -60,7 +60,6 @@ const UploadVendor = () => {
       return;
     }
   };
-
 
   useEffect(() => {
     if (files.length > 2) {

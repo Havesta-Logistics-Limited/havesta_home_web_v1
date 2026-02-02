@@ -42,10 +42,11 @@ export default {
 
         careerTile:
           "linear-gradient(180deg, rgba(1, 190, 114, 0.3), rgba(1, 190, 114, 0.12))",
-        careerGradient: "url('/images/Vector.png')",
-        careerGradient2: "url('/images/Vector (1).png')",
-        marketSec1: "url('/images/Rectangle 1.png')",
-        "green-radial": "radial-gradient(51.99% 116.4% at 50.03% -0.51%, #005231 0%, #273F2B 95.14%)",
+        careerGradient: "url('/images/Vector.webp')",
+        careerGradient2: "url('/images/Vector (1).webp')",
+        marketSec1: "url('/images/Rectangle 1.webp')",
+        "green-radial":
+          "radial-gradient(51.99% 116.4% at 50.03% -0.51%, #005231 0%, #273F2B 95.14%)",
       },
       height: {
         max: "max-content",
