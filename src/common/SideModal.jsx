@@ -60,7 +60,7 @@ const SideModal = () => {
                 key={index}
                 to={item.path}
                 onClick={closeModal}
-                className={`group block text-2xl font-medium text-white hover:text-harvestaYellow transition-all duration-300 pb-2 ${
+                className={`group block text-md font-medium text-white hover:text-harvestaYellow transition-all duration-300 pb-2 ${
                   index < navRoutesMobile.length - 1
                     ? "border-b border-harvestaYellow/20 hover:border-harvestaYellow/60"
                     : ""

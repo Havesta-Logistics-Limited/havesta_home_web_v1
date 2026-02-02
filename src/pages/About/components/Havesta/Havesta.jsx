@@ -3,18 +3,21 @@ import useHavesta from "./useHavesta";
 import { IMG_CEO_NOEL } from "../../../../assets/images";
 
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import SkeletonImage from "../../../../common/SkeletonImage";
 
 export default function Havesta() {
   const h = useHavesta();
   return (
     <div className="grid gap-8 md:grid-cols-2 lg:p-24 ">
       <div className="p-4 flex flex-col items-center text-center">
-        <img
+        <SkeletonImage
           src={IMG_CEO_NOEL}
           alt="ceo-image"
+          className="w-full lg:w-2/3 aspect-[3/4]"
+          imgClassName="w-full h-full object-cover"
+          skeletonClassName="rounded-xl"
           loading="lazy"
           decoding="async"
-          className="w-full lg:w-2/3"
         />
         <p className="pt-2 font-bold font-primary">Noel Amobeda</p>
         <p className="text-xs text-primary font-bold tracking-wide">

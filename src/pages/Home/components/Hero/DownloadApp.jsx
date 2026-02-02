@@ -1,5 +1,5 @@
-import phoneMockup from "../../../../../public/images/Mockup.png";
-import phoneMockupMobile from "../../../../../public/images/Mockup-mobile.png";
+import phoneMockup from "../../../../../public/images/Mockup.webp";
+import phoneMockupMobile from "../../../../../public/images/Mockup-mobile.webp";
 
 export default function DownloadApp(backgroundColor) {
   return (
@@ -10,9 +10,9 @@ export default function DownloadApp(backgroundColor) {
       <section className="flex flex-col lg:flex-row justify-center items-center gap-2 lg:gap-2 max-w-6xl mx-auto">
         <div className="flex flex-col items-center text-center ">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-primary text-white mb-6 text-left">
-            Download Our App
+            Mobile App Coming Soon
           </h2>
-          <p className="text-sm sm:text-base text-[#DEDEDE] max-w-md lg:max-w-lg mb-6">
+          <p className="px-8 text-sm sm:text-base text-[#DEDEDE] max-w-md lg:max-w-lg mb-6">
             Get fresh farm produce delivered in minutes from a variety of
             trusted vendors offering fruits, veggies, tubers, grains, and nuts.
           </p>
@@ -35,6 +35,10 @@ export default function DownloadApp(backgroundColor) {
             src={phoneMockupMobile}
             alt="Havesta mobile app preview"
             className="w-[50%] max-w-xs mx-auto mt-10"
+            loading="lazy"
+            decoding="async"
+            width="320"
+            height="630"
           />
         </div>
 
@@ -43,6 +47,10 @@ export default function DownloadApp(backgroundColor) {
             src={phoneMockup}
             alt="Havesta mobile app preview"
             className="w-full max-w-sm xl:max-w-md mx-auto"
+            loading="lazy"
+            decoding="async"
+            width="300"
+            height="600"
           />
         </div>
       </section>

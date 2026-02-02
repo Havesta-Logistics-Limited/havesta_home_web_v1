@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import uploadList from "../../config/uploadrider.config.jsx";
-import checkIcon from "../../assets/icons/icon.png";
-// import uploadIcon from "../../assets/icons/upload.png";
-import cancelSend from "../../assets/icons/cancel.png";
+import checkIcon from "../../assets/icons/icon.webp";
+import cancelSend from "../../assets/icons/cancel.webp";
 import axiosInstance from "../../config/axios.config.js";
 // import LogoNav from "../../common/LogoNav.jsx";
 import { useNavigate } from "react-router-dom";
@@ -111,7 +110,7 @@ const UploadRider = () => {
       ) {
         const compressedVehicleImg = await imageCompression(
           vehicleImgFile[0],
-          options
+          options,
         );
         const compressedIdImg = await imageCompression(idImgFile[0], options);
 
@@ -128,7 +127,7 @@ const UploadRider = () => {
             headers: {
               "Content-Type": "multipart/form-data",
             },
-          }
+          },
         );
 
         console.log(data);
@@ -141,7 +140,6 @@ const UploadRider = () => {
       console.error(err);
     }
   };
-
 
   // NOTE: This screen currently doesn't store files in `files`; uploads are tracked
   // via `vehicleImgFile` and `idImgFile`. Leaving the button state driven elsewhere.

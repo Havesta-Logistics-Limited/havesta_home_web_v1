@@ -1,6 +1,9 @@
+import { lazy, Suspense } from "react";
 import ReuseableHero from "../../common/ReuseableHero";
-import Latest from "./latest";
+import Loader from "../../common/Loader.jsx";
 import useNews from "./useNewsTemplate";
+
+const Latest = lazy(() => import("./latest"));
 
 export default function News() {
   useNews();
@@ -13,7 +16,9 @@ export default function News() {
       />
 
       <div className="full">
-        <Latest />
+        <Suspense fallback={<Loader />}>
+          <Latest />
+        </Suspense>
       </div>
     </>
   );

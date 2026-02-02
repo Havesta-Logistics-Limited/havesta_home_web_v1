@@ -1,17 +1,19 @@
-import NotFound from "../pages/NotFound";
-import Home from "../pages/Home/Home";
-import MarketPlace from "../pages/MarketPlace/MarketPlace";
-import SingleNews from "../pages/SingleNews";
-import PoultryNews from "../pages/News/PoultryNews";
-import FishNews from "../pages/News/FishNews";
-import GingerNews from "../pages/News/GingerNews";
-import PrivacyPolicy from "../pages/privacypolicy";
-import TermsOfUse from "../pages/termsOfUse";
-import About from "../pages/About/About";
-import News from "../pages/News/News";
-import Contact from "../pages/Contact/Contact";
-import Vendors from "../pages/Vendors/Vendors";
-import Riders from "../pages/Riders/Riders";
+import { lazy } from "react";
+
+const NotFound = lazy(() => import("../pages/NotFound"));
+const Home = lazy(() => import("../pages/Home/Home"));
+const MarketPlace = lazy(() => import("../pages/MarketPlace/MarketPlace"));
+const SingleNews = lazy(() => import("../pages/SingleNews"));
+const PoultryNews = lazy(() => import("../pages/News/PoultryNews"));
+const FishNews = lazy(() => import("../pages/News/FishNews"));
+const GingerNews = lazy(() => import("../pages/News/GingerNews"));
+const PrivacyPolicy = lazy(() => import("../pages/privacypolicy"));
+const TermsOfUse = lazy(() => import("../pages/termsOfUse"));
+const About = lazy(() => import("../pages/About/About"));
+const News = lazy(() => import("../pages/News/News"));
+const Contact = lazy(() => import("../pages/Contact/Contact"));
+const Vendors = lazy(() => import("../pages/Vendors/Vendors"));
+const Riders = lazy(() => import("../pages/Riders/Riders"));
 
 const routes = [
   {

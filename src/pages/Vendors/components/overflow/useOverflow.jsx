@@ -1,6 +1,6 @@
-import imgVendor1 from "../../../../assets/images/vendor-overflow-1.png";
-import imgVendor2 from "../../../../assets/images/vendor-overflow-2.png";
-import imgVendor3 from "../../../../assets/images/vendor-overflow-3.png";
+import imgVendor1 from "../../../../assets/images/vendor-overflow-1.webp";
+import imgVendor2 from "../../../../assets/images/vendor-overflow-2.webp";
+import imgVendor3 from "../../../../assets/images/vendor-overflow-3.webp";
 
 export default function useOverflow() {
   const vendorStats = [

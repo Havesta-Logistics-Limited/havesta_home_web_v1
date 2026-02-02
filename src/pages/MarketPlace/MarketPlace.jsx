@@ -1,5 +1,10 @@
-import Footer from "../../common/Footer";
-import JoinUsSection from "../../components/landing/new/JoinUsSection";
+import { lazy, Suspense } from "react";
+import Loader from "../../common/Loader.jsx";
+
+const Footer = lazy(() => import("../../common/Footer"));
+const JoinUsSection = lazy(
+  () => import("../../components/landing/new/JoinUsSection"),
+);
 // import Navbar from "../../components/MarketPlace/Navbar"
 // import Section1 from "../../components/MarketPlace/Section1"
 // import Section2 from "../../components/MarketPlace/Section2"
@@ -11,7 +16,9 @@ const MarketPlace = () => {
         {/* <Navbar /> */}
         {/* <Section1 />
                 <Section2 /> */}
-        <JoinUsSection />
+        <Suspense fallback={<Loader />}>
+          <JoinUsSection />
+        </Suspense>
         <div className="relative flex justify-center h-fit w-full bg-marketSec1 bg-[#01BE724D]">
           <div className="flex flex-col md:flex-row bg-transparent mt-[10rem]">
             <div className="flex flex-col text-white text-center h-fit py-[50px] w-[500px] justify-center px-10 sm:mb-[10rem] mb-[3rem]">
@@ -28,6 +35,9 @@ const MarketPlace = () => {
                   <img
                     src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718623942/App_Store_brjnhq.svg"
                     className="w-full object-fit  h-auto"
+                    alt="App Store"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="w-[150px]">
@@ -35,6 +45,9 @@ const MarketPlace = () => {
                   <img
                     src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718623942/Play_Store_wq2cvo.svg"
                     className="w-full object-fit  h-auto"
+                    alt="Google Play"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -43,6 +56,9 @@ const MarketPlace = () => {
               <img
                 src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1721823766/Group_1002049_qumfck.png"
                 className=" w-[400px]  h-auto object-contain rounded-lg "
+                alt="Havesta app preview"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -54,7 +70,9 @@ const MarketPlace = () => {
           <img
             className="w-[72.97px] h-[72.97px] object-contain"
             src="/images/svgexport-6 (2) 1.svg"
-            alt=""
+            alt="Best prices"
+            loading="lazy"
+            decoding="async"
           />
           <div className="flex flex-col h-full justify-between">
             <p className="text-[25.26px] leading-[31.83px] font-semibold">
@@ -69,7 +87,9 @@ const MarketPlace = () => {
           <img
             className="w-[72.97px] h-[72.97px] object-contain"
             src="/images/svgexport-6 (3) 1.svg"
-            alt=""
+            alt="Refundable"
+            loading="lazy"
+            decoding="async"
           />
           <div className="flex flex-col h-full justify-between">
             <p className="text-[25.26px] leading-[31.83px] font-semibold">
@@ -84,7 +104,9 @@ const MarketPlace = () => {
           <img
             className="w-[72.97px] h-[72.97px] object-contain"
             src="/images/svgexport-7 (1) 2.svg"
-            alt=""
+            alt="Free delivery"
+            loading="lazy"
+            decoding="async"
           />
           <div className="flex flex-col h-full justify-between">
             <p className="text-[25.26px] leading-[31.83px] font-semibold">
@@ -96,7 +118,9 @@ const MarketPlace = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Suspense fallback={<Loader />}>
+        <Footer />
+      </Suspense>
     </>
   );
 };

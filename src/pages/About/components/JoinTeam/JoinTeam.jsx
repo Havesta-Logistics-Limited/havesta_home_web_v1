@@ -1,13 +1,18 @@
 import useJoinTeam from "./useJoinTeam";
 import { NavLink } from "react-router-dom";
+import SkeletonImage from "../../../../common/SkeletonImage";
 export default function JoinTeam() {
   const h = useJoinTeam();
   return (
     <div className="grid grid-col-1 justify-items-center px-20 lg:mt-10 font-primary relative my-20 mt-0 lg:px-24 pb-44">
-      <img
+      <SkeletonImage
         src={h.aboutMainImage}
         alt="image"
-        className=" w-[80%] hidden lg:block"
+        className="w-[80%] hidden lg:block aspect-[16/9]"
+        imgClassName="w-full h-full object-cover"
+        skeletonClassName="rounded-xl"
+        loading="lazy"
+        decoding="async"
       />
       <div className="absolute lg:top-[20%] grid grid-cols-1 justify-items-center mx-auto">
         <h1 className="uppercase font-bold text-4xl p-2">Join our team</h1>

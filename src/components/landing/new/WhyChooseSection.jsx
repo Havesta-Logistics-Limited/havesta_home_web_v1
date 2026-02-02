@@ -50,8 +50,10 @@ const WhyChooseSection = () => {
             <div className="hidden lg:block flex-shrink-0 -mb-6">
               <img
                 className="w-72 xl:w-80"
-                src="/images/fruit-basket.png"
+                src="/images/fruit-basket.webp"
                 alt="Fresh produce basket"
+                width="288"
+                height="288"
               />
             </div>
           </div>
