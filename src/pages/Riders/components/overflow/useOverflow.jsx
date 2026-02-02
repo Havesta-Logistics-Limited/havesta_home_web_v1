@@ -1,3 +1,7 @@
+import imgRider1 from "../../../../assets/images/rider-overflow-1.png";
+import imgRider2 from "../../../../assets/images/rider-overflow-2.png";
+import imgRider3 from "../../../../assets/images/rider-overflow-3.png";
+
 export default function useOverflow() {
   const riderStats = [
     {
