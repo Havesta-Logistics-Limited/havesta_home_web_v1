@@ -6,7 +6,7 @@ import Navbar from "../common/navbar-template/Navbar";
 
 const MainLayout = () => {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className=" mx-auto">
       <Navbar />
       <SideModal />
       <main id="main-content">
