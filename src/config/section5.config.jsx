@@ -1,12 +1,3 @@
-import imgNoel from "../assets/images/Noel.svg";
-import imgAdetayo from "../assets/images/Adetayo.jpg";
-import imgCharles from "../assets/images/Charles.png";
-import imgGabriel from "../assets/images/Gabriel.png";
-import imgOmotosho from "../assets/images/Omotosho.JPG";
-import imgGodson from "../assets/images/Godson.png";
-import imgJohn from "../assets/images/John.jpg";
-import imgHelen from "../assets/images/helen.jpg";
-
 const data = [
   {
     id: 1,

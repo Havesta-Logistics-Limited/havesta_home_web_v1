@@ -22,7 +22,7 @@ const ReuseableHero = ({
 
 ReuseableHero.propTypes = {
   text: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
 };
 
 export default ReuseableHero;
