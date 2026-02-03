@@ -1,10 +1,10 @@
 import { lazy, Suspense } from "react";
 import { Bounce, ToastContainer } from "react-toastify";
-import Hero from "./components/Hero/Hero";
+import Hero from "./components/hero/Hero";
 import Loader from "../../common/Loader.jsx";
 
-const Form = lazy(() => import("./components/Form/Form"));
-const Overflow = lazy(() => import("./components/Overflow/Overflow"));
+const Form = lazy(() => import("./components/form/Form"));
+const Overflow = lazy(() => import("./components/overflow/Overflow"));
 const Reviews = lazy(() => import("./components/reviews/Reviews"));
 const PageFooter = lazy(() => import("../../common/PageFooter"));
 
