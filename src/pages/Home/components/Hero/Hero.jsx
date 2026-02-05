@@ -124,7 +124,7 @@ export default function Hero() {
                 </div>
               </div>
               <Link
-                to="/"
+                to="/coming-soon"
                 className="relative w-full sm:w-fit mt-20 md:mt-6 inline-block"
               >
                 <div className="bg-harvestaYellow text-harvestaBlack flex items-center justify-center py-3 px-6 rounded-3xl font-bold z-50">

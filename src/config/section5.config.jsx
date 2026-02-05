@@ -1,11 +1,11 @@
-import NoelImage from "../assets/images/Noel.webp";
-import AdetayoImage from "../assets/images/Adetayo.webp";
-import CharlesImage from "../assets/images/Charles.webp";
-import GabrielImage from "../assets/images/Gabriel.webp";
-import OmotoshoImage from "../assets/images/Omotosho.webp";
-import GodsonImage from "../assets/images/Godson.webp";
-import JohnImage from "../assets/images/John.webp";
-import HelenImage from "../assets/images/helen.webp";
+import NoelImage from "../assets/images/Noel.png";
+import AdetayoImage from "../assets/images/Adetayo.png";
+import CharlesImage from "../assets/images/Charles.png";
+import GabrielImage from "../assets/images/Gabriel.png";
+import OmotoshoImage from "../assets/images/Omotosho.png";
+import GodsonImage from "../assets/images/Godson.png";
+import JohnImage from "../assets/images/John.png";
+import HelenImage from "../assets/images/helen.png";
 
 const data = [
   {

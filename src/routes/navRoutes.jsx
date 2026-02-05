@@ -68,7 +68,7 @@ export const navRoutesMobile = [
   },
   {
     name: "Marketplace",
-    path: "/marketplace",
+    path: "/coming-soon",
     hero: "/icons/contact.webp",
   },
 ];
