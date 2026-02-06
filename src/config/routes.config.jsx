@@ -3,6 +3,7 @@ import { lazy } from "react";
 const NotFound = lazy(() => import("../pages/NotFound"));
 const Home = lazy(() => import("../pages/Home/Home"));
 const MarketPlace = lazy(() => import("../pages/MarketPlace/MarketPlace"));
+const ComingSoon = lazy(() => import("../pages/ComingSoon"));
 const SingleNews = lazy(() => import("../pages/SingleNews"));
 const PoultryNews = lazy(() => import("../pages/News/PoultryNews"));
 const FishNews = lazy(() => import("../pages/News/FishNews"));
@@ -71,6 +72,10 @@ const routes = [
   {
     path: "/market",
     element: <MarketPlace />,
+  },
+  {
+    path: "/coming-soon",
+    element: <ComingSoon />,
   },
   {
     path: "*",

@@ -187,7 +187,7 @@ export default function Navbar() {
             <div className="hidden min-[1000px]:flex justify-self-end">
               <div className="h-12 flex items-center border border-white/55 px-2 bg-white/10 rounded-3xl cursor-pointer w-fit text-sm hover:bg-white/15 transition-all">
                 <Link
-                  to="/"
+                  to="/coming-soon"
                   className="px-4 text-sm lg:text-base text-white/90 hover:text-white"
                 >
                   Marketplace
