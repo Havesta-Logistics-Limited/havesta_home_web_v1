@@ -40,7 +40,6 @@ const TestimonialCarousel = () => {
                   imageLoading ? "hidden" : "block"
                 }`}
                 onLoad={() => setImageLoading(false)}
-                loading="lazy"
               />
             </div>
             <div className="p-6">
@@ -120,7 +119,6 @@ const TestimonialCarousel = () => {
                     imageLoading ? "hidden" : "block"
                   }`}
                   onLoad={() => setImageLoading(false)}
-                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
