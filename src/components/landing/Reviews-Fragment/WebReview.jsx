@@ -48,7 +48,6 @@ const WebReview = ({ type, image }) => {
                 <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-white/10">
                   <div className="flex items-center gap-2 text-white/90">
                     <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" />
-                    <span className="text-xs">Loading image...</span>
                   </div>
                 </div>
               )}

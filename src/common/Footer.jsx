@@ -114,13 +114,13 @@ const Footer = () => {
             </NavLink>
           </li>
           <li className="flex items-center">
-            <NavLink to="/careers" className="flex items-center">
+            <NavLink to="#" className="flex items-center">
               <ChevronRight className="text-harvestaLightGreen" />
               <span className="ml-2">Careers</span>
             </NavLink>
           </li>
           <li className="flex items-center">
-            <NavLink to="/landing" className="flex items-center">
+            <NavLink to="/coming-soon" className="flex items-center">
               <ChevronRight className="text-harvestaLightGreen" />
               <span className="ml-2">Marketplace</span>
             </NavLink>
