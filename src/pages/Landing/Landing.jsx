@@ -1,10 +1,18 @@
 import { lazy, Suspense } from "react";
 import Hero from "../Home/components/Hero/Hero";
-import Loader from "../../common/Loader.jsx";
 import LazySection from "../../common/LazySection.jsx";
+import Loader from "../../common/Loader.jsx";
+import ChooseUsSkeleton from "../Home/components/ChooseUs/ChooseUsSkeleton";
+import DownloadAppSkeleton from "../Home/components/Hero/DownloadAppSkeleton";
+import JoinSkeleton from "../Home/components/Join/JoinSkeleton";
+import VideoSkeleton from "../Home/components/Video/VideoSkeleton";
+import CustomerReviewsSkeleton from "../Home/components/CustomerReviews/CustomerReviewsSkeleton";
+import CoreValuesSkeleton from "../About/components/CoreValues/CoreValuesSkeleton";
 
 const DownloadApp = lazy(() => import("../Home/components/Hero/DownloadApp"));
-const Standards = lazy(() => import("../Home/components/Standards/Standards"));
+import Standards from "../Home/components/Standards/Standards";
+import FaqMain from "../../common/faq/faq-main/FaqMain";
+
 const CustomerReviews = lazy(
   () => import("../Home/components/CustomerReviews/CustomerReviews"),
 );
@@ -15,7 +23,6 @@ const JoinUsSection = lazy(
   () => import("../../components/landing/new/JoinUsSection"),
 );
 const VideoPlayer = lazy(() => import("../../components/landing/Video"));
-const FaqMain = lazy(() => import("../../common/faq/faq-main/FaqMain"));
 const CoreValues = lazy(
   () => import("../About/components/CoreValues/CoreValues"),
 );
@@ -24,22 +31,22 @@ const Landing = () => {
   return (
     <div className="bg-green-radial pb-10">
       <Hero />
-      <LazySection minHeight="320px" fallback={<Loader />}>
-        <Suspense fallback={<Loader />}>
+      <LazySection minHeight="320px" fallback={<ChooseUsSkeleton />}>
+        <Suspense fallback={<ChooseUsSkeleton />}>
           <section className="py-8 md:py-12 px-4 sm:px-8">
             <WhyChooseSection />
           </section>
         </Suspense>
       </LazySection>
-      <LazySection minHeight="320px" fallback={<Loader />}>
-        <Suspense fallback={<Loader />}>
+      <LazySection minHeight="320px" fallback={<DownloadAppSkeleton />}>
+        <Suspense fallback={<DownloadAppSkeleton />}>
           <section id="download" className="py-8 md:py-44 px-4 sm:px-8 ">
             <DownloadApp />
           </section>
         </Suspense>
       </LazySection>
-      <LazySection minHeight="320px" fallback={<Loader />}>
-        <Suspense fallback={<Loader />}>
+      <LazySection minHeight="320px" fallback={<JoinSkeleton />}>
+        <Suspense fallback={<JoinSkeleton />}>
           <section className="py-8 md:py-20 px-4 sm:px-8">
             <JoinUsSection />
           </section>
@@ -97,8 +104,8 @@ const Landing = () => {
           </div>
         </section>
       </LazySection>
-      <LazySection minHeight="360px" fallback={<Loader />}>
-        <Suspense fallback={<Loader />}>
+      <LazySection minHeight="360px" fallback={<VideoSkeleton />}>
+        <Suspense fallback={<VideoSkeleton />}>
           <section className="py-8 md:py-20 px-4 sm:px-8">
             <div className="flex justify-center p-6">
               <VideoPlayer />
@@ -106,34 +113,26 @@ const Landing = () => {
           </section>
         </Suspense>
       </LazySection>
-      <LazySection minHeight="320px" fallback={<Loader />}>
-        <Suspense fallback={<Loader />}>
-          <section className="py-8 md:py-20 px-4 sm:px-8">
-            <Standards />
-          </section>
-        </Suspense>
-      </LazySection>
-      <LazySection minHeight="320px" fallback={<Loader />}>
-        <Suspense fallback={<Loader />}>
+      <section className="py-8 md:py-20 px-4 sm:px-8">
+        <Standards />
+      </section>
+      <LazySection minHeight="320px" fallback={<CustomerReviewsSkeleton />}>
+        <Suspense fallback={<CustomerReviewsSkeleton />}>
           <section className="py-8 md:py-20 px-4 sm:px-8">
             <CustomerReviews />
           </section>
         </Suspense>
       </LazySection>
-      <LazySection minHeight="320px" fallback={<Loader />}>
-        <Suspense fallback={<Loader />}>
+      <LazySection minHeight="320px" fallback={<CoreValuesSkeleton />}>
+        <Suspense fallback={<CoreValuesSkeleton />}>
           <section className="py-8 md:py-20 px-4 sm:px-8">
             <CoreValues />
           </section>
         </Suspense>
       </LazySection>
-      <LazySection minHeight="320px" fallback={<Loader />}>
-        <Suspense fallback={<Loader />}>
-          <section className="py-8 md:py-20 px-4 sm:px-8">
-            <FaqMain />
-          </section>
-        </Suspense>
-      </LazySection>
+      <section className="py-8 md:py-20 px-4 sm:px-8">
+        <FaqMain />
+      </section>
     </div>
   );
 };

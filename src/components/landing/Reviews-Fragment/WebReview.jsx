@@ -25,6 +25,7 @@ const WebReview = ({ type, image }) => {
     type === "rider" ? "bg-harvestaYellow" : "bg-harvestaDarkGreen";
   const textColor = type === "rider" ? "text-white" : "text-white";
   const textTag = type === "rider" ? "text-primary" : "text-harvestaYellow";
+  const spinnerColor = type === "rider" ? "border-white/40 border-t-white" : "border-harvestaYellow/40 border-t-harvestaYellow";
 
   return (
     <>
@@ -45,11 +46,8 @@ const WebReview = ({ type, image }) => {
           <div className="flex-shrink-0 w-[40%] h-full flex items-center justify-center p-4">
             <div className="relative w-full h-full">
               {imageLoading && (
-                <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-white/10">
-                  <div className="flex items-center gap-2 text-white/90">
-                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" />
-                    <span className="text-xs">Loading image...</span>
-                  </div>
+                <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-black/20">
+                  <span className={`h-6 w-6 animate-spin rounded-full border-2 ${spinnerColor}`} />
                 </div>
               )}
               <img
@@ -64,7 +62,7 @@ const WebReview = ({ type, image }) => {
             </div>
           </div>
 
-          <div className="flex-1 px-4 py-4 flex flex-col justify-center items-center space-y-4 max-w-md">
+          <div className="flex-1 px-4 py-4 flex flex-col justify-center items-center space-y-4 max-w-md min-h-[280px]">
             <img
               src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719784065/Shape_f1kllb.svg"
               alt=""
@@ -72,7 +70,7 @@ const WebReview = ({ type, image }) => {
               decoding="async"
             />
             <p
-              className={`text-center text-[16px] font-semibold ${textColor} flex items-center justify-center`}
+              className={`text-center text-[16px] font-semibold ${textColor} flex items-center justify-center min-h-[120px]`}
             >
               {reviews[currentIndex].text}
             </p>
