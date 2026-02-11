@@ -1,20 +1,57 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "react-toastify/dist/ReactToastify.css";
-import "./index.css";
+import { StrictMode, useEffect, useState } from "react";
+import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import { IntercomProvider } from "react-use-intercom";
-import { Provider } from "react-redux";
-import store from "./redux/store.js";
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <React.StrictMode>
-        <IntercomProvider appId={"d7aozhso"} autoBoot>
-          <App />
-        </IntercomProvider>
-      </React.StrictMode>
+import App from "./App.jsx";
+import { ModalProvider } from "./contexts/ModalContext";
+import { Environment } from "./config/env.config.js";
+import "./index.css";
+
+function IntercomLazyProvider({ children }) {
+  const [Provider, setProvider] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const loadProvider = () => {
+      import("react-use-intercom").then((mod) => {
+        if (!cancelled) {
+          setProvider(() => mod.IntercomProvider);
+        }
+      });
+    };
+
+    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+      const id = window.requestIdleCallback(loadProvider);
+      return () => {
+        cancelled = true;
+        window.cancelIdleCallback?.(id);
+      };
+    }
+
+    const timeoutId = window.setTimeout(loadProvider, 1500);
+    return () => {
+      cancelled = true;
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
+  if (!Provider) return children;
+
+  return (
+    <Provider appId={Environment.INTERCOM_APP_ID} autoBoot>
+      {children}
     </Provider>
-  </BrowserRouter>
+  );
+}
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <BrowserRouter>
+      <ModalProvider>
+        <IntercomLazyProvider>
+          <App />
+        </IntercomLazyProvider>
+      </ModalProvider>
+    </BrowserRouter>
+  </StrictMode>,
 );

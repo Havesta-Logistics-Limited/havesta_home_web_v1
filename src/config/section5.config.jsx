@@ -1,32 +1,83 @@
+import NoelImage from "../assets/images/Noel.png";
+import AdetayoImage from "../assets/images/Adetayo.png";
+import CharlesImage from "../assets/images/Charles.png";
+import GabrielImage from "../assets/images/Gabriel.png";
+import OmotoshoImage from "../assets/images/Omotosho.png";
+import GodsonImage from "../assets/images/Godson.png";
+import JohnImage from "../assets/images/John.png";
+import HelenImage from "../assets/images/helen.png";
+
 const data = [
-    {
-        id: 1,
-        name: "James Olson",
-        title: "Product Designer",
-        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda veritatis labore quas. Iusto possimus laudantium molestiae quo? Molestias minus placeat natus harum in error officia, sapiente tenetur iure possimus necessitatibus.",
-        image: "/images/Rectangle 5522.png"
-    },
-    {
-        id: 2,
-        name: "John doe",
-        title: "Product Designer",
-        text: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque accusantium fugiat quia enim officia repudiandae inventore nihil error aliquid! Aspernatur ut vel neque. Molestiae est voluptate illum fugit. Unde, corporis.",
-        image: "/images/Rectangle 5524.png"
-    },
-    {
-        id: 3,
-        name: "James Olson",
-        title: "Product Designer",
-        text: "I do admire the company culture and, I like that. Havesta is truly the place where good attitudes have blended with proficiency. If you’re going to craft something great and you have a strong eagerness to do that, Havesta will remove all hassles in your journey.",
-        image: "/images/Rectangle 5525.png"
-    },
-    {
-        id: 4,
-        name: "Jane doe",
-        title: "Product Designer",
-        text: "I do admire the company culture and, I like that. Havesta is truly the place where good attitudes have blended with proficiency. If you’re going to craft something great and you have a strong eagerness to do that, Havesta will remove all hassles in your journey.",
-        image: "/images/Rectangle 5526.png"
-    }
+  {
+    id: 1,
+    name: "Noel Amobeda",
+    title: "Founder & CEO ",
+    text: `Failure is simply the opportunity to begin again. This time, more intelligently. 
+                - Henry Ford`,
+    image: NoelImage,
+    linkedin:
+      "https://www.linkedin.com/in/noelamobeda?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+  },
+  {
+    id: 2,
+    name: "Adetayo Onilogbo",
+    title: "Chief Marketing Officer",
+    text: " Do the work. Even on the days you don’t feel ready. Progress shows up after consistency, not before.",
+    image: AdetayoImage,
+    linkedin:
+      "https://www.linkedin.com/in/adetayo-onilogbo?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  {
+    id: 3,
+    name: "Charles Amobeda",
+    title: "Chief Technology Officer",
+    text: " You don’t have to be great to start, but you have to start to be great.",
+    image: CharlesImage,
+    linkedin:
+      "https://www.linkedin.com/in/charles-amobeda-096887231?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+  },
+  {
+    id: 4,
+    name: "Gabriel Oriakhi",
+    title: "Growth & Operations Specialist",
+    text: "The most important battles is the one you fight inside your head",
+    image: GabrielImage,
+    linkedin:
+      "https://www.linkedin.com/in/gabriel-oriakhi-296931332?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  {
+    id: 5,
+    name: "Omotosho David A.",
+    title: "Software Engineer",
+    text: 'Striving for excellence because "good enough" never is',
+    image: OmotoshoImage,
+    linkedin:
+      "https://www.linkedin.com/in/omotosho-david?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+  },
+  {
+    id: 6,
+    name: "Godson Nwaubani",
+    title: "DevOps Engineer",
+    text: "The best way to predict the future is to create it. — Peter Drucker",
+    image: GodsonImage,
+    linkedin: "https://linkedin.com/in/godson-nwaubani",
+  },
+  {
+    id: 7,
+    name: "John Offia-Chukwu",
+    title: "Mobile Developer",
+    text: "What you do speaks so loudly that I cannot hear what you say — Ralph Waldo Emerson",
+    image: JohnImage,
+    linkedin: "https://www.linkedin.com/in/john-offia-chukwu-26a9503a1/",
+  },
+  {
+    id: 8,
+    name: "Helen Amobeda",
+    title: "Social Media Manager",
+    text: "Life unfolds not in leaps but in the gentle rhythm of thoughtful choices. Be patient with yourself, embrace each small step, and trust that consistent effort and reflection will guide you toward your best self.",
+    image: HelenImage,
+    linkedin: "https://www.linkedin.com/in/john-offia-chukwu-26a9503a1/",
+  },
 ];
 
 export default data;

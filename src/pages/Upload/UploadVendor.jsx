@@ -1,9 +1,7 @@
-import { setIcon } from "../../redux/features/iconSlice.js";
-import { useDispatch } from "react-redux";
 import { useEffect, useRef, useState } from "react";
 
-import uploadIcon from "../../assets/icons/upload.png";
-import cancelSend from "../../assets/icons/cancel.png";
+import uploadIcon from "../../assets/icons/upload.webp";
+import cancelSend from "../../assets/icons/cancel.webp";
 import LogoNav from "../../common/LogoNav.jsx";
 import { useNavigate } from "react-router-dom";
 import vendorUploadList from "../../config/uploadvendor.config.jsx";
@@ -13,7 +11,6 @@ const UploadVendor = () => {
   const [files, setFiles] = useState([]);
   const navigate = useNavigate();
   const [buttonAvailable, setButtonAvailable] = useState(false);
-  const dispatch = useDispatch();
   const fileInputRef = useRef(null);
 
   const handleImageClick = () => {
@@ -65,25 +62,17 @@ const UploadVendor = () => {
   };
 
   useEffect(() => {
-    dispatch(setIcon("rider"));
-
-    return () => {
-      dispatch(setIcon("home")); 
-    };
-  }, []);
-
-  useEffect(() => {
     if (files.length > 2) {
       setButtonAvailable(true);
     }
   }, [files]);
 
-  console.log(buttonAvailable, files.length);
+  // console.log(buttonAvailable, files.length);
 
   return (
     <>
       <LogoNav />
-      
+
       <section className="bg-harvestaBlack p-4 font-primary">
         <div className="h-[100%] md:h-[100vh] lg:grid grid-flow-col justify-items-center items-center">
           <div className="p-4  mt-28 lg:ml-28 lg:mt-[-28px]">
@@ -92,8 +81,8 @@ const UploadVendor = () => {
             </h1>
             <p className="text-white text-sm mt-2 leading-8">
               We need your product menu to build your online store on the
-              Havesta app in <br /> 24 to 48hrs. You'll be able to edit it once
-              we're done and your store is live.
+              Havesta app in <br /> 24 to 48hrs. You&apos;ll be able to edit it
+              once we&apos;re done and your store is live.
             </p>
 
             <p className="mt-6 text-2xl font-semibold text-harvestaYellow">
@@ -201,9 +190,7 @@ const UploadVendor = () => {
               Submit
             </button>
           </div>
-         
         </div>
-       
       </section>
     </>
   );

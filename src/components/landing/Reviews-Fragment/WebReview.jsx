@@ -1,61 +1,103 @@
-import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import { useEffect, useState } from "react";
+import { reviewsByType } from "../../../config/reviews.config.js";
 
-const WebReview = ({type, image}) => {
+const WebReview = ({ type, image }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [imageLoading, setImageLoading] = useState(true);
 
-    const background = type === "rider" ? "bg-harvestaYellow" : "bg-harvestaDarkGreen"
-    const textColor = type === "rider" ? "text-white" : "text-white"
-    const textTag = type === "rider" ? "text-primary" : "text-harvestaYellow"
- 
+  const reviews = reviewsByType[type] || reviewsByType.customer;
+
+  useEffect(() => {
+    setImageLoading(true);
+  }, [currentIndex, type]);
+
+  const nextReview = () => {
+    setCurrentIndex((prev) => (prev + 1) % reviews.length);
+  };
+
+  const prevReview = () => {
+    setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+  };
+
+  const background =
+    type === "rider" ? "bg-harvestaYellow" : "bg-harvestaDarkGreen";
+  const textColor = type === "rider" ? "text-white" : "text-white";
+  const textTag = type === "rider" ? "text-primary" : "text-harvestaYellow";
+  const spinnerColor = type === "rider" ? "border-white/40 border-t-white" : "border-harvestaYellow/40 border-t-harvestaYellow";
+
   return (
     <>
-      <div className="hidden p-4 w-full lg:grid grid-flow-row justify-items-center font-primary mb-16">
+      <div className="hidden p-4 w-full lg:flex justify-center items-center font-primary mb-16">
+        <ArrowCircleLeftIcon
+          fontSize="large"
+          sx={{
+            color: "#005231",
+            cursor: "pointer",
+          }}
+          className="mr-4"
+          onClick={prevReview}
+        />
 
-        
-        <div className={`${background} grid grid-flow-col place-content-center items-center w-[55%] rounded-lg`}>
-
-          <div>
-            <img
-              src={image}
-              className="w-[70%]  ml-3 my-3"
-              alt=""
-            />
-          </div>
-
-          <div className="  mr-10 grid grid-flow-row justify-items-center items-center space-y-8">
-            <img
-              src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719784065/Shape_f1kllb.svg"
-              alt=""
-            />{" "}
-            {/* Quote icon */}
-            <p className={`text-center text-[16px] font-semibold ${textColor}`}>
-              Shopping for groceries has never been easier! Hervesta offers an
-              incredible selection of fresh produce delivered right to my
-              doorstep.
-            </p>
-            <div>
-              <h6 className={`text-[14px] font-semibold ${textTag}`}>Noel Amobeda</h6>
-              <h6 className={`text-[12px] font-bold ${textTag}`}>CEO at Harvesta</h6>
+        <div
+          className={`${background} flex items-center justify-center w-[85%] rounded-lg relative h-[350px] overflow-hidden`}
+        >
+          <div className="flex-shrink-0 w-[40%] h-full flex items-center justify-center p-4">
+            <div className="relative w-full h-full">
+              {imageLoading && (
+                <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-black/20">
+                  <span className={`h-6 w-6 animate-spin rounded-full border-2 ${spinnerColor}`} />
+                </div>
+              )}
+              <img
+                src={reviews[currentIndex].image}
+                className="w-full h-full object-contain rounded-lg"
+                alt={reviews[currentIndex].role}
+                loading="lazy"
+                decoding="async"
+                onLoad={() => setImageLoading(false)}
+                onError={() => setImageLoading(false)}
+              />
             </div>
           </div>
 
+          <div className="flex-1 px-4 py-4 flex flex-col justify-center items-center space-y-4 max-w-md min-h-[280px]">
+            <img
+              src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719784065/Shape_f1kllb.svg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+            <p
+              className={`text-center text-[16px] font-semibold ${textColor} flex items-center justify-center min-h-[120px]`}
+            >
+              {reviews[currentIndex].text}
+            </p>
+            <div>
+              <h6
+                className={`text-[14px] font-semibold text-center ${textTag}`}
+              >
+                {reviews[currentIndex].name}
+              </h6>
+              <h6
+                className={`text-[12px] text-center italic font-light ${textTag}`}
+              >
+                {reviews[currentIndex].role}
+              </h6>
+            </div>
+          </div>
         </div>
-        <div className="grid grid-flow-col gap-5 mt-1 ">
-            <ArrowCircleLeftIcon
-            fontSize='large'
-            sx={{
-                color: "#005231",
-                cursor: "pointer"
-            }}
-            />
-            <ArrowCircleRightIcon
-            fontSize='large'
-            sx={{
-                color: "#005231",
-                cursor: "pointer"
-            }}
-            />
-           </div>
+
+        <ArrowCircleRightIcon
+          fontSize="large"
+          sx={{
+            color: "#005231",
+            cursor: "pointer",
+          }}
+          className="ml-4"
+          onClick={nextReview}
+        />
       </div>
     </>
   );

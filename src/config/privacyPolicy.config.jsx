@@ -3,7 +3,7 @@ export const privacyPolicy = [
     title: "Introduction",
     paragraphs: [
       {
-        text: "Welcome to Harvesta. We prioritize convenience and transparency, offering real-time order tracking, secure payment options, and eco-friendly delivery choices. This Privacy Policy outlines how we collect, use, and protect your personal information when you visit our website or use our services.",
+        text: "Welcome to Havesta. We prioritize convenience and transparency, offering real-time order tracking, secure payment options, and eco-friendly delivery choices. This Privacy Policy outlines how we collect, use, and protect your personal information when you visit our website or use our services.",
       },
     ],
   },
@@ -93,10 +93,10 @@ export const privacyPolicy = [
         text: "If you have any questions about these Terms and Conditions, please contact us at:",
       },
       {
-        text: "Email: terms@havesta.com",
+        text: "Email: info@havesta.com",
       },
       {
-        text: "Phone: 080HAVESTA",
+        text: "Whatsapp Only: 08109511825",
       },
     ],
   },

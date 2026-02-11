@@ -1,90 +1,104 @@
-import {navRoutesMobile} from "../routes/navRoutes";
+import { navRoutesMobile } from "../routes/navRoutes";
 import Logo from "./Logo";
-import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
-import { closeModal } from "../redux/features/modalSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useModal } from "../contexts/ModalContext";
 import { useEffect, useRef } from "react";
+import MobileToggle from "../components/MobileToggle";
+import SocialIcons from "./social-icons/SocialIcons";
+import "./SideModal.css";
 
 const SideModal = () => {
-  const { modalOpen } = useSelector((state) => state.modalReducer);
-  const dispatch = useDispatch();
+  const { modalOpen, closeModal } = useModal();
   const sideModalRef = useRef(null);
 
-  const handleClickOutside = (event) => {
-    if (sideModalRef.current && !sideModalRef.current.contains(event.target)) {
-      dispatch(closeModal());
-    }
-  }
-  const handleModalOpen = () => {
-    if (modalOpen) {
-      document.body.style.overflow = "hidden"; // Prevent scrolling
-
-    } else {
-      document.body.style.overflow = "auto"; // Allow scrolling
-
-    }
-  };
-
   useEffect(() => {
-    handleModalOpen(); // Call on initial render and modal state changes
-    document.addEventListener("mousedown", handleClickOutside);
-
+    document.body.style.overflow = modalOpen ? "hidden" : "auto";
     return () => {
-      document.body.style.overflow = "auto"; // Reset on unmount
-      document.removeEventListener("mousedown", handleClickOutside);
-
+      document.body.style.overflow = "auto";
     };
   }, [modalOpen]);
+
+  useEffect(() => {
+    if (!modalOpen) return;
+    const onPointerDown = (e) => {
+      if (!sideModalRef.current) return;
+      if (sideModalRef.current.contains(e.target)) return;
+      closeModal();
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [modalOpen, closeModal]);
+
   return (
-    <>
+    <div
+      className={`max-lg:block hidden fixed inset-0 z-50 transition-all duration-500 ${
+        modalOpen ? "visible" : "invisible"
+      }`}
+    >
       <div
-    
-        className={`lg:hidden h-[100vh] bg-black/50 ${
-          modalOpen ? "min-w-[100%] " : "min-w-[0%]"
-        } z-40 absolute top-0 left-0 bottom-0 shadow-lg transition-all font-primary `}
-         
+        className={`absolute inset-0 bg-black/90 backdrop-blur-sm transition-all duration-400 ${
+          modalOpen ? "opacity-100" : "opacity-0"
+        }`}
+      />
+
+      <div
+        ref={sideModalRef}
+        className={`absolute inset-0 md:inset-x-0 md:w-96 md:max-w-[90vw] md:right-0
+           md:left-auto md:top-0 bg-[#273f2b] backdrop-blur-2xl transition-all duration-500 ease-out flex flex-col ${
+             modalOpen ? "translate-y-0" : "-translate-y-full"
+           }`}
       >
-        {modalOpen && (
-          <div
-          ref={sideModalRef}
-            className={` h-[100vh] bg-primary 
-            block min-w-[75%]  
-           absolute top-0 left-0 transition ease-in duration-2000 z-50`}
-          >
-            <div className=" flex justify-between p-4 mt-[27px]">
-              <Logo />
-              <CloseIcon
-                className="text-harvestaYellow"
-                onClick={() => dispatch(closeModal())}
-                sx={{
-                  fontSize: "30px",
-                }}
-              />
-            </div>
-
-            <div className=" h-auto mt-10 grid justify-center items-center space-y-4 w-full">
-              {navRoutesMobile.map((item, index) => (
-                <Link
-                  key={index}
-                  className="text-white text-center py-2  w-[150px] mx-auto flex justify-center items-center hover:bg-harvestaLightGreen hover:rounded-lg"
-                  to={item.path}
-                  onClick={() => dispatch(closeModal())}
-                >
-    
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-
-           <div className="absolute bottom-0  w-full text-center">
-              <p className="text-[10px] text-gray-400">@Copyright 2024</p>
-              <p className="text-[11px] text-white my-2">Designed By Dregon J&Z Techbase Limited</p>
-           </div>
+        <div className="px-6 py-8 flex-1 overflow-y-auto">
+          <div className="flex justify-between items-center mb-12">
+            <Logo />
+            <MobileToggle />
           </div>
-        )}
+
+          <nav className="space-y-8">
+            {navRoutesMobile.map((item, index) => (
+              <Link
+                key={index}
+                to={item.path}
+                onClick={closeModal}
+                className={`group block text-md font-medium text-white hover:text-harvestaYellow transition-all duration-300 pb-2 ${
+                  index < navRoutesMobile.length - 1
+                    ? "border-b border-harvestaYellow/20 hover:border-harvestaYellow/60"
+                    : ""
+                } ${modalOpen ? "animate-fadeInUp" : "opacity-0"}`}
+                style={
+                  modalOpen
+                    ? {
+                        animationDelay: `${index * 0.1 + 0.2}s`,
+                        animationFillMode: "both",
+                      }
+                    : {}
+                }
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+        <div
+          className={`px-6 py-6 border-t border-harvestaYellow/20 ${
+            modalOpen ? "animate-fadeInUp" : "opacity-0"
+          }`}
+          style={
+            modalOpen
+              ? { animationDelay: "0.8s", animationFillMode: "both" }
+              : {}
+          }
+        >
+          <div className="flex justify-center mb-4">
+            <SocialIcons color="#FFC141" />
+          </div>
+          <p className="text-sm text-yellow-500/60 text-center">
+            © 2026 Harvesta
+          </p>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

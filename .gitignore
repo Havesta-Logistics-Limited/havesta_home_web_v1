@@ -25,4 +25,6 @@ trash.txt
 *.sln
 *.sw?
 
+Dockerfile-dev
+
 
