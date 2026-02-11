@@ -33,10 +33,11 @@ const MobileReview = ({ type }) => {
     type === "customer" || type === "rider" ? "text-black" : "text-white";
   const nameText = type === "vendor" ? "text-white" : "text-black";
   const roleText = type === "vendor" ? "text-harvestaYellow" : "text-white";
+  const spinnerColor = type === "vendor" ? "border-harvestaYellow/50 border-t-harvestaYellow" : "border-white/50 border-t-white";
 
   return (
     <div
-      className={`w-full flex flex-col justify-center items-center font-primary mb-16 lg:hidden ${backgroundColor} relative rounded-lg mx-auto max-w-md px-4 py-6 sm:p-6 min-h-[360px] sm:min-h-[400px]`}
+      className={`w-full flex flex-col justify-center items-center font-primary mb-16 lg:hidden ${backgroundColor} relative rounded-lg mx-auto max-w-md px-4 py-6 sm:p-6 h-[420px] sm:h-[440px]`}
     >
       <div className="text-center space-y-5 sm:space-y-6 z-10 w-full">
         <img
@@ -57,7 +58,7 @@ const MobileReview = ({ type }) => {
           <div className="relative w-16 h-16">
             {imageLoading && (
               <div className="absolute inset-0 flex items-center justify-center rounded-full bg-black/20">
-                <span className="h-3 w-3 animate-spin rounded-full border-2 border-white/50 border-t-white" />
+                <span className={`h-4 w-4 animate-spin rounded-full border-2 ${spinnerColor}`} />
               </div>
             )}
             <img
