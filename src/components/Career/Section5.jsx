@@ -5,11 +5,23 @@ import Loader from "../../common/Loader"; // Import the Loader component
 
 const TestimonialCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [imageLoading, setImageLoading] = useState(true); // State to track image loading
+  const [imageLoading, setImageLoading] = useState(true);
+  const [loadedImages, setLoadedImages] = useState(new Set());
 
   useEffect(() => {
-    setImageLoading(true);
-  }, [activeIndex]);
+    data.forEach((testimonial) => {
+      const img = new Image();
+      img.src = testimonial.image;
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!loadedImages.has(activeIndex)) {
+      setImageLoading(true);
+    } else {
+      setImageLoading(false);
+    }
+  }, [activeIndex, loadedImages]);
 
   const handleNext = () => {
     setActiveIndex((prev) => (prev + 1) % data.length);
@@ -36,10 +48,13 @@ const TestimonialCarousel = () => {
               <img
                 src={activeTestimonial.image}
                 alt={activeTestimonial.name}
-                className={`w-full h-full object-cover object-center ${
-                  imageLoading ? "hidden" : "block"
+                className={`w-full h-full object-cover object-center transition-opacity duration-300 ${
+                  imageLoading ? "opacity-0" : "opacity-100"
                 }`}
-                onLoad={() => setImageLoading(false)}
+                onLoad={() => {
+                  setImageLoading(false);
+                  setLoadedImages(prev => new Set(prev).add(activeIndex));
+                }}
               />
             </div>
             <div className="p-6">
@@ -115,10 +130,13 @@ const TestimonialCarousel = () => {
                 <img
                   src={activeTestimonial.image}
                   alt={activeTestimonial.name}
-                  className={`w-full h-full object-cover object-top ${
-                    imageLoading ? "hidden" : "block"
+                  className={`w-full h-full object-cover object-top transition-opacity duration-300 ${
+                    imageLoading ? "opacity-0" : "opacity-100"
                   }`}
-                  onLoad={() => setImageLoading(false)}
+                  onLoad={() => {
+                    setImageLoading(false);
+                    setLoadedImages(prev => new Set(prev).add(activeIndex));
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
